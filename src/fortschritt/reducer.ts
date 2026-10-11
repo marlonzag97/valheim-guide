@@ -1,5 +1,4 @@
-// Phase-0-Fassung. Arbeiter A (Phase 1) baut Export/Import und Tests aus; Schnittstelle bleibt.
-import type { FortschrittExport } from '../daten/schema'
+import { FortschrittExportSchema, type FortschrittExport } from '../daten/schema'
 
 export interface Fortschritt {
   besiegteBosse: ReadonlySet<string>
@@ -37,4 +36,27 @@ export function reducer(s: Fortschritt, a: Aktion): Fortschritt {
 
 export function exportieren(s: Fortschritt): FortschrittExport {
   return { version: 1, besiegteBosse: [...s.besiegteBosse], erledigteZiele: [...s.erledigteZiele] }
+}
+
+export type ImportErgebnis = { ok: true; daten: FortschrittExport } | { ok: false; fehler: string }
+
+/** Prüft einen JSON-Text (Datei oder eingefügt) gegen das Export-Schema. */
+export function importieren(text: string): ImportErgebnis {
+  if (!text.trim()) return { ok: false, fehler: 'Kein Text zum Importieren.' }
+  let roh: unknown
+  try {
+    roh = JSON.parse(text)
+  } catch {
+    return { ok: false, fehler: 'Kein gültiges JSON. Bitte die komplette Export-Datei verwenden.' }
+  }
+  const r = FortschrittExportSchema.safeParse(roh)
+  if (r.success) return { ok: true, daten: r.data }
+  const erstes = r.error.issues[0]
+  const feld = erstes?.path.join('.') ?? ''
+  if (feld === 'version') return { ok: false, fehler: 'Unbekannte Version. Erwartet wird Version 1.' }
+  if (feld.startsWith('besiegteBosse') || feld.startsWith('erledigteZiele')) {
+    const name = feld.startsWith('besiegteBosse') ? 'besiegteBosse' : 'erledigteZiele'
+    return { ok: false, fehler: `Feld „${name}“ fehlt oder enthält ungültige IDs.` }
+  }
+  return { ok: false, fehler: 'Das ist keine Fortschritt-Datei des Valheim-Guides.' }
 }
