@@ -6,41 +6,1699 @@
     "en": "Ashlands"
   },
   "farbe": "aschlande",
-  "untertitel": "Lava, Verkohlte und Flametal.",
-  "status": "geruest",
+  "untertitel": "Lava, Verkohlte und Flammenkern. Nur der Drakkar kommt durchs kochende Meer.",
+  "status": "voll",
   "boss": {
     "id": "fader",
     "name": {
       "de": "Fader",
       "en": "Fader"
     },
-    "altar": "Altar in den Aschlanden, Glocke aus drei Fragmenten.",
+    "altar": "Arena der Smaragdflamme (Emerald Flame), ein kolosseumartiger Ring in den Aschlanden. Den Ort verrät ein Vegvisir-Runenstein im Mittelturm einer Verkohlten Festung (nicht jede hat einen) und sehr selten auf einer Verkohlten Ruine. In der Arena stehen drei Ständer: Glocken hineinstellen, dann den Altar in der Mitte benutzen.",
     "opfergabe": [
       {
-        "item": "bell-fragment",
+        "item": "bell",
         "menge": 3
       }
     ],
     "belohnung": [
-      "fader-trophy"
+      "fader-trophy",
+      "kindled-ribs"
     ],
     "macht": {
       "name": "Fader",
-      "wirkung": "Feuerresistenz, mehr Leben."
-    }
+      "wirkung": "50 % weniger Feuerschaden, doppelt so schneller Adrenalin-Aufbau und eine um 50 % langsamer gefüllte Taumel-Leiste. Wirkt auch auf Mitspieler im Umkreis von 10 Metern. 5 Minuten aktiv, 20 Minuten Abklingzeit."
+    },
+    "leben": 25000,
+    "schwaeche": [],
+    "resistenz": [
+      "Stich",
+      "Feuer (immun)",
+      "Geist (immun)"
+    ]
   },
-  "vorbereitung": [],
-  "gefahren": [],
-  "rohstoffe": [],
-  "freischaltungen": [],
+  "vorbereitung": [
+    {
+      "item": "drakkar",
+      "grund": "Das einzige Schiff, das das kochende Wasser rund um die Aschlande übersteht. Jedes andere Boot geht unterwegs kaputt.",
+      "pflicht": true
+    },
+    {
+      "item": "fire-resistance-barley-wine",
+      "grund": "Fast alle Angriffe der Aschlande brennen. Trink ihn vor jedem größeren Kampf, vor allem vor Fader. Wirkt 10 Minuten.",
+      "pflicht": true
+    },
+    {
+      "item": "black-metal-pickaxe",
+      "grund": "Flammenkernerz steckt in Lava-Adern, und die gehen nur mit Schwarzmetall-Spitzhacke auf.",
+      "pflicht": true
+    },
+    {
+      "item": "blast-furnace",
+      "grund": "Nur der Hochofen schmilzt Flammenkernerz zu Barren. Stell ihn ins Lager, mit Kohle als Brennstoff.",
+      "pflicht": true
+    },
+    {
+      "item": "black-forge",
+      "grund": "Alle Flammenkern-Waffen, die Rüstung und die Glocken entstehen hier. Mindestens Stufe 3, dafür brauchst du Kühler und Schraubstock aus dem Nebelland.",
+      "pflicht": true
+    },
+    {
+      "item": "shield-generator",
+      "grund": "Ascheregen setzt Holzbauten in Brand. Ein Schildgenerator fängt die Funken in 30 Metern Umkreis ab. Fütter ihn mit Knochen.",
+      "pflicht": false
+    },
+    {
+      "item": "portal-stone",
+      "grund": "Nur das Steinportal transportiert Erz und Metall. So musst du nicht jedes Mal mit dem Schiff aus der Aschlande raus.",
+      "pflicht": false
+    }
+  ],
+  "gefahren": [
+    {
+      "id": "charred-warrior",
+      "name": {
+        "de": "Verkohlter Krieger",
+        "en": "Charred Warrior"
+      },
+      "gefahr": 3,
+      "schwaeche": [
+        "Geist"
+      ],
+      "resistenz": [
+        "Stich",
+        "Feuer",
+        "Gift (immun)"
+      ],
+      "tipp": "600 Leben, langsam zu Fuß, aber mit Finten: Er hält mitten im Schlag inne und schlägt dann anders zu. Lauf ihm notfalls einfach davon. Mehrere gleichzeitig sind tödlich, zieh sie auseinander. Mit Hieb oder Stumpf kommst du weiter als mit Speer und Bogen.",
+      "drops": [
+        "charred-bone",
+        "warrior-trophy"
+      ]
+    },
+    {
+      "id": "charred-marksman",
+      "name": {
+        "de": "Verkohlter Scharfschütze",
+        "en": "Charred Marksman"
+      },
+      "gefahr": 3,
+      "schwaeche": [
+        "Geist"
+      ],
+      "resistenz": [
+        "Stich",
+        "Feuer",
+        "Gift (immun)"
+      ],
+      "tipp": "Nur 200 Leben, aber ein Bogen mit Salven von weit weg. Nah dran schießt er einzelne Pfeile, die du parieren kannst. Geh im Nahkampf ran statt mit dem Bogen zu antworten, denn Stich prallt an ihm ab.",
+      "drops": [
+        "charred-bone",
+        "marksman-trophy"
+      ]
+    },
+    {
+      "id": "charred-warlock",
+      "name": {
+        "de": "Verkohlter Hexer",
+        "en": "Charred Warlock"
+      },
+      "gefahr": 4,
+      "schwaeche": [
+        "Geist"
+      ],
+      "resistenz": [
+        "Stich",
+        "Frost",
+        "Feuer",
+        "Gift (immun)"
+      ],
+      "tipp": "Kommt nur in Festungen und an den Orten der Dyrnwyn-Aufgabe vor. Wirft grüne Feuerbälle und ruft ständig Zuckende herbei. Ohne Feuerresistenz-Gerstenwein wird es hässlich. Zuerst ihn ausschalten, dann hört der Nachschub auf.",
+      "drops": [
+        "charred-bone",
+        "warlock-trophy"
+      ]
+    },
+    {
+      "id": "charred-twitcher",
+      "name": {
+        "de": "Verkohlter Zuckender",
+        "en": "Charred Twitcher"
+      },
+      "gefahr": 2,
+      "schwaeche": [
+        "Geist"
+      ],
+      "resistenz": [
+        "Stich",
+        "Feuer",
+        "Gift (immun)"
+      ],
+      "tipp": "220 Leben, rennt im Kreis und wirft Steine, ähnlich wie ein Graudwerg. Allein harmlos, in Gruppen nervig, weil sie dich vor stärkere Gegner schubsen. Flächenwaffen räumen sie auf. Die zweisternige Variante ist wirklich gefährlich.",
+      "drops": [
+        "charred-bone"
+      ]
+    },
+    {
+      "id": "morgen",
+      "name": {
+        "de": "Morgen",
+        "en": "Morgen"
+      },
+      "gefahr": 5,
+      "schwaeche": [
+        "Blitz"
+      ],
+      "resistenz": [
+        "Stumpf",
+        "Hieb",
+        "Stich",
+        "Feuer"
+      ],
+      "tipp": "1600 Leben, schnell und ein Schlag-Monster. Bricht aus dem Boden oder aus Ruinen. Seine Hiebe durchbrechen oft den Block, also lieber ausweichen oder parieren. Blitz ist seine Schwäche, Dundr ist hier ideal, am besten in einem Putriden Loch, wo dich niemand umzingelt. Meide die zweisternigen.",
+      "drops": [
+        "morgen-sinew",
+        "morgen-heart",
+        "morgen-trophy"
+      ]
+    },
+    {
+      "id": "lava-blob",
+      "name": {
+        "de": "Lava-Blob",
+        "en": "Lava Blob"
+      },
+      "gefahr": 3,
+      "schwaeche": [
+        "Stumpf",
+        "Frost",
+        "Blitz"
+      ],
+      "resistenz": [
+        "Stich",
+        "Gift",
+        "Feuer (immun)"
+      ],
+      "tipp": "300 Leben, springt auf dich zu und explodiert im Umkreis von 6 Metern. Die Explosion siehst du kommen, roll dich weg. Sie trifft auch andere Gegner und lässt Grausten-Felsen zerbröseln. Er lässt Schwefel und Proustit-Pulver fallen, beides brauchst du.",
+      "drops": [
+        "sulfur",
+        "proustite-powder",
+        "lava-blob-trophy"
+      ]
+    },
+    {
+      "id": "fallen-valkyrie",
+      "name": {
+        "de": "Gefallene Walküre",
+        "en": "Fallen Valkyrie"
+      },
+      "gefahr": 4,
+      "schwaeche": [
+        "Geist"
+      ],
+      "resistenz": [
+        "Feuer",
+        "Gift (immun)"
+      ],
+      "tipp": "1500 Leben, schwebt über dem Boden und spuckt giftige Feuerbälle. Die Wirbel-Attacke kannst du überlaufen, den Krallenhieb musst du blocken oder parieren. Eröffne mit einem Angriff aus dem Hinterhalt (L3 schleichen), bevor sie dich entdeckt. Silberpfeile treffen ihre Geist-Schwäche gut.",
+      "drops": [
+        "celestial-feather",
+        "fallen-valkyrie-trophy"
+      ]
+    },
+    {
+      "id": "asksvin",
+      "name": {
+        "de": "Asksvin",
+        "en": "Asksvin"
+      },
+      "gefahr": 3,
+      "schwaeche": [],
+      "resistenz": [
+        "Feuer",
+        "Gift",
+        "Geist (immun)"
+      ],
+      "tipp": "800 Leben, rennt schnell und springt dich an, mit viel Rückstoß, der dich in Lava stoßen kann. Kämpf nie am Lavarand. Er wird mit Rauchpilz, Farnspross oder Rebbeerentraube zahm und trägt dich dann (mit Sattel) unbeschadet über die Lava.",
+      "drops": [
+        "asksvin-hide",
+        "asksvin-bladder",
+        "asksvin-tail",
+        "asksvin-trophy"
+      ]
+    }
+  ],
+  "rohstoffe": [
+    {
+      "id": "flametal-ore-quelle",
+      "name": {
+        "de": "Flammenkernerz",
+        "en": "Flametal ore"
+      },
+      "fundort": "Lava-Adern auf dem Rücken von Lavaiathanen (Lavaiathan), mitten in der Lava. Außerdem in Truhen der Verkohlten Festungen und beim Angeln von Magmafischen. Eine ganze Ader gibt im Schnitt etwa 82 Erz, kann aber unter dir versinken. Basaltbomben bauen dir kurze Plattformen.",
+      "werkzeug": "Schwarzmetall-Spitzhacke",
+      "wofuer": [
+        "flametal"
+      ]
+    },
+    {
+      "id": "ashwood-quelle",
+      "name": {
+        "de": "Aschenholz",
+        "en": "Ashwood"
+      },
+      "fundort": "Verbrannte Bäume überall in den Aschlanden. Fällen, dann den Stamm zerlegen. Läuft im Köhler nicht zu Kohle.",
+      "werkzeug": "Steinaxt",
+      "wofuer": [
+        "ripper",
+        "splitnir",
+        "ash-fang",
+        "dundr",
+        "flametal-shield",
+        "charred-arrow",
+        "catapult"
+      ]
+    },
+    {
+      "id": "grausten-quelle",
+      "name": {
+        "de": "Grausten",
+        "en": "Grausten"
+      },
+      "fundort": "Aus Ruinen und Felsformationen in den Aschlanden abbauen oder zerschlagen. Lava-Blobs sprengen die Felsen für dich.",
+      "werkzeug": "Spitzhacke",
+      "wofuer": [
+        "portal-stone",
+        "grausten-floor-2x2",
+        "grausten-wall-2x2",
+        "grausten-payload"
+      ]
+    },
+    {
+      "id": "charred-bone-quelle",
+      "name": {
+        "de": "Verkohlter Knochen",
+        "en": "Charred bone"
+      },
+      "fundort": "Von allen Verkohlten: Krieger, Scharfschützen, Hexer, Zuckende. Dient auch als Brennstoff für den Schildgenerator.",
+      "wofuer": [
+        "nidhogg",
+        "berserkir-axes",
+        "flametal-mace",
+        "ash-fang",
+        "flametal-helmet",
+        "charred-arrow",
+        "metal-cutter"
+      ]
+    },
+    {
+      "id": "asksvin-hide-quelle",
+      "name": {
+        "de": "Asksvin-Haut",
+        "en": "Asksvin hide"
+      },
+      "fundort": "Von Asksvin, dazu Blase und Schwanz.",
+      "wofuer": [
+        "flametal-breastplate",
+        "flametal-greaves",
+        "flametal-helmet",
+        "nidhogg",
+        "slayer",
+        "hood-of-ask",
+        "basalt-bomb"
+      ]
+    },
+    {
+      "id": "morgen-quelle",
+      "name": {
+        "de": "Morgen-Sehne und -Herz",
+        "en": "Morgen sinew, Morgen heart"
+      },
+      "fundort": "Von Morgen. Das Herz fällt fast immer, die Sehne immer. Morgen lauern in Ruinen und Putriden Löchern.",
+      "wofuer": [
+        "slayer",
+        "ripper",
+        "ashen-cape",
+        "gem-cutter",
+        "flametal-breastplate"
+      ]
+    },
+    {
+      "id": "bonemaw-quelle",
+      "name": {
+        "de": "Knochenschlund-Zahn und -Fleisch",
+        "en": "Bonemaw tooth, Bonemaw meat"
+      },
+      "fundort": "Vom Bonemaw-Seeungeheuer im Meer vor der Küste. Die Beute schwimmt oben, die Trophäe sinkt. Frostpfeile wirken gut.",
+      "wofuer": [
+        "ripper",
+        "splitnir",
+        "ash-fang",
+        "cooked-bonemaw-meat"
+      ]
+    },
+    {
+      "id": "sulfur-proustite-quelle",
+      "name": {
+        "de": "Schwefel und Proustit-Pulver",
+        "en": "Sulfur, Proustite powder"
+      },
+      "fundort": "Von Lava-Blobs und aus Schwefelbögen (Sulfur arch). Proustit auch aus instabilen Lavafelsen.",
+      "wofuer": [
+        "flametal-mace",
+        "basalt-bomb",
+        "explosive-payload",
+        "lava-lantern"
+      ]
+    },
+    {
+      "id": "celestial-feather-quelle",
+      "name": {
+        "de": "Himmlische Feder",
+        "en": "Celestial feather"
+      },
+      "fundort": "2 bis 3 pro Gefallener Walküre, außerdem in den Truhen der Festungen.",
+      "wofuer": [
+        "dundr"
+      ]
+    },
+    {
+      "id": "bell-fragment-quelle",
+      "name": {
+        "de": "Glockenfragment",
+        "en": "Bell fragment"
+      },
+      "fundort": "Auf dem Glockenaltar im Mittelturm jeder Verkohlten Festung, direkt unter dem grünen Lichtstrahl. 2 bis 4 Stück pro Altar. Du brauchst 9.",
+      "wofuer": [
+        "bell"
+      ]
+    },
+    {
+      "id": "molten-core-quelle",
+      "name": {
+        "de": "Geschmolzener Kern",
+        "en": "Molten core"
+      },
+      "fundort": "Auf dem Boden und in Truhen der Festungen, in Putriden Löchern.",
+      "wofuer": [
+        "portal-stone"
+      ]
+    },
+    {
+      "id": "gems-quelle",
+      "name": {
+        "de": "Blutstein, Iolith, Jade",
+        "en": "Bloodstone, Iolite, Jade"
+      },
+      "fundort": "Truhen in den Mittelturmen der Verkohlten Festungen. Für Dundr brauchst du Blutstein, und alle drei Steine verwandeln Aschlande-Waffen in Varianten.",
+      "wofuer": [
+        "dundr",
+        "gem-cutter"
+      ]
+    },
+    {
+      "id": "ash-pflanzen-quelle",
+      "name": {
+        "de": "Rauchpilz, Farnspross, Rebbeerentraube",
+        "en": "Smoke puff, Fiddlehead, Vineberry cluster"
+      },
+      "fundort": "Wachsen verstreut auf Felsen und Ruinen der Aschlande und wachsen nach ein paar Stunden nach. Auch Zähmfutter für Asksvin.",
+      "wofuer": [
+        "fiery-svinstew",
+        "mashed-meat",
+        "spicy-marmalade",
+        "sparkling-shroomshake",
+        "smoke-bomb"
+      ]
+    },
+    {
+      "id": "volture-quelle",
+      "name": {
+        "de": "Volture-Fleisch und -Ei",
+        "en": "Volture meat, Volture egg"
+      },
+      "fundort": "Von Voltures, schnellen Vögeln, die an Küsten und bei ihren Nestern fliegen. Machen wenig Schaden, aber greifen von hinten an.",
+      "wofuer": [
+        "mashed-meat",
+        "roasted-crust-pie"
+      ]
+    }
+  ],
+  "freischaltungen": [
+    {
+      "id": "r-flametal",
+      "ergebnis": "flametal",
+      "station": "schmelze",
+      "zutaten": [
+        {
+          "item": "flametal-ore",
+          "menge": 1
+        },
+        {
+          "item": "coal",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-artisan-press",
+      "ergebnis": "artisan-press",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 5
+        },
+        {
+          "item": "bronze",
+          "menge": 5
+        },
+        {
+          "item": "majestic-carapace",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-ceramic-plate",
+      "ergebnis": "ceramic-plate",
+      "station": "kunsthandwerkstisch",
+      "stufe": 2,
+      "menge": 5,
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-drakkar",
+      "ergebnis": "drakkar",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "iron-nails",
+          "menge": 100
+        },
+        {
+          "item": "ceramic-plate",
+          "menge": 30
+        },
+        {
+          "item": "fine-wood",
+          "menge": 50
+        },
+        {
+          "item": "yggdrasil-wood",
+          "menge": 25
+        }
+      ]
+    },
+    {
+      "id": "r-shield-core",
+      "ergebnis": "shield-core",
+      "station": "kunsthandwerkstisch",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "black-core",
+          "menge": 1
+        },
+        {
+          "item": "surtling-core",
+          "menge": 1
+        },
+        {
+          "item": "ceramic-plate",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-shield-generator",
+      "ergebnis": "shield-generator",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 5
+        },
+        {
+          "item": "copper",
+          "menge": 5
+        },
+        {
+          "item": "shield-core",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-portal-stone",
+      "ergebnis": "portal-stone",
+      "station": "steinmetz",
+      "zutaten": [
+        {
+          "item": "greydwarf-eye",
+          "menge": 10
+        },
+        {
+          "item": "grausten",
+          "menge": 30
+        },
+        {
+          "item": "molten-core",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-bell",
+      "ergebnis": "bell",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "bell-fragment",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-metal-cutter",
+      "ergebnis": "metal-cutter",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 5
+        },
+        {
+          "item": "flametal",
+          "menge": 5
+        },
+        {
+          "item": "ashwood",
+          "menge": 5
+        },
+        {
+          "item": "charred-bone",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-gem-cutter",
+      "ergebnis": "gem-cutter",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "flametal",
+          "menge": 5
+        },
+        {
+          "item": "ashwood",
+          "menge": 8
+        },
+        {
+          "item": "morgen-sinew",
+          "menge": 2
+        },
+        {
+          "item": "bloodstone",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-rolling-pins",
+      "ergebnis": "rolling-pins-and-cutting-boards",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "ashwood",
+          "menge": 8
+        },
+        {
+          "item": "fine-wood",
+          "menge": 6
+        },
+        {
+          "item": "flametal",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-flametal-helmet",
+      "ergebnis": "flametal-helmet",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "flametal",
+          "menge": 16
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 3
+        },
+        {
+          "item": "charred-bone",
+          "menge": 2
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-flametal-breastplate",
+      "ergebnis": "flametal-breastplate",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "flametal",
+          "menge": 20
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 3
+        },
+        {
+          "item": "charred-bone",
+          "menge": 5
+        },
+        {
+          "item": "morgen-heart",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-flametal-greaves",
+      "ergebnis": "flametal-greaves",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "flametal",
+          "menge": 20
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 3
+        },
+        {
+          "item": "charred-bone",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-hood-of-ask",
+      "ergebnis": "hood-of-ask",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "linen-thread",
+          "menge": 15
+        },
+        {
+          "item": "lox-pelt",
+          "menge": 4
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-breastplate-of-ask",
+      "ergebnis": "breastplate-of-ask",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "linen-thread",
+          "menge": 15
+        },
+        {
+          "item": "lox-pelt",
+          "menge": 4
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-trousers-of-ask",
+      "ergebnis": "trousers-of-ask",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "linen-thread",
+          "menge": 15
+        },
+        {
+          "item": "lox-pelt",
+          "menge": 4
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-hood-of-embla",
+      "ergebnis": "hood-of-embla",
+      "station": "galdr-tisch",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "linen-thread",
+          "menge": 16
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 15
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-trousers-of-embla",
+      "ergebnis": "trousers-of-embla",
+      "station": "galdr-tisch",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "linen-thread",
+          "menge": 20
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 20
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-robes-of-embla",
+      "ergebnis": "robes-of-embla",
+      "station": "galdr-tisch",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "linen-thread",
+          "menge": 20
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 20
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 10
+        },
+        {
+          "item": "flametal",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-ashen-cape",
+      "ergebnis": "ashen-cape",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "asksvin-hide",
+          "menge": 6
+        },
+        {
+          "item": "morgen-sinew",
+          "menge": 2
+        },
+        {
+          "item": "flametal",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-asksvin-cloak",
+      "ergebnis": "asksvin-cloak",
+      "station": "galdr-tisch",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "asksvin-hide",
+          "menge": 6
+        },
+        {
+          "item": "morgen-sinew",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-asksvin-saddle",
+      "ergebnis": "asksvin-saddle",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "flametal",
+          "menge": 6
+        },
+        {
+          "item": "linen-thread",
+          "menge": 20
+        },
+        {
+          "item": "morgen-sinew",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-nidhogg",
+      "ergebnis": "nidhogg",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "flametal",
+          "menge": 12
+        },
+        {
+          "item": "charred-bone",
+          "menge": 3
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-berserkir-axes",
+      "ergebnis": "berserkir-axes",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "flametal",
+          "menge": 24
+        },
+        {
+          "item": "charred-bone",
+          "menge": 15
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-slayer",
+      "ergebnis": "slayer",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "flametal",
+          "menge": 30
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 5
+        },
+        {
+          "item": "morgen-sinew",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-flametal-mace",
+      "ergebnis": "flametal-mace",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "flametal",
+          "menge": 15
+        },
+        {
+          "item": "charred-bone",
+          "menge": 10
+        },
+        {
+          "item": "sulfur",
+          "menge": 5
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-splitnir",
+      "ergebnis": "splitnir",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "ashwood",
+          "menge": 10
+        },
+        {
+          "item": "flametal",
+          "menge": 6
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 2
+        },
+        {
+          "item": "bonemaw-tooth",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-ripper",
+      "ergebnis": "ripper",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "ashwood",
+          "menge": 10
+        },
+        {
+          "item": "flametal",
+          "menge": 8
+        },
+        {
+          "item": "morgen-sinew",
+          "menge": 2
+        },
+        {
+          "item": "bonemaw-tooth",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-ash-fang",
+      "ergebnis": "ash-fang",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "ashwood",
+          "menge": 10
+        },
+        {
+          "item": "charred-bone",
+          "menge": 16
+        },
+        {
+          "item": "flametal",
+          "menge": 5
+        },
+        {
+          "item": "bonemaw-tooth",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-dundr",
+      "ergebnis": "dundr",
+      "station": "galdr-tisch",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "ashwood",
+          "menge": 10
+        },
+        {
+          "item": "flametal",
+          "menge": 4
+        },
+        {
+          "item": "celestial-feather",
+          "menge": 3
+        },
+        {
+          "item": "bloodstone",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-flametal-shield",
+      "ergebnis": "flametal-shield",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "ashwood",
+          "menge": 10
+        },
+        {
+          "item": "flametal",
+          "menge": 8
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-flametal-tower-shield",
+      "ergebnis": "flametal-tower-shield",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "ashwood",
+          "menge": 15
+        },
+        {
+          "item": "flametal",
+          "menge": 10
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-charred-arrow",
+      "ergebnis": "charred-arrow",
+      "station": "schwarze-schmiede",
+      "menge": 20,
+      "zutaten": [
+        {
+          "item": "ashwood",
+          "menge": 8
+        },
+        {
+          "item": "charred-bone",
+          "menge": 4
+        },
+        {
+          "item": "feathers",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-charred-bolt",
+      "ergebnis": "charred-bolt",
+      "station": "schwarze-schmiede",
+      "menge": 20,
+      "zutaten": [
+        {
+          "item": "ashwood",
+          "menge": 8
+        },
+        {
+          "item": "charred-bone",
+          "menge": 2
+        },
+        {
+          "item": "feathers",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-flametal-missile",
+      "ergebnis": "flametal-missile",
+      "station": "kunsthandwerkstisch",
+      "menge": 20,
+      "zutaten": [
+        {
+          "item": "ashwood",
+          "menge": 10
+        },
+        {
+          "item": "flametal",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-catapult",
+      "ergebnis": "catapult",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "flametal",
+          "menge": 10
+        },
+        {
+          "item": "charred-cogwheel",
+          "menge": 1
+        },
+        {
+          "item": "ashwood",
+          "menge": 20
+        }
+      ]
+    },
+    {
+      "id": "r-battering-ram",
+      "ergebnis": "battering-ram",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "flametal",
+          "menge": 10
+        },
+        {
+          "item": "surtling-core",
+          "menge": 2
+        },
+        {
+          "item": "ashwood",
+          "menge": 20
+        }
+      ]
+    },
+    {
+      "id": "r-explosive-payload",
+      "ergebnis": "explosive-payload",
+      "station": "werkbank",
+      "menge": 5,
+      "zutaten": [
+        {
+          "item": "sulfur",
+          "menge": 2
+        },
+        {
+          "item": "proustite-powder",
+          "menge": 3
+        },
+        {
+          "item": "asksvin-hide",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-grausten-payload",
+      "ergebnis": "grausten-payload",
+      "station": "werkbank",
+      "menge": 5,
+      "zutaten": [
+        {
+          "item": "grausten",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-basalt-bomb",
+      "ergebnis": "basalt-bomb",
+      "station": "werkbank",
+      "menge": 5,
+      "zutaten": [
+        {
+          "item": "asksvin-hide",
+          "menge": 1
+        },
+        {
+          "item": "asksvin-bladder",
+          "menge": 1
+        },
+        {
+          "item": "proustite-powder",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-smoke-bomb",
+      "ergebnis": "smoke-bomb",
+      "station": "werkbank",
+      "menge": 10,
+      "zutaten": [
+        {
+          "item": "smoke-puff",
+          "menge": 1
+        },
+        {
+          "item": "asksvin-bladder",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-lava-lantern",
+      "ergebnis": "lava-lantern",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "flametal",
+          "menge": 1
+        },
+        {
+          "item": "proustite-powder",
+          "menge": 1
+        },
+        {
+          "item": "sulfur",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-grausten-floor-2x2",
+      "ergebnis": "grausten-floor-2x2",
+      "station": "steinmetz",
+      "zutaten": [
+        {
+          "item": "grausten",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-grausten-wall-2x2",
+      "ergebnis": "grausten-wall-2x2",
+      "station": "steinmetz",
+      "zutaten": [
+        {
+          "item": "grausten",
+          "menge": 6
+        }
+      ]
+    },
+    {
+      "id": "r-grausten-pillar",
+      "ergebnis": "grausten-medium-pillar",
+      "station": "steinmetz",
+      "zutaten": [
+        {
+          "item": "grausten",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-ashwood-floor",
+      "ergebnis": "ashwood-floor-2x2",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "ashwood",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-ashwood-door",
+      "ergebnis": "ashwood-door",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "ashwood",
+          "menge": 3
+        },
+        {
+          "item": "flametal",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-flametal-gate",
+      "ergebnis": "flametal-gate",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "flametal",
+          "menge": 16
+        }
+      ]
+    },
+    {
+      "id": "r-cooked-asksvin-tail",
+      "ergebnis": "cooked-asksvin-tail",
+      "station": "feuer",
+      "zutaten": [
+        {
+          "item": "asksvin-tail",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-cooked-bonemaw-meat",
+      "ergebnis": "cooked-bonemaw-meat",
+      "station": "feuer",
+      "zutaten": [
+        {
+          "item": "bonemaw-meat",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-fiery-svinstew",
+      "ergebnis": "fiery-svinstew",
+      "station": "kessel",
+      "stufe": 5,
+      "zutaten": [
+        {
+          "item": "asksvin-tail",
+          "menge": 1
+        },
+        {
+          "item": "vineberry-cluster",
+          "menge": 2
+        },
+        {
+          "item": "smoke-puff",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-mashed-meat",
+      "ergebnis": "mashed-meat",
+      "station": "kessel",
+      "stufe": 6,
+      "zutaten": [
+        {
+          "item": "asksvin-tail",
+          "menge": 1
+        },
+        {
+          "item": "volture-meat",
+          "menge": 1
+        },
+        {
+          "item": "fiddlehead",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-piquant-pie",
+      "ergebnis": "piquant-pie",
+      "station": "kessel",
+      "zutaten": [
+        {
+          "item": "asksvin-tail",
+          "menge": 2
+        },
+        {
+          "item": "vineberry-cluster",
+          "menge": 2
+        },
+        {
+          "item": "barley-flour",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-spicy-marmalade",
+      "ergebnis": "spicy-marmalade",
+      "station": "kessel",
+      "stufe": 5,
+      "zutaten": [
+        {
+          "item": "vineberry-cluster",
+          "menge": 3
+        },
+        {
+          "item": "honey",
+          "menge": 1
+        },
+        {
+          "item": "fiddlehead",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-roasted-crust-pie",
+      "ergebnis": "roasted-crust-pie",
+      "station": "kessel",
+      "zutaten": [
+        {
+          "item": "volture-egg",
+          "menge": 1
+        },
+        {
+          "item": "vineberry-cluster",
+          "menge": 2
+        },
+        {
+          "item": "barley-flour",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-sparkling-shroomshake",
+      "ergebnis": "sparkling-shroomshake",
+      "station": "kessel",
+      "stufe": 6,
+      "zutaten": [
+        {
+          "item": "sap",
+          "menge": 4
+        },
+        {
+          "item": "magecap",
+          "menge": 2
+        },
+        {
+          "item": "vineberry-cluster",
+          "menge": 2
+        },
+        {
+          "item": "smoke-puff",
+          "menge": 2
+        }
+      ]
+    }
+  ],
   "items": [
+    {
+      "id": "flametal-ore",
+      "name": {
+        "de": "Flammenkernerz",
+        "en": "Flametal ore"
+      },
+      "typ": "material",
+      "hinweis": "Zu schwer für normale Portale. Nur das Steinportal transportiert Erz."
+    },
+    {
+      "id": "flametal",
+      "name": {
+        "de": "Flammenkern",
+        "en": "Flametal"
+      },
+      "typ": "material",
+      "hinweis": "Barren aus dem Hochofen (Blast furnace), nicht aus der normalen Schmelze. Brennstoff ist Kohle, alle 30 Sekunden ein Barren."
+    },
+    {
+      "id": "ashwood",
+      "name": {
+        "de": "Aschenholz",
+        "en": "Ashwood"
+      },
+      "typ": "material",
+      "hinweis": "Von verbrannten Bäumen. Läuft im Köhler nicht zu Kohle."
+    },
+    {
+      "id": "grausten",
+      "name": {
+        "de": "Grausten",
+        "en": "Grausten"
+      },
+      "typ": "material",
+      "hinweis": "Baustein der Aschlande. Grausten-Bauteile brauchen einen Steinmetz (Stonecutter) in der Nähe und sind feuerfest."
+    },
+    {
+      "id": "charred-bone",
+      "name": {
+        "de": "Verkohlter Knochen",
+        "en": "Charred bone"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "asksvin-hide",
+      "name": {
+        "de": "Asksvin-Haut",
+        "en": "Asksvin hide"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "asksvin-bladder",
+      "name": {
+        "de": "Asksvin-Blase",
+        "en": "Asksvin bladder"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "asksvin-tail",
+      "name": {
+        "de": "Asksvin-Schwanz",
+        "en": "Asksvin tail"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "bonemaw-tooth",
+      "name": {
+        "de": "Knochenschlund-Zahn",
+        "en": "Bonemaw tooth"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "bonemaw-meat",
+      "name": {
+        "de": "Knochenschlund-Fleisch",
+        "en": "Bonemaw meat"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "morgen-sinew",
+      "name": {
+        "de": "Morgen-Sehne",
+        "en": "Morgen sinew"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "morgen-heart",
+      "name": {
+        "de": "Morgen-Herz",
+        "en": "Morgen heart"
+      },
+      "typ": "material",
+      "hinweis": "Wird nur für die Flammenkern-Brustplatte gebraucht."
+    },
+    {
+      "id": "sulfur",
+      "name": {
+        "de": "Schwefel",
+        "en": "Sulfur"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "proustite-powder",
+      "name": {
+        "de": "Proustit-Pulver",
+        "en": "Proustite powder"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "celestial-feather",
+      "name": {
+        "de": "Himmlische Feder",
+        "en": "Celestial feather"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "molten-core",
+      "name": {
+        "de": "Geschmolzener Kern",
+        "en": "Molten core"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "charred-cogwheel",
+      "name": {
+        "de": "Verkohltes Zahnrad",
+        "en": "Charred cogwheel"
+      },
+      "typ": "material",
+      "hinweis": "Fällt von Skugg, den Knochen-Ballisten in den Ecken der Festungen. Nötig für das Katapult."
+    },
+    {
+      "id": "bloodstone",
+      "name": {
+        "de": "Blutstein",
+        "en": "Bloodstone"
+      },
+      "typ": "material",
+      "hinweis": "Edelstein aus den Truhen der Verkohlten Festungen. Verwandelt Aschlande-Waffen in Varianten (Blutstein, Iolith, Jade), die verbesserte Stufe geht dabei verloren."
+    },
+    {
+      "id": "iolite",
+      "name": {
+        "de": "Iolith",
+        "en": "Iolite"
+      },
+      "typ": "material",
+      "hinweis": "Edelstein. Blitz-Variante der Waffen, springt auf Nachbarn über."
+    },
+    {
+      "id": "jade",
+      "name": {
+        "de": "Jade",
+        "en": "Jade"
+      },
+      "typ": "material",
+      "hinweis": "Edelstein. Wurzel-Variante der Waffen, hält Gegner fest."
+    },
     {
       "id": "bell-fragment",
       "name": {
         "de": "Glockenfragment",
         "en": "Bell fragment"
       },
-      "typ": "material"
+      "typ": "material",
+      "hinweis": "Liegt auf einem Altar im Mittelturm der Verkohlten Festung. Der Altar ist zerbrechlich, also vorsichtig mit Flächenschaden."
+    },
+    {
+      "id": "bell",
+      "name": {
+        "de": "Glocke",
+        "en": "Bell"
+      },
+      "typ": "material",
+      "hinweis": "Aus 3 Glockenfragmenten in der Schwarzschmiede. Für Fader brauchst du 3 Glocken, also 9 Fragmente."
     },
     {
       "id": "fader-trophy",
@@ -48,10 +1706,772 @@
         "de": "Fader-Trophäe",
         "en": "Fader trophy"
       },
+      "typ": "material",
+      "hinweis": "An den Opfersteinen am Start aufhängen, dann kannst du die Macht aktivieren."
+    },
+    {
+      "id": "kindled-ribs",
+      "name": {
+        "de": "Entfachte Rippen",
+        "en": "Kindled ribs"
+      },
+      "typ": "material",
+      "hinweis": "Fader lässt 5 Stück fallen. Früher Fader-Relikt (Fader relic) genannt. Nur eine einzige Verwendung bekannt: das Ewige Feuer (Eternal pyre) am Steinmetz."
+    },
+    {
+      "id": "warrior-trophy",
+      "name": {
+        "de": "Krieger-Trophäe",
+        "en": "Warrior trophy"
+      },
       "typ": "material"
+    },
+    {
+      "id": "marksman-trophy",
+      "name": {
+        "de": "Scharfschützen-Trophäe",
+        "en": "Marksman trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "warlock-trophy",
+      "name": {
+        "de": "Hexer-Trophäe",
+        "en": "Warlock trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "morgen-trophy",
+      "name": {
+        "de": "Morgen-Trophäe",
+        "en": "Morgen trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "lava-blob-trophy",
+      "name": {
+        "de": "Lava-Blob-Trophäe",
+        "en": "Lava Blob trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "fallen-valkyrie-trophy",
+      "name": {
+        "de": "Trophäe der Gefallenen Walküre",
+        "en": "Fallen Valkyrie trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "asksvin-trophy",
+      "name": {
+        "de": "Asksvin-Trophäe",
+        "en": "Asksvin trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "volture-meat",
+      "name": {
+        "de": "Volture-Fleisch",
+        "en": "Volture meat"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "volture-egg",
+      "name": {
+        "de": "Volture-Ei",
+        "en": "Volture egg"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "smoke-puff",
+      "name": {
+        "de": "Rauchpilz",
+        "en": "Smoke puff"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 15,
+        "ausdauer": 15,
+        "dauer": 900
+      },
+      "hinweis": "Roh essbar und Zähmfutter für Asksvin."
+    },
+    {
+      "id": "fiddlehead",
+      "name": {
+        "de": "Farnspross",
+        "en": "Fiddlehead"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 30,
+        "ausdauer": 30,
+        "dauer": 900
+      },
+      "hinweis": "Roh essbar und Zähmfutter für Asksvin."
+    },
+    {
+      "id": "vineberry-cluster",
+      "name": {
+        "de": "Rebbeerentraube",
+        "en": "Vineberry cluster"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 30,
+        "ausdauer": 30,
+        "eitr": 30,
+        "dauer": 900
+      },
+      "hinweis": "Roh essbar und Zähmfutter für Asksvin."
+    },
+    {
+      "id": "cooked-asksvin-tail",
+      "name": {
+        "de": "Gegrillter Asksvin-Schwanz",
+        "en": "Cooked asksvin tail"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 70,
+        "ausdauer": 24,
+        "dauer": 1200
+      },
+      "hinweis": "Wird an der Eisernen Kochstation (Iron cooking station) gegart, nicht am Lagerfeuer."
+    },
+    {
+      "id": "cooked-bonemaw-meat",
+      "name": {
+        "de": "Gegrilltes Knochenschlund-Fleisch",
+        "en": "Cooked bonemaw meat"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 90,
+        "ausdauer": 30,
+        "dauer": 1500
+      },
+      "hinweis": "Wird an der Eisernen Kochstation gegart."
+    },
+    {
+      "id": "fiery-svinstew",
+      "name": {
+        "de": "Feuriger Svineintopf",
+        "en": "Fiery svinstew"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 95,
+        "ausdauer": 32,
+        "dauer": 1500
+      },
+      "hinweis": "Braucht einen Kessel der Stufe 5."
+    },
+    {
+      "id": "mashed-meat",
+      "name": {
+        "de": "Fleischpüree",
+        "en": "Mashed meat"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 100,
+        "ausdauer": 34,
+        "dauer": 1500
+      },
+      "hinweis": "Braucht einen Kessel der Stufe 6 (Rollholz und Schneidebretter)."
+    },
+    {
+      "id": "piquant-pie",
+      "name": {
+        "de": "Pikante Pastete",
+        "en": "Piquant pie"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 105,
+        "ausdauer": 35,
+        "dauer": 1800
+      },
+      "hinweis": "Teig an der Lebensmittel-Zubereitungstisch (Food preparation table) anrühren, dann im Steinofen (Stone oven) backen. Die beste Leben-Nahrung der Aschlande."
+    },
+    {
+      "id": "spicy-marmalade",
+      "name": {
+        "de": "Scharfe Marmelade",
+        "en": "Spicy marmalade"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 30,
+        "ausdauer": 90,
+        "dauer": 1500
+      },
+      "hinweis": "Braucht einen Kessel der Stufe 5. Ausdauer-Nahrung."
+    },
+    {
+      "id": "roasted-crust-pie",
+      "name": {
+        "de": "Krustenpastete",
+        "en": "Roasted crust pie"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 34,
+        "ausdauer": 100,
+        "dauer": 1800
+      },
+      "hinweis": "Teig an der Zubereitungstisch, gebacken im Steinofen. Die beste Ausdauer-Nahrung der Aschlande."
+    },
+    {
+      "id": "sparkling-shroomshake",
+      "name": {
+        "de": "Prickelnder Pilzshake",
+        "en": "Sparkling shroomshake"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 30,
+        "ausdauer": 15,
+        "eitr": 90,
+        "dauer": 1500
+      },
+      "hinweis": "Kessel Stufe 6. Eitr-Nahrung für Magier."
+    },
+    {
+      "id": "ceramic-plate",
+      "name": {
+        "de": "Keramikplatte",
+        "en": "Ceramic plate"
+      },
+      "typ": "material",
+      "hinweis": "Aus Schwarzem Marmor am Kunsthandwerkstisch, braucht dessen Presse (Artisan press)."
+    },
+    {
+      "id": "shield-core",
+      "name": {
+        "de": "Schildkern",
+        "en": "Shield core"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "flametal-helmet",
+      "name": {
+        "de": "Flammenkern-Helm",
+        "en": "Flametal helmet"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 38
+      }
+    },
+    {
+      "id": "flametal-breastplate",
+      "name": {
+        "de": "Flammenkern-Brustplatte",
+        "en": "Flametal breastplate"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 38,
+        "hitzeresistenz": 20
+      },
+      "hinweis": "Minus 5 % Tempo. Hitzeresistenz hilft gegen Lava und kochendes Wasser, nicht gegen Feuerschaden und Brennen."
+    },
+    {
+      "id": "flametal-greaves",
+      "name": {
+        "de": "Flammenkern-Beinschienen",
+        "en": "Flametal greaves"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 38,
+        "hitzeresistenz": 20
+      },
+      "hinweis": "Minus 5 % Tempo. Das ganze Set gibt 40 % Hitzeresistenz und die höchste Rüstung im Spiel."
+    },
+    {
+      "id": "hood-of-ask",
+      "name": {
+        "de": "Kapuze von Ask",
+        "en": "Hood of Ask"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 28
+      },
+      "hinweis": "Set-Bonus mit allen drei Teilen: Rennen und Springen kosten 10 % weniger, Angriffe 20 % weniger Ausdauer, plus 10 % Stichschaden."
+    },
+    {
+      "id": "breastplate-of-ask",
+      "name": {
+        "de": "Brustplatte von Ask",
+        "en": "Breastplate of Ask"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 28
+      }
+    },
+    {
+      "id": "trousers-of-ask",
+      "name": {
+        "de": "Hose von Ask",
+        "en": "Trousers of Ask"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 28
+      }
+    },
+    {
+      "id": "hood-of-embla",
+      "name": {
+        "de": "Kapuze von Embla",
+        "en": "Hood of Embla"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 19,
+        "eitrregen": 30
+      },
+      "hinweis": "Magier-Set: leicht, mit viel Eitr-Regeneration (ganzes Set plus 130 %)."
+    },
+    {
+      "id": "trousers-of-embla",
+      "name": {
+        "de": "Hose von Embla",
+        "en": "Trousers of Embla"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 19,
+        "eitrregen": 50
+      },
+      "hinweis": "Das Wiki führt die Hose als Brustteil, die Robe als Beinteil. Prüf es im Spiel."
+    },
+    {
+      "id": "robes-of-embla",
+      "name": {
+        "de": "Robe von Embla",
+        "en": "Robes of Embla"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 19,
+        "eitrregen": 50
+      }
+    },
+    {
+      "id": "ashen-cape",
+      "name": {
+        "de": "Aschenumhang",
+        "en": "Ashen cape"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 12
+      },
+      "hinweis": "Kampf-Umhang: 10 % weniger Angriffs- und 20 % weniger Blockausdauer, Frostresistenz."
+    },
+    {
+      "id": "asksvin-cloak",
+      "name": {
+        "de": "Asksvin-Umhang",
+        "en": "Asksvin cloak"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 1
+      },
+      "hinweis": "Windlauf: mit Wind im Rücken rennst du schneller und sparsamer. Ausweichrollen kosten 15 % weniger Ausdauer."
+    },
+    {
+      "id": "asksvin-saddle",
+      "name": {
+        "de": "Asksvin-Sattel",
+        "en": "Asksvin saddle"
+      },
+      "typ": "werkzeug",
+      "hinweis": "Auf ein gezähmtes Asksvin legen, dann reitest du unbeschadet über Lava. Beim Reiten kannst du nicht angreifen."
+    },
+    {
+      "id": "nidhogg",
+      "name": {
+        "de": "Nidhögg",
+        "en": "Nidhögg"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 135
+      },
+      "hinweis": "Einhandschwert."
+    },
+    {
+      "id": "berserkir-axes",
+      "name": {
+        "de": "Berserkir-Äxte",
+        "en": "Berserkir axes"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 140
+      },
+      "hinweis": "Zwei Äxte gleichzeitig. Fällen auch Bäume."
+    },
+    {
+      "id": "slayer",
+      "name": {
+        "de": "Slayer",
+        "en": "Slayer"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 170
+      },
+      "hinweis": "Zweihandschwert mit langem Stich als Zweitangriff."
+    },
+    {
+      "id": "flametal-mace",
+      "name": {
+        "de": "Flammenkern-Streitkolben",
+        "en": "Flametal mace"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stumpf": 135
+      }
+    },
+    {
+      "id": "splitnir",
+      "name": {
+        "de": "Splitnir",
+        "en": "Splitnir"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 135
+      },
+      "hinweis": "Speer, auch als Wurfspeer."
+    },
+    {
+      "id": "ripper",
+      "name": {
+        "de": "Ripper",
+        "en": "Ripper"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 220
+      },
+      "hinweis": "Armbrust, Munition: Verkohlte Bolzen. Stark aus dem Hinterhalt."
+    },
+    {
+      "id": "ash-fang",
+      "name": {
+        "de": "Ash Fang",
+        "en": "Ash Fang"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 82
+      },
+      "hinweis": "Bogen. Verbessert fügt er Geist-Schaden hinzu."
+    },
+    {
+      "id": "dundr",
+      "name": {
+        "de": "Dundr",
+        "en": "Dundr"
+      },
+      "typ": "waffe",
+      "werte": {
+        "blitz": 20
+      },
+      "hinweis": "Zauberstab mit 12 Blitzen pro Schuss auf kurze Distanz, danach lädt er nach. Kostet 25 Eitr pro Schuss. Morgen sind schwach gegen Blitz."
+    },
+    {
+      "id": "flametal-shield",
+      "name": {
+        "de": "Flammenkern-Schild",
+        "en": "Flametal shield"
+      },
+      "typ": "schild",
+      "werte": {
+        "block": 114
+      },
+      "hinweis": "Rundschild, kann parieren."
+    },
+    {
+      "id": "flametal-tower-shield",
+      "name": {
+        "de": "Flammenkern-Turmschild",
+        "en": "Flametal tower shield"
+      },
+      "typ": "schild",
+      "werte": {
+        "block": 140
+      },
+      "hinweis": "Höchster Block im Spiel, 10 % langsamer, kein Parieren."
+    },
+    {
+      "id": "charred-arrow",
+      "name": {
+        "de": "Verkohlter Pfeil",
+        "en": "Charred arrow"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 82
+      }
+    },
+    {
+      "id": "charred-bolt",
+      "name": {
+        "de": "Verkohlter Bolzen",
+        "en": "Charred bolt"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 82
+      }
+    },
+    {
+      "id": "flametal-missile",
+      "name": {
+        "de": "Flammenkern-Geschoss",
+        "en": "Flametal missile"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 140
+      },
+      "hinweis": "Munition für die Balliste."
+    },
+    {
+      "id": "basalt-bomb",
+      "name": {
+        "de": "Basaltbombe",
+        "en": "Basalt bomb"
+      },
+      "typ": "waffe",
+      "hinweis": "In die Lava geworfen erstarrt sie zu einer Plattform, die 30 Sekunden hält. So erreichst du Flammenkernerz-Adern."
+    },
+    {
+      "id": "smoke-bomb",
+      "name": {
+        "de": "Rauchbombe",
+        "en": "Smoke bomb"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stumpf": 5
+      },
+      "hinweis": "Löscht Feuer im Umkreis von 3 Metern. Gut gegen Brände im Lager."
+    },
+    {
+      "id": "explosive-payload",
+      "name": {
+        "de": "Sprengladung",
+        "en": "Explosive payload"
+      },
+      "typ": "waffe",
+      "hinweis": "Katapult-Munition. Zerstört Festungswände und Tore."
+    },
+    {
+      "id": "grausten-payload",
+      "name": {
+        "de": "Grausten-Geschoss",
+        "en": "Grausten payload"
+      },
+      "typ": "waffe",
+      "hinweis": "Katapult-Munition, billig und schwach. Zum Zielen vor der Sprengladung."
+    },
+    {
+      "id": "artisan-press",
+      "name": {
+        "de": "Kunsthandwerks-Presse",
+        "en": "Artisan press"
+      },
+      "typ": "station",
+      "hinweis": "Ausbau für den Kunsthandwerkstisch, schaltet Stufe 2 frei (Keramikplatten, Schildkern)."
+    },
+    {
+      "id": "metal-cutter",
+      "name": {
+        "de": "Metallschneider",
+        "en": "Metal cutter"
+      },
+      "typ": "station",
+      "hinweis": "Ausbau der Schwarzschmiede, nah daneben stellen."
+    },
+    {
+      "id": "gem-cutter",
+      "name": {
+        "de": "Edelsteinschneider",
+        "en": "Gem cutter"
+      },
+      "typ": "station",
+      "hinweis": "Ausbau der Schwarzschmiede, nah daneben stellen. Schaltet die Stufe 5 für Verbesserungen frei."
+    },
+    {
+      "id": "rolling-pins-and-cutting-boards",
+      "name": {
+        "de": "Rollholz und Schneidebretter",
+        "en": "Rolling pins and cutting boards"
+      },
+      "typ": "station",
+      "hinweis": "Kessel-Ausbau der Aschlande, schaltet die obersten Kessel-Rezepte frei."
+    },
+    {
+      "id": "shield-generator",
+      "name": {
+        "de": "Schildgenerator",
+        "en": "Shield generator"
+      },
+      "typ": "bauteil",
+      "hinweis": "Bauplatz auf festem Boden, Stein oder Grausten. Fängt Ascheregen und Projektile in 30 Metern Umkreis ab. Fütter ihn mit bis zu 10 Knochenfragmenten oder Verkohlten Knochen."
+    },
+    {
+      "id": "portal-stone",
+      "name": {
+        "de": "Steinportal",
+        "en": "Portal - Stone"
+      },
+      "typ": "bauteil",
+      "hinweis": "Verbindet sich mit jedem anderen Portal gleichen Namens, auch Holzportalen. Lässt Erz, Metalle und Drachenei durch."
+    },
+    {
+      "id": "drakkar",
+      "name": {
+        "de": "Drakkar",
+        "en": "Drakkar"
+      },
+      "typ": "bauteil",
+      "hinweis": "Großes, robustes Schiff mit 17 Sitzen und viel Stauraum, aber träge. Das einzige Boot, das kochendes Wasser überlebt."
+    },
+    {
+      "id": "catapult",
+      "name": {
+        "de": "Katapult",
+        "en": "Catapult"
+      },
+      "typ": "bauteil",
+      "hinweis": "Belagerungsgerät, zieht man wie einen Karren. Schießt Sprengladungen über Mauern hinweg."
+    },
+    {
+      "id": "battering-ram",
+      "name": {
+        "de": "Rammbock",
+        "en": "Battering ram"
+      },
+      "typ": "bauteil",
+      "hinweis": "Läuft mit Holz, Feinholz, Kernholz oder Aschenholz im Tank. Bricht Festungstore auf."
+    },
+    {
+      "id": "lava-lantern",
+      "name": {
+        "de": "Lavalaterne",
+        "en": "Lava lantern"
+      },
+      "typ": "bauteil",
+      "hinweis": "Leuchtet ohne Brennstoff."
+    },
+    {
+      "id": "grausten-floor-2x2",
+      "name": {
+        "de": "Grausten-Boden 2x2",
+        "en": "Grausten floor 2x2"
+      },
+      "typ": "bauteil",
+      "hinweis": "Grausten ist feuerfest. Braucht einen Steinmetz in der Nähe."
+    },
+    {
+      "id": "grausten-wall-2x2",
+      "name": {
+        "de": "Grausten-Wand 2x2",
+        "en": "Grausten wall 2x2"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "grausten-medium-pillar",
+      "name": {
+        "de": "Grausten-Pfeiler (mittel)",
+        "en": "Grausten medium pillar"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "ashwood-floor-2x2",
+      "name": {
+        "de": "Aschenholz-Boden 2x2",
+        "en": "Ashwood floor 2x2"
+      },
+      "typ": "bauteil",
+      "hinweis": "Aschenholz-Wände brennen nicht, der Boden schon."
+    },
+    {
+      "id": "ashwood-door",
+      "name": {
+        "de": "Aschenholz-Tür",
+        "en": "Ashwood door"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "flametal-gate",
+      "name": {
+        "de": "Flammenkern-Tor",
+        "en": "Flametal gate"
+      },
+      "typ": "bauteil",
+      "hinweis": "Braucht eine Schwarzschmiede in der Nähe. Flammenkern-Bauteile kannst du als Einzige direkt in die Lava setzen."
     }
   ],
   "checkliste": [
+    {
+      "id": "z-drakkar",
+      "text": "Drakkar bauen: Artisan-Presse, Keramikplatten, Eisennägel, Feinholz, Yggdrasil-Holz"
+    },
+    {
+      "id": "z-vorbereitung",
+      "text": "Feuerresistenz-Gerstenwein brauen, beste Mistlands-Rüstung und Schwarzmetall-Spitzhacke einpacken"
+    },
+    {
+      "id": "z-landung",
+      "text": "Mit dem Drakkar an Land, Lager mit Schildgenerator und Steinportal aufbauen"
+    },
+    {
+      "id": "z-flammenkern",
+      "text": "Hochofen bauen, Flammenkernerz mit Basaltbomben abbauen und schmelzen"
+    },
+    {
+      "id": "z-materialien",
+      "text": "Verkohlte Knochen, Asksvin-Haut, Morgen-Sehnen und Schwefel sammeln"
+    },
+    {
+      "id": "z-schwarzschmiede",
+      "text": "Schwarzschmiede ausbauen und Flammenkern-Rüstung samt neuer Waffe herstellen"
+    },
+    {
+      "id": "z-festungen",
+      "text": "Verkohlte Festungen mit Rammbock oder Katapult stürmen, 9 Glockenfragmente sammeln"
+    },
+    {
+      "id": "z-glocken",
+      "text": "Drei Glocken schmieden und über einen Vegvisir die Arena finden"
+    },
     {
       "id": "z-fader",
       "text": "Fader besiegen",
