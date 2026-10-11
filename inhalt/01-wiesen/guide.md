@@ -30,7 +30,7 @@ Eikthyr ist ein riesiger Hirsch mit Blitzen im Geweih. Er hat drei Angriffe: ein
 
 **Taktik:** Bleib an seiner Seite, nicht vor ihm. Block mit dem Schild (L2) kurz vor dem Stoß, dann zwei Treffer, dann wieder weg. Mit dem Bogen auf Distanz und um Bäume herumlaufen ist die sichere Methode. Der Kampf dauert ein paar Minuten, kein Grund zu hetzen.
 
-Nach dem Sieg: Trophäe nehmen, zurück zu den Opfersteinen am Start, Trophäe an den Eikthyr-Stein hängen. Dann kannst du die Macht mit dem Touchpad (lange drücken) aktivieren. Das Harte Geweih wird zur Geweihspitzhacke, und damit beginnt der Schwarzwald.
+Nach dem Sieg: Trophäe nehmen, zurück zu den Opfersteinen am Start, Trophäe an den Eikthyr-Stein hängen. Dann kannst du die Macht mit Steuerkreuz unten aktivieren. Das Harte Geweih wird zur Geweihspitzhacke, und damit beginnt der Schwarzwald.
 
 ## Checkliste
 

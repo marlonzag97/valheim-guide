@@ -87,14 +87,15 @@ export function Start() {
         <summary className="rune-titel cursor-pointer text-sm text-asche-200">Controller-Belegung PS5</summary>
         <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">
           <dt className="text-glut-300">Kreuz</dt><dd>Aufheben, benutzen, bestätigen</dd>
-          <dt className="text-glut-300">Kreis</dt><dd>Zurück, Menü schließen</dd>
-          <dt className="text-glut-300">Quadrat</dt><dd>Ausweichrolle</dd>
+          <dt className="text-glut-300">Kreis</dt><dd>Springen</dd>
           <dt className="text-glut-300">Dreieck</dt><dd>Inventar</dd>
-          <dt className="text-glut-300">R2 / L2</dt><dd>Angriff / Blocken (mit Hammer: Bauen)</dd>
-          <dt className="text-glut-300">R1 / L1</dt><dd>Schneller Angriff / Zweitwaffe, Hotbar mit Steuerkreuz</dd>
-          <dt className="text-glut-300">L3</dt><dd>Schleichen</dd>
-          <dt className="text-glut-300">R3</dt><dd>Sprinten</dd>
-          <dt className="text-glut-300">Touchpad</dt><dd>Karte · lange drücken: Macht aktivieren</dd>
+          <dt className="text-glut-300">Quadrat</dt><dd>Hinsetzen</dd>
+          <dt className="text-glut-300">R2 / L2</dt><dd>Angriff / Blocken. Mit Hammer: Bauen</dd>
+          <dt className="text-glut-300">L2 + Kreis</dt><dd>Ausweichrolle</dd>
+          <dt className="text-glut-300">R1 / L1</dt><dd>Zweitangriff / Rennen</dd>
+          <dt className="text-glut-300">L3 / R3</dt><dd>Schleichen / Waffe wegstecken</dd>
+          <dt className="text-glut-300">Steuerkreuz</dt><dd>Oben: Hotbar (links/rechts wechseln) · Unten: Ahnen-Macht</dd>
+          <dt className="text-glut-300">Touchpad</dt><dd>Karte</dd>
         </dl>
       </details>
     </div>

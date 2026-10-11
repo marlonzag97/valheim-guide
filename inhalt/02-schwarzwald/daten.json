@@ -1,70 +1,241 @@
 {
   "id": "schwarzwald",
   "reihenfolge": 2,
-  "name": {
-    "de": "Schwarzwald",
-    "en": "Black Forest"
-  },
+  "name": { "de": "Schwarzwald", "en": "Black Forest" },
   "farbe": "schwarzwald",
   "untertitel": "Kupfer, Zinn, Bronze. Der erste richtige Schritt nach vorn.",
-  "status": "geruest",
+  "status": "voll",
   "boss": {
     "id": "the-elder",
-    "name": {
-      "de": "Der Älteste",
-      "en": "The Elder"
-    },
-    "altar": "Altar im Schwarzwald, Ort per Vegvisir in Grabkammern.",
-    "opfergabe": [
-      {
-        "item": "ancient-seed",
-        "menge": 3
-      }
-    ],
-    "belohnung": [
-      "swamp-key",
-      "the-elder-trophy"
-    ],
-    "macht": {
-      "name": "Der Älteste",
-      "wirkung": "Schnelleres Holzfällen."
-    }
+    "name": { "de": "Der Älteste", "en": "The Elder" },
+    "altar": "Altar des Ältesten im Schwarzwald, umringt von vier Säulen. Den Ort verrät ein Vegvisir-Runenstein, den du in Grabkammern (manchmal auch in Ruinen) findest.",
+    "opfergabe": [{ "item": "ancient-seed", "menge": 3 }],
+    "belohnung": ["swamp-key", "the-elder-trophy"],
+    "macht": { "name": "Der Älteste", "wirkung": "60 % mehr Schaden mit Axt und Spitzhacke (Holzfällen und Abbau geht schneller) und 30 % mehr Lebensregeneration. 5 Minuten aktiv, 20 Minuten Abklingzeit." },
+    "leben": 2500,
+    "schwaeche": ["Feuer"],
+    "resistenz": ["Gift (immun)", "Geist (immun)"]
   },
-  "vorbereitung": [],
-  "gefahren": [],
-  "rohstoffe": [],
-  "freischaltungen": [],
-  "items": [
+  "vorbereitung": [
+    { "item": "antler-pickaxe", "grund": "Damit baust du Kupfer und Zinn ab. Ohne sie kommst du nicht weiter.", "pflicht": true },
+    { "item": "workbench", "grund": "Schmelze, Köhler und Schmiede müssen in der Nähe einer Werkbank gebaut werden. Stell eine ins neue Lager.", "pflicht": true },
+    { "item": "torch", "grund": "Grabkammern sind stockfinster, und nachts siehst du im Wald fast nichts.", "pflicht": true },
+    { "item": "wood-shield", "grund": "Graudwerge werfen Steine und kommen in Gruppen. Mit Schild (L2) überlebst du das.", "pflicht": false },
+    { "item": "flint-arrow", "grund": "Bogen und Pfeile für Schamanen und Trolle auf Distanz.", "pflicht": false },
+    { "item": "leather-tunic", "grund": "Etwas Rüstung für die ersten Nächte, bis die Bronzerüstung steht.", "pflicht": false },
+    { "item": "cooked-meat", "grund": "Essen ist Rüstung. Nimm dir drei verschiedene Sorten mit.", "pflicht": false }
+  ],
+  "gefahren": [
     {
-      "id": "ancient-seed",
-      "name": {
-        "de": "Uralter Samen",
-        "en": "Ancient seed"
-      },
-      "typ": "material"
+      "id": "greydwarf",
+      "name": { "de": "Graudwerg", "en": "Greydwarf" },
+      "gefahr": 2,
+      "schwaeche": ["Feuer"],
+      "resistenz": ["Gift"],
+      "tipp": "Der Standardgegner im Wald, tagsüber wenige, nachts bis zu sechs auf einmal. Nahkampf-Schlag und Steinwurf. Mit Schild und freiem Rücken hältst du sie dir vom Leib. Graudwerg-Nester spucken immer neue aus, also nicht daneben campen.",
+      "drops": ["greydwarf-eye", "wood", "stone", "resin", "greydwarf-trophy"]
     },
     {
-      "id": "swamp-key",
-      "name": {
-        "de": "Sumpfschlüssel",
-        "en": "Swamp key"
-      },
-      "typ": "material"
+      "id": "greydwarf-brute",
+      "name": { "de": "Graudwerg-Brutmutter", "en": "Greydwarf brute" },
+      "gefahr": 3,
+      "schwaeche": ["Feuer"],
+      "resistenz": ["Gift"],
+      "tipp": "Groß, langsam und schlägt hart (30 Schaden pro Hieb). Erscheint nur nachts, selten auch aus Nestern. Aus der Distanz anschießen oder dem Hieb ausweichen und sofort zuschlagen. Lässt Uralte Samen fallen, die du für den Ältesten brauchst.",
+      "drops": ["ancient-seed", "dandelion", "greydwarf-eye", "stone", "wood", "greydwarf-brute-trophy"]
     },
     {
-      "id": "the-elder-trophy",
-      "name": {
-        "de": "Trophäe des Ältesten",
-        "en": "The Elder trophy"
-      },
-      "typ": "material"
+      "id": "greydwarf-shaman",
+      "name": { "de": "Graudwerg-Schamane", "en": "Greydwarf shaman" },
+      "gefahr": 3,
+      "schwaeche": ["Feuer"],
+      "resistenz": ["Gift"],
+      "tipp": "Heilt andere Graudwerge und schießt Gift auf Distanz. Hat wenig Leben (60), also zuerst ausschalten, am besten mit dem Bogen, bevor du dich um den Rest kümmerst.",
+      "drops": ["greydwarf-eye", "resin", "wood", "greydwarf-shaman-trophy"]
+    },
+    {
+      "id": "troll",
+      "name": { "de": "Troll", "en": "Troll" },
+      "gefahr": 4,
+      "schwaeche": ["Stich"],
+      "resistenz": ["Stumpf"],
+      "tipp": "600 Leben, langsam, aber ein Treffer kann dich schwer verwunden. Ausweichrolle (L2 + Kreis) unter dem Schlag durch, dann zuschlagen. Stich ist seine Schwäche, also Bogen oder Speer, am besten auf den Kopf zielen. Nie im Dunkeln und nie ohne Bronzerüstung herausfordern.",
+      "drops": ["troll-hide", "troll-trophy"]
+    },
+    {
+      "id": "skeleton",
+      "name": { "de": "Skelett", "en": "Skeleton" },
+      "gefahr": 2,
+      "schwaeche": ["Stumpf", "Feuer"],
+      "resistenz": ["Stich", "Frost"],
+      "tipp": "Wacht vor und in Grabkammern, manche haben einen Bogen. Wenig Leben (40). Mit Keule oder Streitkolben ist es schnell vorbei, Pfeile und Speer sind weniger wirksam.",
+      "drops": ["bone-fragments", "skeleton-trophy"]
+    },
+    {
+      "id": "ghost",
+      "name": { "de": "Geist", "en": "Ghost" },
+      "gefahr": 3,
+      "schwaeche": ["Geist"],
+      "resistenz": ["Stumpf", "Hieb", "Stich", "Gift"],
+      "tipp": "Schwebt in Grabkammern durch Wände und nimmt von normalen Waffen weniger Schaden. Er hat nur 60 Leben, also geduldig draufhalten statt fliehen.",
+      "drops": ["ectoplasm", "ghost-trophy"]
+    },
+    {
+      "id": "bear",
+      "name": { "de": "Bär", "en": "Bear" },
+      "gefahr": 3,
+      "schwaeche": ["Feuer"],
+      "resistenz": ["Frost", "Stumpf", "Stich"],
+      "tipp": "800 Leben, beißt, kratzt und schlägt zu. Er scheut Feuer: Eine Fackel in der Hand und der Bär im Blick hält ihn auf Abstand. Mit Schwert oder Axt (Hieb) statt Speer oder Keule kämpfen. Frisst gern Blaubeeren vom Boden.",
+      "drops": ["bear-hide", "bear-meat", "bear-paw", "bear-trophy"]
     }
   ],
+  "rohstoffe": [
+    { "id": "copper-ore-quelle", "name": { "de": "Kupfererz", "en": "Copper ore" }, "fundort": "Große Felsen mit bronzefarbenen Streifen im Schwarzwald. Die Ader reicht tief in den Boden, also rundherum graben, bis sie zerbröselt.", "werkzeug": "Geweihspitzhacke", "wofuer": ["copper"] },
+    { "id": "tin-ore-quelle", "name": { "de": "Zinnerz", "en": "Tin ore" }, "fundort": "Zinnvorkommen an Küsten und Flussufern des Schwarzwalds. Manchmal steckt Erz auch in Fässern bei Steinruinen.", "werkzeug": "Geweihspitzhacke", "wofuer": ["tin"] },
+    { "id": "core-wood-quelle", "name": { "de": "Kernholz", "en": "Core wood" }, "fundort": "Von Kiefern im Schwarzwald. Fällen, dann den Stamm zerlegen.", "werkzeug": "Steinaxt", "wofuer": ["bronze-pickaxe", "cultivator", "finewood-bow", "stagbreaker", "log-beam-2m"] },
+    { "id": "fine-wood-quelle", "name": { "de": "Feinholz", "en": "Fine wood" }, "fundort": "Von Birken und Eichen (Wiesen, später Ebenen). Aus Schiffswracks an den Küsten kannst du es auch zerlegen.", "werkzeug": "Bronzeaxt", "wofuer": ["finewood-bow", "fermenter", "karve", "forge-cooler", "adze"] },
+    { "id": "blueberries-quelle", "name": { "de": "Blaubeeren", "en": "Blueberries" }, "fundort": "Beerenbüsche im Schwarzwald.", "wofuer": ["blueberries", "queens-jam", "mead-base-minor-healing"] },
+    { "id": "thistle-quelle", "name": { "de": "Distel", "en": "Thistle" }, "fundort": "Wächst als Pflanze auf dem Waldboden, wird erst später gebraucht.", "wofuer": [] },
+    { "id": "yellow-mushroom-quelle", "name": { "de": "Gelbe Pilze", "en": "Yellow mushroom" }, "fundort": "In Grabkammern und Trollhöhlen.", "wofuer": ["yellow-mushroom", "mead-base-minor-stamina"] },
+    { "id": "ancient-seed-quelle", "name": { "de": "Uralter Samen", "en": "Ancient seed" }, "fundort": "Fällt von Graudwerg-Brutmüttern (nachts) und aus zerstörten Graudwerg-Nestern. Du brauchst drei für den Ältesten.", "wofuer": [] },
+    { "id": "troll-hide-quelle", "name": { "de": "Trollhaut", "en": "Troll hide" }, "fundort": "Von Trollen, fünf Stück pro Troll.", "wofuer": ["troll-leather-helmet", "troll-leather-tunic", "troll-leather-pants", "troll-hide-cape"] },
+    { "id": "bone-fragments-quelle", "name": { "de": "Knochenfragmente", "en": "Bone fragments" }, "fundort": "Von Skeletten in Grabkammern und aus Trollhöhlen. Auch Steingräber in den Wiesen geben welche.", "wofuer": ["troll-leather-helmet", "troll-hide-cape"] },
+    { "id": "surtling-core-quelle", "name": { "de": "Surtlingkerne", "en": "Surtling cores" }, "fundort": "In Truhen der Grabkammern. Du brauchst mindestens zehn: fünf für die Schmelze, fünf für den Köhler.", "wofuer": ["smelter", "charcoal-kiln"] },
+    { "id": "carrot-seeds-quelle", "name": { "de": "Karottensamen", "en": "Carrot seeds" }, "fundort": "Liegen als Pflanzen im Schwarzwald auf dem Boden. Aufheben (Kreuz), mit dem Kultivator einpflanzen.", "wofuer": ["carrot", "carrot-soup"] }
+  ],
+  "freischaltungen": [
+    { "id": "r-smelter", "ergebnis": "smelter", "station": "bauen", "zutaten": [{ "item": "stone", "menge": 20 }, { "item": "surtling-core", "menge": 5 }] },
+    { "id": "r-charcoal-kiln", "ergebnis": "charcoal-kiln", "station": "bauen", "zutaten": [{ "item": "stone", "menge": 20 }, { "item": "surtling-core", "menge": 5 }] },
+    { "id": "r-coal", "ergebnis": "coal", "station": "koehler", "zutaten": [{ "item": "wood", "menge": 1 }] },
+    { "id": "r-copper", "ergebnis": "copper", "station": "schmelze", "zutaten": [{ "item": "copper-ore", "menge": 1 }, { "item": "coal", "menge": 2 }] },
+    { "id": "r-tin", "ergebnis": "tin", "station": "schmelze", "zutaten": [{ "item": "tin-ore", "menge": 1 }, { "item": "coal", "menge": 2 }] },
+    { "id": "r-forge", "ergebnis": "forge", "station": "bauen", "zutaten": [{ "item": "wood", "menge": 10 }, { "item": "stone", "menge": 4 }, { "item": "coal", "menge": 4 }, { "item": "copper", "menge": 6 }] },
+    { "id": "r-bronze", "ergebnis": "bronze", "station": "schmiede", "zutaten": [{ "item": "copper", "menge": 2 }, { "item": "tin", "menge": 1 }] },
+    { "id": "r-bronze-nails", "ergebnis": "bronze-nails", "station": "schmiede", "menge": 20, "zutaten": [{ "item": "bronze", "menge": 1 }] },
+    { "id": "r-forge-cooler", "ergebnis": "forge-cooler", "station": "bauen", "zutaten": [{ "item": "fine-wood", "menge": 25 }, { "item": "copper", "menge": 10 }] },
+    { "id": "r-anvils", "ergebnis": "anvils", "station": "bauen", "zutaten": [{ "item": "wood", "menge": 5 }, { "item": "bronze", "menge": 2 }] },
+    { "id": "r-adze", "ergebnis": "adze", "station": "bauen", "zutaten": [{ "item": "fine-wood", "menge": 10 }, { "item": "bronze", "menge": 3 }] },
+    { "id": "r-bronze-axe", "ergebnis": "bronze-axe", "station": "schmiede", "zutaten": [{ "item": "wood", "menge": 4 }, { "item": "bronze", "menge": 8 }, { "item": "leather-scraps", "menge": 2 }] },
+    { "id": "r-bronze-pickaxe", "ergebnis": "bronze-pickaxe", "station": "schmiede", "zutaten": [{ "item": "core-wood", "menge": 3 }, { "item": "bronze", "menge": 10 }] },
+    { "id": "r-bronze-sword", "ergebnis": "bronze-sword", "station": "schmiede", "zutaten": [{ "item": "wood", "menge": 2 }, { "item": "bronze", "menge": 8 }, { "item": "leather-scraps", "menge": 2 }] },
+    { "id": "r-bronze-atgeir", "ergebnis": "bronze-atgeir", "station": "schmiede", "zutaten": [{ "item": "wood", "menge": 10 }, { "item": "bronze", "menge": 8 }, { "item": "leather-scraps", "menge": 2 }] },
+    { "id": "r-bronze-mace", "ergebnis": "bronze-mace", "station": "schmiede", "zutaten": [{ "item": "wood", "menge": 4 }, { "item": "bronze", "menge": 8 }, { "item": "leather-scraps", "menge": 3 }] },
+    { "id": "r-bronze-buckler", "ergebnis": "bronze-buckler", "station": "schmiede", "zutaten": [{ "item": "bronze", "menge": 10 }, { "item": "wood", "menge": 4 }] },
+    { "id": "r-bronze-helmet", "ergebnis": "bronze-helmet", "station": "schmiede", "zutaten": [{ "item": "bronze", "menge": 5 }, { "item": "deer-hide", "menge": 2 }] },
+    { "id": "r-bronze-plate-cuirass", "ergebnis": "bronze-plate-cuirass", "station": "schmiede", "zutaten": [{ "item": "bronze", "menge": 5 }, { "item": "deer-hide", "menge": 2 }] },
+    { "id": "r-bronze-plate-leggings", "ergebnis": "bronze-plate-leggings", "station": "schmiede", "zutaten": [{ "item": "bronze", "menge": 5 }, { "item": "deer-hide", "menge": 2 }] },
+    { "id": "r-bronzehead-arrow", "ergebnis": "bronzehead-arrow", "station": "schmiede", "menge": 20, "zutaten": [{ "item": "wood", "menge": 8 }, { "item": "bronze", "menge": 1 }, { "item": "feathers", "menge": 2 }] },
+    { "id": "r-cultivator", "ergebnis": "cultivator", "station": "schmiede", "zutaten": [{ "item": "core-wood", "menge": 5 }, { "item": "bronze", "menge": 5 }] },
+    { "id": "r-troll-leather-helmet", "ergebnis": "troll-leather-helmet", "station": "werkbank", "stufe": 2, "zutaten": [{ "item": "troll-hide", "menge": 5 }, { "item": "bone-fragments", "menge": 3 }] },
+    { "id": "r-troll-leather-tunic", "ergebnis": "troll-leather-tunic", "station": "werkbank", "stufe": 2, "zutaten": [{ "item": "troll-hide", "menge": 5 }] },
+    { "id": "r-troll-leather-pants", "ergebnis": "troll-leather-pants", "station": "werkbank", "stufe": 2, "zutaten": [{ "item": "troll-hide", "menge": 5 }] },
+    { "id": "r-troll-hide-cape", "ergebnis": "troll-hide-cape", "station": "werkbank", "stufe": 2, "zutaten": [{ "item": "troll-hide", "menge": 10 }, { "item": "bone-fragments", "menge": 10 }] },
+    { "id": "r-finewood-bow", "ergebnis": "finewood-bow", "station": "werkbank", "zutaten": [{ "item": "fine-wood", "menge": 10 }, { "item": "core-wood", "menge": 10 }, { "item": "deer-hide", "menge": 2 }] },
+    { "id": "r-fire-arrow", "ergebnis": "fire-arrow", "station": "werkbank", "stufe": 2, "menge": 20, "zutaten": [{ "item": "wood", "menge": 8 }, { "item": "resin", "menge": 8 }, { "item": "feathers", "menge": 2 }] },
+    { "id": "r-stagbreaker", "ergebnis": "stagbreaker", "station": "werkbank", "stufe": 2, "zutaten": [{ "item": "core-wood", "menge": 20 }, { "item": "deer-trophy", "menge": 5 }, { "item": "leather-scraps", "menge": 2 }] },
+    { "id": "r-cauldron", "ergebnis": "cauldron", "station": "bauen", "zutaten": [{ "item": "tin", "menge": 10 }] },
+    { "id": "r-fermenter", "ergebnis": "fermenter", "station": "bauen", "zutaten": [{ "item": "fine-wood", "menge": 30 }, { "item": "bronze", "menge": 5 }, { "item": "resin", "menge": 10 }] },
+    { "id": "r-mead-ketill", "ergebnis": "mead-ketill", "station": "bauen", "zutaten": [{ "item": "tin", "menge": 4 }, { "item": "copper", "menge": 6 }, { "item": "leather-scraps", "menge": 2 }] },
+    { "id": "r-queens-jam", "ergebnis": "queens-jam", "station": "kessel", "menge": 4, "zutaten": [{ "item": "raspberries", "menge": 8 }, { "item": "blueberries", "menge": 6 }] },
+    { "id": "r-carrot-soup", "ergebnis": "carrot-soup", "station": "kessel", "zutaten": [{ "item": "mushroom", "menge": 1 }, { "item": "carrot", "menge": 3 }] },
+    { "id": "r-mead-base-minor-healing", "ergebnis": "mead-base-minor-healing", "station": "kessel", "zutaten": [{ "item": "honey", "menge": 10 }, { "item": "blueberries", "menge": 5 }, { "item": "raspberries", "menge": 10 }, { "item": "dandelion", "menge": 1 }] },
+    { "id": "r-mead-base-minor-stamina", "ergebnis": "mead-base-minor-stamina", "station": "kessel", "zutaten": [{ "item": "honey", "menge": 10 }, { "item": "raspberries", "menge": 10 }, { "item": "yellow-mushroom", "menge": 10 }] },
+    { "id": "r-minor-healing-mead", "ergebnis": "minor-healing-mead", "station": "gaerbottich", "menge": 6, "zutaten": [{ "item": "mead-base-minor-healing", "menge": 1 }] },
+    { "id": "r-minor-stamina-mead", "ergebnis": "minor-stamina-mead", "station": "gaerbottich", "menge": 6, "zutaten": [{ "item": "mead-base-minor-stamina", "menge": 1 }] },
+    { "id": "r-karve", "ergebnis": "karve", "station": "bauen", "zutaten": [{ "item": "fine-wood", "menge": 30 }, { "item": "deer-hide", "menge": 10 }, { "item": "resin", "menge": 20 }, { "item": "bronze-nails", "menge": 80 }] },
+    { "id": "r-cart", "ergebnis": "cart", "station": "bauen", "zutaten": [{ "item": "wood", "menge": 20 }, { "item": "bronze-nails", "menge": 10 }] },
+    { "id": "r-log-pole-2m", "ergebnis": "log-pole-2m", "station": "bauen", "zutaten": [{ "item": "core-wood", "menge": 1 }] },
+    { "id": "r-log-pole-4m", "ergebnis": "log-pole-4m", "station": "bauen", "zutaten": [{ "item": "core-wood", "menge": 2 }] },
+    { "id": "r-log-beam-2m", "ergebnis": "log-beam-2m", "station": "bauen", "zutaten": [{ "item": "core-wood", "menge": 1 }] },
+    { "id": "r-log-beam-4m", "ergebnis": "log-beam-4m", "station": "bauen", "zutaten": [{ "item": "core-wood", "menge": 2 }] },
+    { "id": "r-sharp-stakes", "ergebnis": "sharp-stakes", "station": "bauen", "zutaten": [{ "item": "wood", "menge": 6 }, { "item": "core-wood", "menge": 4 }] },
+    { "id": "r-core-wood-stack", "ergebnis": "core-wood-stack", "station": "bauen", "zutaten": [{ "item": "core-wood", "menge": 50 }] }
+  ],
+  "items": [
+    { "id": "core-wood", "name": { "de": "Kernholz", "en": "Core wood" }, "typ": "material", "hinweis": "Von Kiefern. Trägt mehr Gewicht als normales Holz, ideal für hohe Bauten." },
+    { "id": "fine-wood", "name": { "de": "Feinholz", "en": "Fine wood" }, "typ": "material", "hinweis": "Von Birken und Eichen, braucht mindestens die Bronzeaxt." },
+    { "id": "copper-ore", "name": { "de": "Kupfererz", "en": "Copper ore" }, "typ": "material" },
+    { "id": "tin-ore", "name": { "de": "Zinnerz", "en": "Tin ore" }, "typ": "material" },
+    { "id": "copper", "name": { "de": "Kupfer", "en": "Copper" }, "typ": "material", "hinweis": "Barren aus der Schmelze." },
+    { "id": "tin", "name": { "de": "Zinn", "en": "Tin" }, "typ": "material", "hinweis": "Barren aus der Schmelze. Öffnet auch Kessel und Metkessel." },
+    { "id": "bronze", "name": { "de": "Bronze", "en": "Bronze" }, "typ": "material", "hinweis": "Zwei Kupfer und ein Zinn ergeben einen Bronzebarren. Wird in der Schmiede hergestellt." },
+    { "id": "bronze-nails", "name": { "de": "Bronzenägel", "en": "Bronze nails" }, "typ": "material", "hinweis": "Ein Bronzebarren ergibt 20 Nägel. Gebraucht für Karve und Karren." },
+    { "id": "coal", "name": { "de": "Kohle", "en": "Coal" }, "typ": "material", "hinweis": "Brennstoff für die Schmelze. Aus Holz im Köhler gebrannt." },
+    { "id": "surtling-core", "name": { "de": "Surtlingkern", "en": "Surtling core" }, "typ": "material" },
+    { "id": "bone-fragments", "name": { "de": "Knochenfragmente", "en": "Bone fragments" }, "typ": "material" },
+    { "id": "troll-hide", "name": { "de": "Trollhaut", "en": "Troll hide" }, "typ": "material" },
+    { "id": "ancient-seed", "name": { "de": "Uralter Samen", "en": "Ancient seed" }, "typ": "material", "hinweis": "Opfergabe für den Ältesten. Kann nicht gepflanzt werden." },
+    { "id": "swamp-key", "name": { "de": "Sumpfschlüssel", "en": "Swamp key" }, "typ": "material", "hinweis": "Öffnet im Sumpf die Sumpfgrüfte. Du musst ihn beim ersten Öffnen im Inventar haben." },
+    { "id": "the-elder-trophy", "name": { "de": "Trophäe des Ältesten", "en": "The Elder trophy" }, "typ": "material", "hinweis": "An den Opfersteinen am Start aufhängen, dann kannst du die Macht aktivieren." },
+    { "id": "thistle", "name": { "de": "Distel", "en": "Thistle" }, "typ": "material" },
+    { "id": "dandelion", "name": { "de": "Löwenzahn", "en": "Dandelion" }, "typ": "material", "hinweis": "Wächst auf den Wiesen, fällt auch von Graudwerg-Brutmüttern." },
+    { "id": "carrot-seeds", "name": { "de": "Karottensamen", "en": "Carrot seeds" }, "typ": "material" },
+    { "id": "ectoplasm", "name": { "de": "Ektoplasma", "en": "Ectoplasm" }, "typ": "material" },
+    { "id": "bear-hide", "name": { "de": "Bärenfell", "en": "Bear hide" }, "typ": "material" },
+    { "id": "bear-meat", "name": { "de": "Bärenfleisch", "en": "Bear meat" }, "typ": "material" },
+    { "id": "bear-paw", "name": { "de": "Bärentatze", "en": "Bear paw" }, "typ": "material" },
+    { "id": "greydwarf-trophy", "name": { "de": "Graudwerg-Trophäe", "en": "Greydwarf trophy" }, "typ": "material" },
+    { "id": "greydwarf-brute-trophy", "name": { "de": "Trophäe der Graudwerg-Brutmutter", "en": "Greydwarf brute trophy" }, "typ": "material" },
+    { "id": "greydwarf-shaman-trophy", "name": { "de": "Graudwerg-Schamanen-Trophäe", "en": "Greydwarf shaman trophy" }, "typ": "material" },
+    { "id": "troll-trophy", "name": { "de": "Trolltrophäe", "en": "Troll trophy" }, "typ": "material" },
+    { "id": "skeleton-trophy", "name": { "de": "Skelett-Trophäe", "en": "Skeleton trophy" }, "typ": "material" },
+    { "id": "ghost-trophy", "name": { "de": "Geister-Trophäe", "en": "Ghost trophy" }, "typ": "material" },
+    { "id": "bear-trophy", "name": { "de": "Bärentrophäe", "en": "Bear trophy" }, "typ": "material" },
+    { "id": "blueberries", "name": { "de": "Blaubeeren", "en": "Blueberries" }, "typ": "nahrung", "werte": { "leben": 8, "ausdauer": 25, "dauer": 600 } },
+    { "id": "yellow-mushroom", "name": { "de": "Gelber Pilz", "en": "Yellow mushroom" }, "typ": "nahrung", "werte": { "leben": 10, "ausdauer": 30, "dauer": 600 } },
+    { "id": "carrot", "name": { "de": "Karotte", "en": "Carrot" }, "typ": "nahrung", "werte": { "leben": 10, "ausdauer": 32, "dauer": 900 } },
+    { "id": "queens-jam", "name": { "de": "Königinnenmarmelade", "en": "Queen's jam" }, "typ": "nahrung", "werte": { "leben": 14, "ausdauer": 40, "dauer": 1200 }, "hinweis": "Ein Ansatz ergibt vier Portionen." },
+    { "id": "carrot-soup", "name": { "de": "Karottensuppe", "en": "Carrot soup" }, "typ": "nahrung", "werte": { "leben": 15, "ausdauer": 45, "dauer": 1500 }, "hinweis": "Die meiste Ausdauer unter allem Essen im Schwarzwald." },
+    { "id": "mead-base-minor-healing", "name": { "de": "Metansatz: Schwache Heilung", "en": "Mead base: Minor healing" }, "typ": "met", "hinweis": "Wird am Metkessel (Mead ketill) über einem Feuer angesetzt und danach im Gärbottich vergoren." },
+    { "id": "mead-base-minor-stamina", "name": { "de": "Metansatz: Schwache Ausdauer", "en": "Mead base: Minor stamina" }, "typ": "met", "hinweis": "Wird am Metkessel (Mead ketill) über einem Feuer angesetzt und danach im Gärbottich vergoren." },
+    { "id": "minor-healing-mead", "name": { "de": "Schwacher Heilmet", "en": "Minor healing mead" }, "typ": "met", "werte": { "leben": 50, "dauer": 10 }, "hinweis": "Stellt 50 Leben über 10 Sekunden wieder her. Ein Ansatz ergibt sechs Fläschchen, die Gärung dauert zwei Spieltage." },
+    { "id": "minor-stamina-mead", "name": { "de": "Schwacher Ausdauermet", "en": "Minor stamina mead" }, "typ": "met", "werte": { "ausdauer": 80, "dauer": 2 }, "hinweis": "Stellt 80 Ausdauer über 2 Sekunden wieder her. Ein Ansatz ergibt sechs Fläschchen, die Gärung dauert zwei Spieltage." },
+    { "id": "bronze-axe", "name": { "de": "Bronzeaxt", "en": "Bronze axe" }, "typ": "werkzeug", "werte": { "hieb": 40 }, "hinweis": "Fällt auch Birken und Eichen (Feinholz)." },
+    { "id": "bronze-pickaxe", "name": { "de": "Bronzespitzhacke", "en": "Bronze pickaxe" }, "typ": "werkzeug", "werte": { "stich": 25 } },
+    { "id": "cultivator", "name": { "de": "Kultivator", "en": "Cultivator" }, "typ": "werkzeug", "hinweis": "Zum Bestellen von Ackerland und Pflanzen von Samen, etwa Karotten." },
+    { "id": "bronze-sword", "name": { "de": "Bronzeschwert", "en": "Bronze sword" }, "typ": "waffe", "werte": { "hieb": 35 } },
+    { "id": "bronze-atgeir", "name": { "de": "Bronzeatgeir", "en": "Bronze atgeir" }, "typ": "waffe", "werte": { "stich": 45 } },
+    { "id": "bronze-mace", "name": { "de": "Bronzestreitkolben", "en": "Bronze mace" }, "typ": "waffe", "werte": { "stumpf": 35 } },
+    { "id": "stagbreaker", "name": { "de": "Hirschbrecher", "en": "Stagbreaker" }, "typ": "waffe", "werte": { "stumpf": 20, "stich": 5 }, "hinweis": "Zweihandhammer mit viel Rückstoß. Stumpfer Schaden, also gut gegen Skelette." },
+    { "id": "finewood-bow", "name": { "de": "Feinholzbogen", "en": "Finewood bow" }, "typ": "waffe", "werte": { "stich": 32 } },
+    { "id": "bronzehead-arrow", "name": { "de": "Bronzespitzenpfeil", "en": "Bronzehead arrow" }, "typ": "waffe", "werte": { "stich": 32 } },
+    { "id": "fire-arrow", "name": { "de": "Feuerpfeil", "en": "Fire arrow" }, "typ": "waffe", "werte": { "stich": 11, "feuer": 22 }, "hinweis": "Der Älteste ist schwach gegen Feuer. Das ist deine beste Pfeilsorte für den Kampf." },
+    { "id": "bronze-buckler", "name": { "de": "Bronzebuckler", "en": "Bronze buckler" }, "typ": "schild", "werte": { "block": 16 }, "hinweis": "Das Bronze-Schild des Spiels. Ein Rundschild, mit dem du Angriffe parieren kannst." },
+    { "id": "bronze-helmet", "name": { "de": "Bronzehelm", "en": "Bronze helmet" }, "typ": "ruestung", "werte": { "ruestung": 8 } },
+    { "id": "bronze-plate-cuirass", "name": { "de": "Bronzebrustplatte", "en": "Bronze plate cuirass" }, "typ": "ruestung", "werte": { "ruestung": 8 }, "hinweis": "Macht dich etwas langsamer (minus 5 % Tempo)." },
+    { "id": "bronze-plate-leggings", "name": { "de": "Bronzebeinschienen", "en": "Bronze plate leggings" }, "typ": "ruestung", "werte": { "ruestung": 8 }, "hinweis": "Macht dich etwas langsamer (minus 5 % Tempo)." },
+    { "id": "troll-leather-helmet", "name": { "de": "Trollhaut-Kapuze", "en": "Troll leather hood" }, "typ": "ruestung", "werte": { "ruestung": 6 } },
+    { "id": "troll-leather-tunic", "name": { "de": "Trollhaut-Hemd", "en": "Troll leather tunic" }, "typ": "ruestung", "werte": { "ruestung": 6 } },
+    { "id": "troll-leather-pants", "name": { "de": "Trollhaut-Hose", "en": "Troll leather trousers" }, "typ": "ruestung", "werte": { "ruestung": 6 } },
+    { "id": "troll-hide-cape", "name": { "de": "Trollhaut-Umhang", "en": "Troll hide cape" }, "typ": "ruestung", "werte": { "ruestung": 1 }, "hinweis": "Erst mit Kapuze, Hemd, Hose und Umhang bekommst du den Set-Bonus: schleichen fällt leichter." },
+    { "id": "smelter", "name": { "de": "Schmelze", "en": "Smelter" }, "typ": "station", "hinweis": "Muss in der Nähe einer Werkbank gebaut werden. Erz links einfüllen, Kohle rechts. Der Rauch braucht freien Platz nach oben." },
+    { "id": "charcoal-kiln", "name": { "de": "Köhler", "en": "Charcoal kiln" }, "typ": "station", "hinweis": "Muss in der Nähe einer Werkbank gebaut werden. Verbrennt Holz zu Kohle, etwa alle 16 Sekunden ein Stück." },
+    { "id": "forge", "name": { "de": "Schmiede", "en": "Forge" }, "typ": "station", "hinweis": "Braucht ein Dach, Wände drumherum und eine Werkbank in der Nähe. Ausbauten schalten höhere Stufen frei." },
+    { "id": "forge-cooler", "name": { "de": "Schmiedekühler", "en": "Forge cooler" }, "typ": "station", "hinweis": "Ausbau der Schmiede. Nah an die Schmiede stellen." },
+    { "id": "anvils", "name": { "de": "Ambosse", "en": "Anvils" }, "typ": "station", "hinweis": "Ausbau der Schmiede. Nah an die Schmiede stellen." },
+    { "id": "adze", "name": { "de": "Dechsel", "en": "Adze" }, "typ": "station", "hinweis": "Werkbank-Ausbau Stufe 4 (nach Hackklotz und Gerbgestell)." },
+    { "id": "cauldron", "name": { "de": "Kessel", "en": "Cauldron" }, "typ": "station", "hinweis": "Funktioniert nur über einem Feuer, zum Beispiel einem Lagerfeuer. Das Rezept erscheint, sobald du Zinn hast und eine Schmiede stehst." },
+    { "id": "mead-ketill", "name": { "de": "Metkessel", "en": "Mead ketill" }, "typ": "station", "hinweis": "Braucht ein Feuer darunter, genau wie der Kessel. Hier setzt du Metansätze an." },
+    { "id": "fermenter", "name": { "de": "Gärbottich", "en": "Fermenter" }, "typ": "station", "hinweis": "Braucht ein Dach und Wände. Metansätze gären hier zwei Spieltage." },
+    { "id": "karve", "name": { "de": "Karve", "en": "Karve" }, "typ": "bauteil", "hinweis": "Kleines Segelschiff mit Frachtraum. Damit erreichst du Ziele über das Meer." },
+    { "id": "cart", "name": { "de": "Karren", "en": "Cart" }, "typ": "bauteil", "hinweis": "Frachtkarren, den du hinter dir herziehst." },
+    { "id": "log-pole-2m", "name": { "de": "Baumstammpfahl 2 m", "en": "Log pole 2m" }, "typ": "bauteil" },
+    { "id": "log-pole-4m", "name": { "de": "Baumstammpfahl 4 m", "en": "Log pole 4m" }, "typ": "bauteil" },
+    { "id": "log-beam-2m", "name": { "de": "Baumstammbalken 2 m", "en": "Log beam 2m" }, "typ": "bauteil" },
+    { "id": "log-beam-4m", "name": { "de": "Baumstammbalken 4 m", "en": "Log beam 4m" }, "typ": "bauteil" },
+    { "id": "sharp-stakes", "name": { "de": "Spitze Pfähle", "en": "Sharp stakes" }, "typ": "bauteil", "hinweis": "Verteidigung gegen Angreifer. Geben beim Abreißen kein Material zurück." },
+    { "id": "core-wood-stack", "name": { "de": "Kernholzstapel", "en": "Core wood stack" }, "typ": "bauteil", "hinweis": "Platziert einen Haufen Kernholz zur Lagerung." }
+  ],
   "checkliste": [
-    {
-      "id": "z-the-elder",
-      "text": "Der Älteste besiegen",
-      "bedingung": "boss"
-    }
+    { "id": "z-schwarzwald-betreten", "text": "Lager im Schwarzwald aufbauen: Werkbank, Bett, Lagerfeuer" },
+    { "id": "z-erze", "text": "Kupfer- und Zinnerz sowie Kernholz sammeln (Geweihspitzhacke)" },
+    { "id": "z-grabkammer", "text": "Grabkammer finden und mindestens zehn Surtlingkerne holen" },
+    { "id": "z-schmelze-koehler", "text": "Schmelze und Köhler bauen, Kupfer und Zinn schmelzen" },
+    { "id": "z-schmiede", "text": "Schmiede bauen und Bronze herstellen" },
+    { "id": "z-bronze-ausruestung", "text": "Bronzeaxt, Waffe, Buckler und Bronzerüstung herstellen" },
+    { "id": "z-essen", "text": "Kessel bauen, Königinnenmarmelade und Karottensuppe kochen" },
+    { "id": "z-samen-altar", "text": "Drei Uralte Samen sammeln, Altar des Ältesten per Vegvisir finden" },
+    { "id": "z-the-elder", "text": "Der Älteste besiegen", "bedingung": "boss" }
   ]
 }
