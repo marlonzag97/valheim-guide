@@ -30,7 +30,13 @@ for (const o of ordner) {
     continue
   }
   biome.push(r.data)
-  for (const i of r.data.items) alleItemIds.add(i.id)
+  for (const i of r.data.items) {
+    if (alleItemIds.has(i.id)) {
+      console.error(`✗ ${o}: Item-ID "${i.id}" ist schon in einem früheren Biom definiert`)
+      fehler++
+    }
+    alleItemIds.add(i.id)
+  }
   if (!existsSync(guidePfad)) {
     console.error(`✗ ${o}: guide.md fehlt`)
     fehler++
