@@ -1,0 +1,70 @@
+{
+  "id": "sumpf",
+  "reihenfolge": 3,
+  "name": {
+    "de": "Sumpf",
+    "en": "Swamp"
+  },
+  "farbe": "sumpf",
+  "untertitel": "Gift, Nässe und Eisen in versunkenen Krypten.",
+  "status": "geruest",
+  "boss": {
+    "id": "bonemass",
+    "name": {
+      "de": "Knochenmasse",
+      "en": "Bonemass"
+    },
+    "altar": "Altar im Sumpf, Ort per Vegvisir in versunkenen Krypten.",
+    "opfergabe": [
+      {
+        "item": "withered-bone",
+        "menge": 10
+      }
+    ],
+    "belohnung": [
+      "wishbone",
+      "bonemass-trophy"
+    ],
+    "macht": {
+      "name": "Knochenmasse",
+      "wirkung": "Weniger physischer Schaden."
+    }
+  },
+  "vorbereitung": [],
+  "gefahren": [],
+  "rohstoffe": [],
+  "freischaltungen": [],
+  "items": [
+    {
+      "id": "withered-bone",
+      "name": {
+        "de": "Verdorrter Knochen",
+        "en": "Withered bone"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "wishbone",
+      "name": {
+        "de": "Gabelbein",
+        "en": "Wishbone"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "bonemass-trophy",
+      "name": {
+        "de": "Knochenmasse-Trophäe",
+        "en": "Bonemass trophy"
+      },
+      "typ": "material"
+    }
+  ],
+  "checkliste": [
+    {
+      "id": "z-bonemass",
+      "text": "Knochenmasse besiegen",
+      "bedingung": "boss"
+    }
+  ]
+}

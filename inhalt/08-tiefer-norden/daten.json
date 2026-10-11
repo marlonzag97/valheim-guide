@@ -1,0 +1,61 @@
+{
+  "id": "tiefer-norden",
+  "reihenfolge": 8,
+  "name": {
+    "de": "Tiefer Norden",
+    "en": "Deep North"
+  },
+  "farbe": "tiefer-norden",
+  "untertitel": "Ewiges Eis, Mörkhalla und der letzte Boss.",
+  "status": "geruest",
+  "boss": {
+    "id": "kall-fimbulbringer",
+    "name": {
+      "de": "Kall Fimbulbringer",
+      "en": "Kall Fimbulbringer"
+    },
+    "altar": "Seltsame Schale am Fuß der Asen-Passage im Tiefen Norden.",
+    "opfergabe": [
+      {
+        "item": "malicious-blood",
+        "menge": 3
+      }
+    ],
+    "belohnung": [
+      "kall-trophy"
+    ],
+    "macht": {
+      "name": "Keine",
+      "wirkung": "Kall verleiht keine eigene Macht. Mit seiner Trophäe am Startaltar endet die Reise."
+    }
+  },
+  "vorbereitung": [],
+  "gefahren": [],
+  "rohstoffe": [],
+  "freischaltungen": [],
+  "items": [
+    {
+      "id": "malicious-blood",
+      "name": {
+        "de": "Bösartiges Blut",
+        "en": "Malicious blood"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "kall-trophy",
+      "name": {
+        "de": "Kall-Trophäe",
+        "en": "Kall trophy"
+      },
+      "typ": "material"
+    }
+  ],
+  "checkliste": [
+    {
+      "id": "z-kall-fimbulbringer",
+      "text": "Kall Fimbulbringer besiegen",
+      "bedingung": "boss"
+    }
+  ]
+}

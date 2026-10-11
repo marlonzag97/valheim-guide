@@ -1,0 +1,70 @@
+{
+  "id": "schwarzwald",
+  "reihenfolge": 2,
+  "name": {
+    "de": "Schwarzwald",
+    "en": "Black Forest"
+  },
+  "farbe": "schwarzwald",
+  "untertitel": "Kupfer, Zinn, Bronze. Der erste richtige Schritt nach vorn.",
+  "status": "geruest",
+  "boss": {
+    "id": "the-elder",
+    "name": {
+      "de": "Der Älteste",
+      "en": "The Elder"
+    },
+    "altar": "Altar im Schwarzwald, Ort per Vegvisir in Grabkammern.",
+    "opfergabe": [
+      {
+        "item": "ancient-seed",
+        "menge": 3
+      }
+    ],
+    "belohnung": [
+      "swamp-key",
+      "the-elder-trophy"
+    ],
+    "macht": {
+      "name": "Der Älteste",
+      "wirkung": "Schnelleres Holzfällen."
+    }
+  },
+  "vorbereitung": [],
+  "gefahren": [],
+  "rohstoffe": [],
+  "freischaltungen": [],
+  "items": [
+    {
+      "id": "ancient-seed",
+      "name": {
+        "de": "Uralter Samen",
+        "en": "Ancient seed"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "swamp-key",
+      "name": {
+        "de": "Sumpfschlüssel",
+        "en": "Swamp key"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "the-elder-trophy",
+      "name": {
+        "de": "Trophäe des Ältesten",
+        "en": "The Elder trophy"
+      },
+      "typ": "material"
+    }
+  ],
+  "checkliste": [
+    {
+      "id": "z-the-elder",
+      "text": "Der Älteste besiegen",
+      "bedingung": "boss"
+    }
+  ]
+}

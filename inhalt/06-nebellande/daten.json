@@ -1,0 +1,70 @@
+{
+  "id": "nebellande",
+  "reihenfolge": 6,
+  "name": {
+    "de": "Nebellande",
+    "en": "Mistlands"
+  },
+  "farbe": "nebellande",
+  "untertitel": "Nebel, Seeker, Dvergr und Eitr-Magie.",
+  "status": "geruest",
+  "boss": {
+    "id": "the-queen",
+    "name": {
+      "de": "Die Königin",
+      "en": "The Queen"
+    },
+    "altar": "Versiegelte Zitadelle in den Nebellanden, Tor mit dem Siegelbrecher öffnen.",
+    "opfergabe": [
+      {
+        "item": "sealbreaker",
+        "menge": 1
+      }
+    ],
+    "belohnung": [
+      "queen-drop",
+      "the-queen-trophy"
+    ],
+    "macht": {
+      "name": "Die Königin",
+      "wirkung": "Mehr Eitr-Regeneration, weniger Ausdauerverbrauch."
+    }
+  },
+  "vorbereitung": [],
+  "gefahren": [],
+  "rohstoffe": [],
+  "freischaltungen": [],
+  "items": [
+    {
+      "id": "sealbreaker",
+      "name": {
+        "de": "Siegelbrecher",
+        "en": "Sealbreaker"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "queen-drop",
+      "name": {
+        "de": "Königinnen-Tropfen",
+        "en": "Queen drop"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "the-queen-trophy",
+      "name": {
+        "de": "Trophäe der Königin",
+        "en": "The Queen trophy"
+      },
+      "typ": "material"
+    }
+  ],
+  "checkliste": [
+    {
+      "id": "z-the-queen",
+      "text": "Die Königin besiegen",
+      "bedingung": "boss"
+    }
+  ]
+}

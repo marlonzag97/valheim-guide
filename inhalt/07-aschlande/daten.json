@@ -1,0 +1,61 @@
+{
+  "id": "aschlande",
+  "reihenfolge": 7,
+  "name": {
+    "de": "Aschlande",
+    "en": "Ashlands"
+  },
+  "farbe": "aschlande",
+  "untertitel": "Lava, Verkohlte und Flametal.",
+  "status": "geruest",
+  "boss": {
+    "id": "fader",
+    "name": {
+      "de": "Fader",
+      "en": "Fader"
+    },
+    "altar": "Altar in den Aschlanden, Glocke aus drei Fragmenten.",
+    "opfergabe": [
+      {
+        "item": "bell-fragment",
+        "menge": 3
+      }
+    ],
+    "belohnung": [
+      "fader-trophy"
+    ],
+    "macht": {
+      "name": "Fader",
+      "wirkung": "Feuerresistenz, mehr Leben."
+    }
+  },
+  "vorbereitung": [],
+  "gefahren": [],
+  "rohstoffe": [],
+  "freischaltungen": [],
+  "items": [
+    {
+      "id": "bell-fragment",
+      "name": {
+        "de": "Glockenfragment",
+        "en": "Bell fragment"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "fader-trophy",
+      "name": {
+        "de": "Fader-Trophäe",
+        "en": "Fader trophy"
+      },
+      "typ": "material"
+    }
+  ],
+  "checkliste": [
+    {
+      "id": "z-fader",
+      "text": "Fader besiegen",
+      "bedingung": "boss"
+    }
+  ]
+}

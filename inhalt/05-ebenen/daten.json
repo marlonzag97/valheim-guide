@@ -1,0 +1,70 @@
+{
+  "id": "ebenen",
+  "reihenfolge": 5,
+  "name": {
+    "de": "Ebenen",
+    "en": "Plains"
+  },
+  "farbe": "ebenen",
+  "untertitel": "Fulinge, Todesmücken, Schwarzmetall und Gerste.",
+  "status": "geruest",
+  "boss": {
+    "id": "yagluth",
+    "name": {
+      "de": "Yagluth",
+      "en": "Yagluth"
+    },
+    "altar": "Altar in den Ebenen, Ort per Vegvisir an Steinmonumenten.",
+    "opfergabe": [
+      {
+        "item": "fuling-totem",
+        "menge": 5
+      }
+    ],
+    "belohnung": [
+      "torn-spirit",
+      "yagluth-trophy"
+    ],
+    "macht": {
+      "name": "Yagluth",
+      "wirkung": "Weniger Elementarschaden."
+    }
+  },
+  "vorbereitung": [],
+  "gefahren": [],
+  "rohstoffe": [],
+  "freischaltungen": [],
+  "items": [
+    {
+      "id": "fuling-totem",
+      "name": {
+        "de": "Fuling-Totem",
+        "en": "Fuling totem"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "torn-spirit",
+      "name": {
+        "de": "Zerrissener Geist",
+        "en": "Torn spirit"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "yagluth-trophy",
+      "name": {
+        "de": "Yagluth-Trophäe",
+        "en": "Yagluth trophy"
+      },
+      "typ": "material"
+    }
+  ],
+  "checkliste": [
+    {
+      "id": "z-yagluth",
+      "text": "Yagluth besiegen",
+      "bedingung": "boss"
+    }
+  ]
+}

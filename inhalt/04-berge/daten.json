@@ -1,0 +1,70 @@
+{
+  "id": "berge",
+  "reihenfolge": 4,
+  "name": {
+    "de": "Berge",
+    "en": "Mountain"
+  },
+  "farbe": "berge",
+  "untertitel": "Kälte, Wölfe, Drachen und Silber.",
+  "status": "geruest",
+  "boss": {
+    "id": "moder",
+    "name": {
+      "de": "Moder",
+      "en": "Moder"
+    },
+    "altar": "Altar hoch in den Bergen, Ort per Vegvisir an Runensteinen.",
+    "opfergabe": [
+      {
+        "item": "dragon-egg",
+        "menge": 3
+      }
+    ],
+    "belohnung": [
+      "dragon-tear",
+      "moder-trophy"
+    ],
+    "macht": {
+      "name": "Moder",
+      "wirkung": "Beim Segeln immer Rückenwind."
+    }
+  },
+  "vorbereitung": [],
+  "gefahren": [],
+  "rohstoffe": [],
+  "freischaltungen": [],
+  "items": [
+    {
+      "id": "dragon-egg",
+      "name": {
+        "de": "Drachenei",
+        "en": "Dragon egg"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "dragon-tear",
+      "name": {
+        "de": "Drachenträne",
+        "en": "Dragon tear"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "moder-trophy",
+      "name": {
+        "de": "Moder-Trophäe",
+        "en": "Moder trophy"
+      },
+      "typ": "material"
+    }
+  ],
+  "checkliste": [
+    {
+      "id": "z-moder",
+      "text": "Moder besiegen",
+      "bedingung": "boss"
+    }
+  ]
+}
