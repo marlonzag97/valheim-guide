@@ -1,20 +1,17 @@
 {
   "id": "berge",
   "reihenfolge": 4,
-  "name": {
-    "de": "Berge",
-    "en": "Mountain"
-  },
+  "name": {"de": "Berge", "en": "Mountain"},
   "farbe": "berge",
   "untertitel": "Kälte, Wölfe, Drachen und Silber.",
-  "status": "geruest",
+  "status": "voll",
   "boss": {
     "id": "moder",
     "name": {
       "de": "Moder",
       "en": "Moder"
     },
-    "altar": "Altar hoch in den Bergen, Ort per Vegvisir an Runensteinen.",
+    "altar": "Altar der Verlassenen hoch im Gebirge. Den Ort verrät ein Vegvisir-Runenstein, den du oben in Bergruinen und in Frosthöhlen findest.",
     "opfergabe": [
       {
         "item": "dragon-egg",
@@ -27,44 +24,140 @@
     ],
     "macht": {
       "name": "Moder",
-      "wirkung": "Beim Segeln immer Rückenwind."
-    }
+      "wirkung": "Beim Segeln immer Rückenwind. Dazu 300 mehr Tragkraft, 10 % mehr Lauftempo und halber Frostschaden. 5 Minuten aktiv, 20 Minuten Abklingzeit."
+    },
+    "leben": 7500,
+    "schwaeche": [
+      "Feuer"
+    ],
+    "resistenz": [
+      "Frost (immun)",
+      "Geist (immun)",
+      "Betäubung (immun)"
+    ]
   },
-  "vorbereitung": [],
-  "gefahren": [],
-  "rohstoffe": [],
-  "freischaltungen": [],
+  "vorbereitung": [
+    {"item": "iron-pickaxe", "grund": "Silberadern und Obsidian lassen sich erst mit der Eisenspitzhacke abbauen. Die Geweihspitzhacke und die Bronzespitzhacke reichen nicht.", "pflicht": true},
+    {"item": "frost-resistance-mead", "grund": "Ab der ersten Bergflanke frierst du: keine Lebensregeneration, kaum Ausdauer. Der Met hält 10 Minuten. Nimm gleich mehrere Fläschchen mit.", "pflicht": true},
+    {"item": "wishbone", "grund": "Das Gabelbein von Knochenmasse zeigt dir Silberadern: Es klingelt und funkelt, je näher du kommst, desto schneller.", "pflicht": true},
+    {"item": "campfire", "grund": "Ein Lagerfeuer in der Nähe nimmt dir die Kälte. Bau eines an jede Silberader und jedes Nest, wo du länger bleibst.", "pflicht": false},
+    {"item": "bed", "grund": "Stell ein Bett in dein Berglager, sonst läufst du nach einem Tod die ganze Strecke zurück.", "pflicht": false},
+    {"item": "cart", "grund": "Silbererz wiegt 14 pro Stück. Ein Karren spart viele Wege, kommt aber an steilen Hängen nicht überall hin.", "pflicht": false},
+    {"item": "megingjord", "grund": "Haldor verkauft den Gürtel für 950 Münzen: 150 mehr Tragkraft. Er belegt denselben Platz wie das Gabelbein, du musst also wechseln.", "pflicht": false},
+    {"item": "fire-arrow", "grund": "Drachen sind schwach gegen Feuer. Mit Bogen und Feuerpfeilen kommst du an sie heran, bis du Obsidianpfeile hast.", "pflicht": false}
+  ],
+  "gefahren": [
+    {"id": "wolf", "name": {"de": "Wolf", "en": "Wolf"}, "gefahr": 3, "schwaeche": [], "resistenz": ["Geist (immun)"], "tipp": "80 Leben, beißt dreimal kurz hintereinander. Tagsüber bis zu drei, nachts bis zu sechs, oft mit Sternen. Schild hoch (L2), nach dem dritten Biss zuschlagen oder dich mit L2 + Kreis wegrollen. Ihre Pelze, Fänge und das Fleisch brauchst du für Rüstung und Essen. Wölfe lassen sich auch zähmen.", "drops": ["wolf-meat", "wolf-fang", "wolf-pelt", "wolf-trophy"]},
+    {"id": "drake", "name": {"de": "Drache", "en": "Drake"}, "gefahr": 3, "schwaeche": ["Feuer"], "resistenz": ["Frost (immun)", "Geist (immun)", "Betäubung (immun)"], "tipp": "Nur 100 Leben, aber er spuckt drei Eisbälle auf einmal (je 90 Frost) und friert dich dabei ein. Er sitzt oft bei den Nestern über 100 Höhenmetern. Beschieß ihn aus der Distanz und geh hinter einem Felsen in Deckung, wenn er spuckt. Gefrorene Drüsen und seine Trophäe gibt es nur von ihm.", "drops": ["freeze-gland", "drake-trophy"]},
+    {"id": "stone-golem", "name": {"de": "Steingolem", "en": "Stone golem"}, "gefahr": 4, "schwaeche": ["Spitzhacke"], "resistenz": ["Stich", "Hieb", "Feuer (immun)", "Frost (immun)", "Gift (immun)", "Geist (immun)"], "tipp": "800 Leben. Von Weitem wirkt er wie ein Steinhaufen und wacht auf, wenn du näher kommst. Seine Schläge sind schwer (110 Stumpf), aber langsam: Weich aus und schlag danach zu. Gegen Stich und Hieb ist er resistent. Die Spitzhacke ist seine größte Schwäche, eine Stumpfwaffe geht auch. Er lässt 8 bis 11 Kristalle fallen.", "drops": ["crystal", "stone", "stone-golem-trophy"]},
+    {"id": "fenring", "name": {"de": "Fenring", "en": "Fenring"}, "gefahr": 4, "schwaeche": ["Feuer"], "resistenz": ["Gift"], "tipp": "300 Leben, läuft aufrecht und taucht nachts auf. Krallenhieb (85) im Nahkampf, Sprung (95) aus 5 bis 9 Metern. Bleib nah dran, dann gibt es den Sprung nicht. Silberpfeile mit Geistschaden wirken gut. Er lässt Wolfsfänge und selten eine Trophäe fallen.", "drops": ["wolf-fang", "fenring-trophy"]},
+    {"id": "ulv", "name": {"de": "Ulv", "en": "Ulv"}, "gefahr": 3, "schwaeche": ["Gift"], "resistenz": ["Feuer"], "tipp": "Nur 50 Leben, aber er läuft auf allen Vieren in Frosthöhlen und kommt zu mehreren. Biss (80) und Prankenhieb (70). Fackeln helfen nicht, er hält Feuer aus. Mit Schild in einer Engstelle kämpfen und eins nach dem anderen erledigen.", "drops": ["wolf-fang", "ulv-trophy"]},
+    {"id": "cultist", "name": {"de": "Kultist", "en": "Cultist"}, "gefahr": 4, "schwaeche": ["Gift"], "resistenz": ["Feuer (immun)"], "tipp": "200 Leben, lebt tief in den Frosthöhlen. Seine Klauen setzen dich in Brand (35 Hieb + 40 Feuer) und sein Flammenstoß (50 Feuer) geht durch Wände und lässt sich nicht blocken. Aus 2 bis 6 Metern greift er damit an: Geh nah ran oder rolle dich seitlich weg. Das volle Fenris-Set gibt dir halben Feuerschaden. Er lässt Rote Jute und selten seine Trophäe fallen.", "drops": ["red-jute", "cultist-trophy"]},
+    {"id": "bat", "name": {"de": "Fledermaus", "en": "Bat"}, "gefahr": 2, "schwaeche": ["Feuer", "Geist"], "resistenz": ["Stumpf", "Hieb", "Stich", "Frost (immun)", "Gift (immun)"], "tipp": "Nur 10 Leben, aber flink und sie hängen in den Schächten der Frosthöhlen. Sie sind nicht gefährlich, erschrecken dich aber leicht kurz vor einem Absturz. Pass am Rand der Schächte auf, Fallschaden tut mehr weh als jeder Biss.", "drops": ["leather-scraps"]}
+  ],
+  "rohstoffe": [
+    {"id": "silver-ore-quelle", "name": {"de": "Silbererz", "en": "Silver ore"}, "fundort": "In Silberadern tief unter dem Schnee, nur über etwa 120 Höhenmetern. Mit dem Gabelbein findest du sie, oder du schlägst mit dem Hirschbrecher auf den Boden: Meldet das Spiel „zu hart“, liegt Silber darunter. Eine Ader gibt im Schnitt rund 83 Erz.", "werkzeug": "Eisenspitzhacke", "wofuer": ["silver"]},
+    {"id": "obsidian-quelle", "name": {"de": "Obsidian", "en": "Obsidian"}, "fundort": "Glasige schwarze Brocken an den Hängen, oberhalb von etwa 100 Metern. Außerdem in Truhen der Frosthöhlen und in Bergruinen.", "werkzeug": "Eisenspitzhacke", "wofuer": ["obsidian-arrow", "frost-arrow", "tool-shelf"]},
+    {"id": "wolf-pelt-quelle", "name": {"de": "Wolfspelz", "en": "Wolf pelt"}, "fundort": "Von Wölfen im Gebirge, je ein Pelz pro Wolf (mehr bei Sternen).", "wofuer": ["wolf-armor-chest", "wolf-armor-legs", "drake-helmet", "wolf-fur-cape", "fenris-hood", "fenris-coat", "fenris-leggings"]},
+    {"id": "wolf-fang-quelle", "name": {"de": "Wolfsfang", "en": "Wolf fang"}, "fundort": "Von Wölfen, Fenrings und Ulven. Beim Wolf nur mit etwa 40 Prozent.", "wofuer": ["wolf-armor-legs", "fang-spear"]},
+    {"id": "wolf-meat-quelle", "name": {"de": "Wolfsfleisch", "en": "Wolf meat"}, "fundort": "Von Wölfen. Roh in den Kessel, am Feuer gegart als einfaches Essen.", "wofuer": ["cooked-wolf-meat", "wolf-skewer", "wolf-jerky"]},
+    {"id": "freeze-gland-quelle", "name": {"de": "Gefrorene Drüse", "en": "Freeze gland"}, "fundort": "Fällt von jedem Drachen. Auf den hohen Bergen bei den Nestern.", "wofuer": ["frostner", "frost-arrow", "eyescream"]},
+    {"id": "fenris-hair-quelle", "name": {"de": "Fenris-Haar", "en": "Fenris hair"}, "fundort": "In Frosthöhlen: hängt in Büscheln an den Wänden der Kultistenlager und liegt auf Altarsäulen.", "wofuer": ["fenris-hood", "fenris-coat", "fenris-leggings"]},
+    {"id": "crystal-quelle", "name": {"de": "Kristall", "en": "Crystal"}, "fundort": "Wächst in Frosthöhlen aus Wänden und Boden, fällt auch vom Steingolem.", "wofuer": ["crystal-battleaxe"]},
+    {"id": "dragon-egg-quelle", "name": {"de": "Drachenei", "en": "Dragon egg"}, "fundort": "In Drachennestern über 100 Höhenmetern: ein Ei pro Nest, bewacht von bis zu drei Drachen. Jedes wiegt 200, und es lässt sich nicht durch Portale schicken.", "wofuer": []},
+    {"id": "onion-seeds-quelle", "name": {"de": "Zwiebelsamen", "en": "Onion seeds"}, "fundort": "In Truhen in verlassenen Hütten und Bergruinen. Mit dem Kultivator einpflanzen, nach etwa zweieinhalb Tagen ernten.", "wofuer": ["onion", "onion-soup", "wolf-skewer"]},
+    {"id": "ymir-flesh-quelle", "name": {"de": "Ymir-Fleisch", "en": "Ymir flesh"}, "fundort": "Gibt es bei Haldor, dem Händler, für 120 Münzen. Er führt es, sobald der Älteste besiegt ist.", "wofuer": ["frostner"]}
+  ],
+  "freischaltungen": [
+    {"id": "r-silver", "ergebnis": "silver", "station": "schmelze", "zutaten": [{"item": "silver-ore", "menge": 1}, {"item": "coal", "menge": 2}]},
+    {"id": "r-tool-shelf", "ergebnis": "tool-shelf", "station": "bauen", "zutaten": [{"item": "iron", "menge": 4}, {"item": "fine-wood", "menge": 10}, {"item": "obsidian", "menge": 4}]},
+    {"id": "r-butchers-table", "ergebnis": "butchers-table", "station": "bauen", "zutaten": [{"item": "ancient-bark", "menge": 2}, {"item": "core-wood", "menge": 4}, {"item": "fine-wood", "menge": 4}, {"item": "silver", "menge": 2}]},
+    {"id": "r-artisan-table", "ergebnis": "artisan-table", "station": "bauen", "zutaten": [{"item": "dragon-tear", "menge": 2}, {"item": "wood", "menge": 10}]},
+    {"id": "r-mead-base-frost-resistance", "ergebnis": "mead-base-frost-resistance", "station": "kessel", "zutaten": [{"item": "honey", "menge": 10}, {"item": "thistle", "menge": 5}, {"item": "bloodbag", "menge": 2}, {"item": "greydwarf-eye", "menge": 1}]},
+    {"id": "r-frost-resistance-mead", "ergebnis": "frost-resistance-mead", "station": "gaerbottich", "menge": 6, "zutaten": [{"item": "mead-base-frost-resistance", "menge": 1}]},
+    {"id": "r-cooked-wolf-meat", "ergebnis": "cooked-wolf-meat", "station": "feuer", "zutaten": [{"item": "wolf-meat", "menge": 1}]},
+    {"id": "r-onion-soup", "ergebnis": "onion-soup", "station": "kessel", "stufe": 2, "zutaten": [{"item": "onion", "menge": 3}]},
+    {"id": "r-wolf-skewer", "ergebnis": "wolf-skewer", "station": "kessel", "stufe": 3, "zutaten": [{"item": "wolf-meat", "menge": 1}, {"item": "mushroom", "menge": 2}, {"item": "onion", "menge": 1}]},
+    {"id": "r-wolf-jerky", "ergebnis": "wolf-jerky", "station": "kessel", "stufe": 3, "menge": 2, "zutaten": [{"item": "wolf-meat", "menge": 1}, {"item": "honey", "menge": 1}]},
+    {"id": "r-eyescream", "ergebnis": "eyescream", "station": "kessel", "stufe": 3, "zutaten": [{"item": "greydwarf-eye", "menge": 3}, {"item": "freeze-gland", "menge": 1}]},
+    {"id": "r-obsidian-arrow", "ergebnis": "obsidian-arrow", "station": "werkbank", "stufe": 3, "menge": 20, "zutaten": [{"item": "wood", "menge": 8}, {"item": "obsidian", "menge": 4}, {"item": "feathers", "menge": 2}]},
+    {"id": "r-frost-arrow", "ergebnis": "frost-arrow", "station": "werkbank", "stufe": 4, "menge": 20, "zutaten": [{"item": "wood", "menge": 8}, {"item": "obsidian", "menge": 4}, {"item": "feathers", "menge": 2}, {"item": "freeze-gland", "menge": 1}]},
+    {"id": "r-silver-arrow", "ergebnis": "silver-arrow", "station": "schmiede", "stufe": 3, "menge": 20, "zutaten": [{"item": "wood", "menge": 8}, {"item": "silver", "menge": 1}, {"item": "feathers", "menge": 2}]},
+    {"id": "r-silver-sword", "ergebnis": "silver-sword", "station": "schmiede", "stufe": 3, "zutaten": [{"item": "wood", "menge": 2}, {"item": "silver", "menge": 40}, {"item": "leather-scraps", "menge": 3}, {"item": "iron", "menge": 5}]},
+    {"id": "r-silver-knife", "ergebnis": "silver-knife", "station": "schmiede", "stufe": 3, "zutaten": [{"item": "wood", "menge": 2}, {"item": "silver", "menge": 10}, {"item": "leather-scraps", "menge": 3}, {"item": "iron", "menge": 2}]},
+    {"id": "r-frostner", "ergebnis": "frostner", "station": "schmiede", "stufe": 3, "zutaten": [{"item": "ancient-bark", "menge": 10}, {"item": "silver", "menge": 30}, {"item": "ymir-flesh", "menge": 5}, {"item": "freeze-gland", "menge": 5}]},
+    {"id": "r-draugr-fang", "ergebnis": "draugr-fang", "station": "schmiede", "stufe": 2, "zutaten": [{"item": "ancient-bark", "menge": 10}, {"item": "silver", "menge": 20}, {"item": "deer-hide", "menge": 2}, {"item": "guck", "menge": 10}]},
+    {"id": "r-fang-spear", "ergebnis": "fang-spear", "station": "schmiede", "stufe": 3, "zutaten": [{"item": "ancient-bark", "menge": 10}, {"item": "wolf-fang", "menge": 4}, {"item": "leather-scraps", "menge": 2}, {"item": "silver", "menge": 2}]},
+    {"id": "r-crystal-battleaxe", "ergebnis": "crystal-battleaxe", "station": "schmiede", "stufe": 3, "zutaten": [{"item": "ancient-bark", "menge": 40}, {"item": "silver", "menge": 30}, {"item": "crystal", "menge": 10}]},
+    {"id": "r-silver-shield", "ergebnis": "silver-shield", "station": "schmiede", "stufe": 3, "zutaten": [{"item": "fine-wood", "menge": 10}, {"item": "silver", "menge": 8}]},
+    {"id": "r-drake-helmet", "ergebnis": "drake-helmet", "station": "schmiede", "zutaten": [{"item": "silver", "menge": 20}, {"item": "wolf-pelt", "menge": 2}, {"item": "drake-trophy", "menge": 2}]},
+    {"id": "r-wolf-armor-chest", "ergebnis": "wolf-armor-chest", "station": "schmiede", "stufe": 2, "zutaten": [{"item": "silver", "menge": 20}, {"item": "wolf-pelt", "menge": 5}, {"item": "chain", "menge": 1}]},
+    {"id": "r-wolf-armor-legs", "ergebnis": "wolf-armor-legs", "station": "schmiede", "stufe": 2, "zutaten": [{"item": "silver", "menge": 20}, {"item": "wolf-pelt", "menge": 5}, {"item": "wolf-fang", "menge": 4}]},
+    {"id": "r-wolf-fur-cape", "ergebnis": "wolf-fur-cape", "station": "werkbank", "stufe": 2, "zutaten": [{"item": "silver", "menge": 4}, {"item": "wolf-pelt", "menge": 6}, {"item": "wolf-trophy", "menge": 1}]},
+    {"id": "r-fenris-hood", "ergebnis": "fenris-hood", "station": "werkbank", "stufe": 2, "zutaten": [{"item": "fenris-hair", "menge": 20}, {"item": "wolf-pelt", "menge": 2}, {"item": "cultist-trophy", "menge": 1}]},
+    {"id": "r-fenris-coat", "ergebnis": "fenris-coat", "station": "werkbank", "stufe": 2, "zutaten": [{"item": "fenris-hair", "menge": 20}, {"item": "wolf-pelt", "menge": 5}, {"item": "leather-scraps", "menge": 10}]},
+    {"id": "r-fenris-leggings", "ergebnis": "fenris-leggings", "station": "werkbank", "stufe": 2, "zutaten": [{"item": "fenris-hair", "menge": 20}, {"item": "wolf-pelt", "menge": 5}, {"item": "leather-scraps", "menge": 10}]}
+  ],
   "items": [
-    {
-      "id": "dragon-egg",
-      "name": {
-        "de": "Drachenei",
-        "en": "Dragon egg"
-      },
-      "typ": "material"
-    },
-    {
-      "id": "dragon-tear",
-      "name": {
-        "de": "Drachenträne",
-        "en": "Dragon tear"
-      },
-      "typ": "material"
-    },
-    {
-      "id": "moder-trophy",
-      "name": {
-        "de": "Moder-Trophäe",
-        "en": "Moder trophy"
-      },
-      "typ": "material"
-    }
+    {"id": "silver-ore", "name": {"de": "Silbererz", "en": "Silver ore"}, "typ": "material", "werte": {"gewicht": 14}, "hinweis": "Das schwerste Erz im Spiel. Lässt sich nicht durch Portale schicken. Wird in der Schmelze zu Silber."},
+    {"id": "silver", "name": {"de": "Silber", "en": "Silver"}, "typ": "material", "werte": {"gewicht": 14}, "hinweis": "Barren aus der Schmelze, zwei Kohle pro Erz. Silber lässt sich nicht durch Portale schicken."},
+    {"id": "obsidian", "name": {"de": "Obsidian", "en": "Obsidian"}, "typ": "material", "hinweis": "Schaltet das Werkzeugregal für die Werkbank frei und die Pfeile Obsidian, Frost und Gift. Darf durch Portale."},
+    {"id": "wolf-pelt", "name": {"de": "Wolfspelz", "en": "Wolf pelt"}, "typ": "material"},
+    {"id": "wolf-fang", "name": {"de": "Wolfsfang", "en": "Wolf fang"}, "typ": "material"},
+    {"id": "wolf-meat", "name": {"de": "Wolfsfleisch", "en": "Wolf meat"}, "typ": "material", "hinweis": "Roh für Kessel-Gerichte. Gegart am Feuer wird es zu gekochtem Wolfsfleisch."},
+    {"id": "freeze-gland", "name": {"de": "Gefrorene Drüse", "en": "Freeze gland"}, "typ": "material", "hinweis": "Von Drachen. Für Frostner, Frostpfeile und Eyescream."},
+    {"id": "fenris-hair", "name": {"de": "Fenris-Haar", "en": "Fenris hair"}, "typ": "material", "hinweis": "Aus den Lagern der Kultisten in den Frosthöhlen."},
+    {"id": "crystal", "name": {"de": "Kristall", "en": "Crystal"}, "typ": "material", "hinweis": "Wächst in Frosthöhlen, fällt auch vom Steingolem."},
+    {"id": "red-jute", "name": {"de": "Rote Jute", "en": "Red jute"}, "typ": "material", "hinweis": "Fällt von Kultisten und aus zerstörten Vorhängen in den Frosthöhlen."},
+    {"id": "onion-seeds", "name": {"de": "Zwiebelsamen", "en": "Onion seeds"}, "typ": "material", "hinweis": "Aus Truhen in Bergruinen. Mit dem Kultivator pflanzen. Aus einer Zwiebel bekommst du später wieder drei Samen."},
+    {"id": "dragon-egg", "name": {"de": "Drachenei", "en": "Dragon egg"}, "typ": "material", "werte": {"gewicht": 200}, "hinweis": "Liegt in Drachennestern. Wiegt 200, lässt sich nicht durch Portale schicken. Du brauchst drei für Moder."},
+    {"id": "dragon-tear", "name": {"de": "Drachenträne", "en": "Dragon tear"}, "typ": "material", "hinweis": "Zehn Stück von Moder. Öffnet den Kunsthandwerkstisch."},
+    {"id": "moder-trophy", "name": {"de": "Moder-Trophäe", "en": "Moder trophy"}, "typ": "material", "hinweis": "An den Opfersteinen am Start aufhängen, dann kannst du Moders Macht aktivieren."},
+    {"id": "wolf-trophy", "name": {"de": "Wolfstrophäe", "en": "Wolf trophy"}, "typ": "material", "hinweis": "Fällt mit etwa 10 Prozent. Braucht der Wolfsfellumhang."},
+    {"id": "drake-trophy", "name": {"de": "Drachentrophäe", "en": "Drake trophy"}, "typ": "material", "hinweis": "Fällt mit etwa 10 Prozent vom Drachen. Zweimal für den Drachenhelm."},
+    {"id": "fenring-trophy", "name": {"de": "Fenring-Trophäe", "en": "Fenring trophy"}, "typ": "material"},
+    {"id": "ulv-trophy", "name": {"de": "Ulv-Trophäe", "en": "Ulv trophy"}, "typ": "material"},
+    {"id": "cultist-trophy", "name": {"de": "Kultisten-Trophäe", "en": "Cultist trophy"}, "typ": "material", "hinweis": "Fällt mit etwa 10 Prozent. Braucht die Fenris-Kapuze."},
+    {"id": "stone-golem-trophy", "name": {"de": "Steingolem-Trophäe", "en": "Stone golem trophy"}, "typ": "material"},
+    {"id": "megingjord", "name": {"de": "Megingjord", "en": "Megingjord"}, "typ": "ruestung", "werte": {"tragkraft": 150}, "hinweis": "Gürtel von Haldor für 950 Münzen. Belegt den Zubehör-Platz, den auch das Gabelbein braucht."},
+    {"id": "onion", "name": {"de": "Zwiebel", "en": "Onion"}, "typ": "nahrung", "werte": {"leben": 13, "ausdauer": 40, "dauer": 900}},
+    {"id": "cooked-wolf-meat", "name": {"de": "Gekochtes Wolfsfleisch", "en": "Cooked wolf meat"}, "typ": "nahrung", "werte": {"leben": 45, "ausdauer": 15, "dauer": 1200}},
+    {"id": "onion-soup", "name": {"de": "Zwiebelsuppe", "en": "Onion soup"}, "typ": "nahrung", "werte": {"leben": 20, "ausdauer": 60, "dauer": 1200}, "hinweis": "Kessel Stufe 2 (Gewürzregal). Die Zwiebel ist leicht anzubauen, daher das bequemste Ausdauer-Essen der Berge."},
+    {"id": "wolf-skewer", "name": {"de": "Wolfsspieß", "en": "Wolf skewer"}, "typ": "nahrung", "werte": {"leben": 65, "ausdauer": 21, "dauer": 1500}, "hinweis": "Kessel Stufe 3 (Fleischertisch). Das beste Lebensessen in den Bergen."},
+    {"id": "wolf-jerky", "name": {"de": "Wolfsdörrfleisch", "en": "Wolf jerky"}, "typ": "nahrung", "werte": {"leben": 33, "ausdauer": 33, "dauer": 1800}, "hinweis": "Kessel Stufe 3 (Fleischertisch). Zwei Stück pro Ansatz, hält mit 30 Minuten am längsten."},
+    {"id": "eyescream", "name": {"de": "Eyescream", "en": "Eyescream"}, "typ": "nahrung", "werte": {"leben": 21, "ausdauer": 65, "dauer": 1500}, "hinweis": "Kessel Stufe 3 (Fleischertisch). Die meiste Ausdauer aller Berggerichte."},
+    {"id": "mead-base-frost-resistance", "name": {"de": "Metansatz: Frostresistenz", "en": "Mead base: Frost resistance"}, "typ": "met", "hinweis": "Wird am Metkessel (Mead ketill) über einem Feuer angesetzt und danach im Gärbottich vergoren."},
+    {"id": "frost-resistance-mead", "name": {"de": "Frostresistenz-Met", "en": "Frost resistance mead"}, "typ": "met", "werte": {"dauer": 600}, "hinweis": "Halbiert den Frostschaden und hält die Kälte der Berge 10 Minuten lang fern. Ein Ansatz ergibt sechs Fläschchen, die Gärung dauert zwei Spieltage. Wirkt nicht zusätzlich zu Fenris-Mantel, Wolfsfell-Brustpanzer oder Wolfsfellumhang."},
+    {"id": "silver-sword", "name": {"de": "Silberschwert", "en": "Silver sword"}, "typ": "waffe", "werte": {"hieb": 75, "geist": 30}, "hinweis": "Geistschaden wirkt nur auf Untote und Dämonen. Für alles andere ist ein Eisenschwert oft besser."},
+    {"id": "silver-knife", "name": {"de": "Silbermesser", "en": "Silver knife"}, "typ": "waffe", "werte": {"stich": 25, "hieb": 25, "geist": 12}, "hinweis": "Sechsfacher Schaden gegen Gegner, die dich noch nicht bemerkt haben."},
+    {"id": "frostner", "name": {"de": "Frostner", "en": "Frostner"}, "typ": "waffe", "werte": {"stumpf": 35, "frost": 40, "geist": 20}, "hinweis": "Einhandkeule mit starkem Rückstoß, verlangsamt Gegner. Gegen Moder nutzlos, sie ist frostimmun."},
+    {"id": "draugr-fang", "name": {"de": "Draugr-Reißzahn", "en": "Draugr fang"}, "typ": "waffe", "werte": {"stich": 47, "gift": 5}, "hinweis": "Bogen, dessen Pfeile zusätzlich vergiften. Das Leuchten macht dich beim Schleichen leichter zu entdecken."},
+    {"id": "fang-spear", "name": {"de": "Wolfsfangspeer", "en": "Fang spear"}, "typ": "waffe", "werte": {"stich": 75}, "hinweis": "Speer, auch als Wurfwaffe (anderthalbfacher Schaden). Braucht vergleichsweise wenig Silber."},
+    {"id": "crystal-battleaxe", "name": {"de": "Kristallkampfaxt", "en": "Crystal battleaxe"}, "typ": "waffe", "werte": {"hieb": 90, "geist": 30}, "hinweis": "Zweihandaxt mit viel Rückstoß. Frisst viel Alte Rinde."},
+    {"id": "silver-arrow", "name": {"de": "Silberpfeil", "en": "Silver arrow"}, "typ": "waffe", "werte": {"stich": 52, "geist": 20}, "hinweis": "Geistschaden gegen Untote, Fenrings und viele Monster der Berge."},
+    {"id": "obsidian-arrow", "name": {"de": "Obsidianpfeil", "en": "Obsidian arrow"}, "typ": "waffe", "werte": {"stich": 52}, "hinweis": "Direktes Upgrade zu Eisenspitzenpfeilen. Werkbank Stufe 3."},
+    {"id": "frost-arrow", "name": {"de": "Frostpfeil", "en": "Frost arrow"}, "typ": "waffe", "werte": {"stich": 26, "frost": 52}, "hinweis": "Verlangsamt Gegner. Werkbank Stufe 4. Bei frostimmunen Zielen wie Drachen und Moder verpufft der Frostanteil."},
+    {"id": "silver-shield", "name": {"de": "Silberschild", "en": "Silver shield"}, "typ": "schild", "werte": {"block": 60}, "hinweis": "Rundschild zum Parieren. Beim Herstellen kannst du aus einigen Mustern wählen."},
+    {"id": "drake-helmet", "name": {"de": "Drachenhelm", "en": "Drake helmet"}, "typ": "ruestung", "werte": {"ruestung": 20}, "hinweis": "Teil der Wolfsrüstung."},
+    {"id": "wolf-armor-chest", "name": {"de": "Wolfsfell-Brustpanzer", "en": "Wolf armor chest"}, "typ": "ruestung", "werte": {"ruestung": 20}, "hinweis": "Gibt Frostresistenz wie der Met, nur dauerhaft. Macht dich etwas langsamer (minus 5 Prozent)."},
+    {"id": "wolf-armor-legs", "name": {"de": "Wolfsfell-Hose", "en": "Wolf armor legs"}, "typ": "ruestung", "werte": {"ruestung": 20}, "hinweis": "Macht dich etwas langsamer (minus 5 Prozent). Gibt selbst keine Frostresistenz."},
+    {"id": "wolf-fur-cape", "name": {"de": "Wolfsfellumhang", "en": "Wolf fur cape"}, "typ": "ruestung", "werte": {"ruestung": 1}, "hinweis": "Gibt Frostresistenz. Wirkt nicht zusätzlich zum Met oder zum Wolfsfell-Brustpanzer, dafür ohne Tempo-Abzug."},
+    {"id": "fenris-hood", "name": {"de": "Fenris-Kapuze", "en": "Fenris hood"}, "typ": "ruestung", "werte": {"ruestung": 10}, "hinweis": "Plus 3 Prozent Lauftempo."},
+    {"id": "fenris-coat", "name": {"de": "Fenris-Mantel", "en": "Fenris coat"}, "typ": "ruestung", "werte": {"ruestung": 10}, "hinweis": "Plus 3 Prozent Lauftempo und Frostresistenz."},
+    {"id": "fenris-leggings", "name": {"de": "Fenris-Beinlinge", "en": "Fenris leggings"}, "typ": "ruestung", "werte": {"ruestung": 10}, "hinweis": "Das volle Set gibt die Fenris-Segnung: Fäuste plus 15 und halber Feuerschaden."},
+    {"id": "tool-shelf", "name": {"de": "Werkzeugregal", "en": "Tool shelf"}, "typ": "station", "hinweis": "Werkbank-Ausbau. Zum Bauen brauchst du eine Schmiede in der Nähe, danach steht es höchstens zwei Meter von der Werkbank entfernt."},
+    {"id": "butchers-table", "name": {"de": "Fleischertisch", "en": "Butcher's table"}, "typ": "station", "hinweis": "Ausbau des Kessels auf Stufe 3: Eyescream, Wolfsspieß und Wolfsdörrfleisch."},
+    {"id": "artisan-table", "name": {"de": "Kunsthandwerkstisch", "en": "Artisan table"}, "typ": "station", "hinweis": "Braucht Dach und 70 Prozent Deckung. Öffnet später Windmühle, Spinnrad, Steinofen und Hochofen im Umkreis von 40 Metern."}
   ],
   "checkliste": [
-    {
-      "id": "z-moder",
-      "text": "Moder besiegen",
-      "bedingung": "boss"
-    }
+    {"id": "z-frostmet", "text": "Frostresistenz-Met ansetzen und vergären (Honig, Distel, Blutsäcke, Graudwerg-Auge)"},
+    {"id": "z-eisenhacke", "text": "Eisenspitzhacke herstellen und Gabelbein anlegen"},
+    {"id": "z-berglager", "text": "Lager am Fuß der Berge aufbauen: Werkbank, Bett, Lagerfeuer"},
+    {"id": "z-silber", "text": "Silberader mit dem Gabelbein finden, Silbererz abbauen und zu Silber schmelzen"},
+    {"id": "z-wolf", "text": "Wölfe jagen: Wolfspelze, Fänge und Fleisch sammeln, Wolfsfellumhang bauen"},
+    {"id": "z-obsidian", "text": "Obsidian und Gefrorene Drüsen sammeln, Obsidianpfeile herstellen"},
+    {"id": "z-silberausruestung", "text": "Silberschwert, Silberschild und Wolfsrüstung in der Schmiede (Stufe 3) herstellen"},
+    {"id": "z-dracheneier", "text": "Vegvisir lesen, drei Dracheneier aus Drachennestern zum Altar bringen"},
+    {"id": "z-moder", "text": "Moder besiegen", "bedingung": "boss"}
   ]
 }
