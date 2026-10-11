@@ -3,7 +3,7 @@ import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { BIOME, biom, guideAbschnitte, itemName } from '../daten/laden'
 import { H2_REIHENFOLGE, type BiomId } from '../daten/schema'
-import { useFortschritt } from '../fortschritt/kontext'
+import { useFortschritt, useNeuBiome } from '../fortschritt/kontext'
 import { biomStatus } from '../logik/progression'
 import { Karte } from '../komponenten/Karte'
 import { RunenIcon } from '../komponenten/RunenIcon'
@@ -33,6 +33,7 @@ export function BiomSeite() {
   const { id } = useParams()
   const b = biom(id as BiomId)
   const { stand, senden } = useFortschritt()
+  const neuBiome = useNeuBiome()
   if (!b) {
     return (
       <p>
@@ -43,6 +44,7 @@ export function BiomSeite() {
   const status = biomStatus(BIOME, stand)[b.id]
   const prosa = guideAbschnitte(b.id)
   const besiegt = stand.besiegteBosse.has(b.boss.id)
+  const neu = neuBiome.has(b.id)
 
   return (
     <article data-biom={b.id} className="flex flex-col gap-8">
@@ -149,7 +151,7 @@ export function BiomSeite() {
         <ul className="grid gap-3 sm:grid-cols-2">
           {b.freischaltungen.map((r) => (
             <li key={r.id}>
-              <RezeptKarte rezept={r} />
+              <RezeptKarte rezept={r} neu={neu} />
             </li>
           ))}
         </ul>
@@ -158,7 +160,7 @@ export function BiomSeite() {
       <section id="boss" className="scroll-mt-4">
         <h2 className="rune-titel mb-3 text-lg text-asche-100">Boss</h2>
         <Prosa text={prosa.Boss} />
-        <BossKarte boss={b.boss} besiegt={besiegt} onToggle={(v) => senden({ typ: 'boss', id: b.boss.id, besiegt: v })} />
+        <BossKarte boss={b.boss} biomId={b.id} besiegt={besiegt} onToggle={(v) => senden({ typ: 'boss', id: b.boss.id, besiegt: v })} />
       </section>
 
       <section id="checkliste" className="scroll-mt-4">

@@ -6,7 +6,7 @@ export default defineConfig({
   use: { baseURL: 'http://localhost:4173/valheim-guide/', colorScheme: 'dark' },
   webServer: { command: 'npm run preview -- --port 4173 --strictPort', url: 'http://localhost:4173/valheim-guide/', reuseExistingServer: true },
   projects: [
-    { name: 'handy', use: { ...devices['iPhone 13'] } },
+    { name: 'handy', use: { ...devices['Pixel 7'] } },
     { name: 'desktop', use: { ...devices['Desktop Chrome'], viewport: { width: 1280, height: 900 } } },
   ],
 })

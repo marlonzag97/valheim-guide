@@ -3,19 +3,25 @@ import { itemName } from '../daten/laden'
 import { Button } from './Button'
 import { Karte } from './Karte'
 import { RunenIcon } from './RunenIcon'
+import { RunenKreis } from './RunenKreis'
 
 interface Props {
   boss: Boss
+  biomId: string
   besiegt: boolean
   onToggle: (besiegt: boolean) => void
 }
 
-export function BossKarte({ boss, besiegt, onToggle }: Props) {
+export function BossKarte({ boss, biomId, besiegt, onToggle }: Props) {
   return (
     <Karte className="flex flex-col gap-3">
       <div className="flex items-center gap-3">
-        <span className="text-[var(--biom-akzent)]">
-          <RunenIcon name="boss" groesse={28} />
+        <span className="flex h-20 w-20 shrink-0 items-center justify-center">
+          <RunenKreis aktiv={besiegt} biomId={biomId}>
+            <span className="flex h-10 w-10 items-center justify-center text-[var(--biom-akzent)]">
+              <RunenIcon name={boss.id} groesse={30} />
+            </span>
+          </RunenKreis>
         </span>
         <div>
           <div className="rune-titel text-lg text-asche-100">{boss.name.de}</div>

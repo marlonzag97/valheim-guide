@@ -59,7 +59,7 @@ export function Start() {
                   className={`flex items-center gap-2 rounded-lg border border-white/5 px-3 py-2 text-sm hover:bg-nacht-800 ${besiegt ? 'biom-dim' : ''}`}
                 >
                   <span className={besiegt ? 'text-glut-400' : 'text-[var(--biom)]'}>
-                    <RunenIcon name={besiegt ? 'haken' : 'boss'} groesse={18} />
+                    <RunenIcon name={besiegt ? 'haken' : b.boss.id} groesse={18} />
                   </span>
                   <span className="flex flex-col leading-tight">
                     <span className="rune-titel text-asche-100">{b.boss.name.de}</span>
