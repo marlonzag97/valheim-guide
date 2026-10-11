@@ -18,7 +18,7 @@ export function Start() {
         <h1 className="rune-titel text-2xl text-asche-100">
           {nichtsGeklickt ? 'Du beginnst in den Wiesen' : schritt ? `Du bist ${schritt.biom.id === 'wiesen' ? 'in den' : 'im'} ${schritt.biom.name.de}` : 'Du hast Valheim bezwungen'}
         </h1>
-        <p className="mt-1 text-sm text-asche-300">{schritt ? schritt.biom.untertitel : 'Alle acht Bosse liegen. Odin wartet.'}</p>
+        <p className="mt-1 text-sm text-asche-300">{schritt ? schritt.biom.untertitel : 'Alle acht Bosse liegen. Bring das Opferblut zu den Opfersteinen am Start, dort wartet der Abspann.'}</p>
       </section>
 
       {schritt && (

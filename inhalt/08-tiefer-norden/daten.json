@@ -7,14 +7,14 @@
   },
   "farbe": "tiefer-norden",
   "untertitel": "Ewiges Eis, Mörkhalla und der letzte Boss.",
-  "status": "geruest",
+  "status": "voll",
   "boss": {
     "id": "kall-fimbulbringer",
     "name": {
       "de": "Kall Fimbulbringer",
       "en": "Kall Fimbulbringer"
     },
-    "altar": "Seltsame Schale am Fuß der Asen-Passage im Tiefen Norden.",
+    "altar": "Seltsame Schüssel (Strange bowl) im Aesir-Übergang (Aesir passage), tief im Tiefen Norden ab etwa 80 Metern Höhe. Den Ort verrät ein Vegvisir-Runenstein an einer Gedenkstätte (Memorial site) oder in Mörkhalla. Dahinter liegt Das Gefängnis (The Prison).",
     "opfergabe": [
       {
         "item": "malicious-blood",
@@ -22,36 +22,3282 @@
       }
     ],
     "belohnung": [
-      "kall-trophy"
+      "sacrificial-blood",
+      "crown-jewel"
     ],
     "macht": {
       "name": "Keine",
-      "wirkung": "Kall verleiht keine eigene Macht. Mit seiner Trophäe am Startaltar endet die Reise."
-    }
+      "wirkung": "Kall verleiht keine eigene Macht. Opferblut, das er fallen lässt, bringst du zu den Opfersteinen am Start, dort endet die Reise."
+    },
+    "leben": 47000,
+    "schwaeche": [
+      "Stumpf (voller Schaden)",
+      "Hieb (voller Schaden)"
+    ],
+    "resistenz": [
+      "Stich",
+      "Feuer",
+      "Frost",
+      "Blitz",
+      "Geist (immun)",
+      "Betäubung (immun)"
+    ]
   },
-  "vorbereitung": [],
-  "gefahren": [],
-  "rohstoffe": [],
-  "freischaltungen": [],
+  "vorbereitung": [
+    {
+      "item": "frost-resistance-mead",
+      "grund": "Draußen im Norden erfrierst du sonst: Es ist Tag und Nacht eisig, ohne Frostschutz hörst du auf, Leben zu regenerieren. Ein Met hält 10 Minuten, nimm einen ganzen Stapel mit.",
+      "pflicht": true
+    },
+    {
+      "item": "snow-shovel",
+      "grund": "Im Schnee kannst du nicht bauen. Mit der Schaufel räumst du den Boden frei. Stell sie schon zu Hause an der Schwarzschmiede her.",
+      "pflicht": true
+    },
+    {
+      "item": "embers",
+      "grund": "Glut vom Ewigen Scheiterhaufen (nach Fader). Daraus machst du im Norden Glutladungen, mit denen du versteinerte Trolle für das Blutgold sprengst. Eine Glut ergibt 10 Ladungen.",
+      "pflicht": true
+    },
+    {
+      "item": "black-forge",
+      "grund": "Die Schwarzschmiede muss auf Stufe 4, damit du Güsse herstellen kannst. Bau sie im neuen Lager mit den nötigen Ausbauten.",
+      "pflicht": true
+    },
+    {
+      "item": "grappling-hook",
+      "grund": "In Mörkhalla geht es etliche Stockwerke tief und nur mit dem Haken schnell wieder hoch.",
+      "pflicht": true
+    },
+    {
+      "item": "fire-resistance-barley-wine",
+      "grund": "Für den Boss: Die Feuer-Aspekte von Fader und Yagluth in Phase 2 und die Feuerhiebe in Phase 3 tun sonst richtig weh.",
+      "pflicht": false
+    },
+    {
+      "item": "seal-meat-soup",
+      "grund": "Das stärkste Essen des Spiels, braucht Kessel Stufe 7 mit Räucherkammer. Alternativ Geräuchertes Elchfleisch oder Preiselbeersaft.",
+      "pflicht": false
+    }
+  ],
+  "gefahren": [
+    {
+      "id": "moose",
+      "name": {
+        "de": "Elch",
+        "en": "Moose"
+      },
+      "gefahr": 3,
+      "schwaeche": [
+        "Feuer"
+      ],
+      "resistenz": [
+        "Stumpf",
+        "Hieb",
+        "Frost",
+        "Geist (immun)"
+      ],
+      "tipp": "Tausend Leben, Hörner 160 Hieb, Hufe 150 Stumpf, ein Angriff alle vier Sekunden. Er steckt Hieb und Stumpf gut weg, also nimm Stich (Speer, Bogen) oder Feuer. Mit Preiselbeeren lässt er sich zähmen und mit Elchsattel reiten. Kälber wachsen in 50 Minuten heran.",
+      "drops": [
+        "moose-meat",
+        "moose-hide",
+        "moose-sinew",
+        "moose-trophy"
+      ]
+    },
+    {
+      "id": "barka",
+      "name": {
+        "de": "Barka",
+        "en": "Barka"
+      },
+      "gefahr": 3,
+      "schwaeche": [
+        "Feuer"
+      ],
+      "resistenz": [
+        "Stumpf",
+        "Hieb",
+        "Stich",
+        "Frost",
+        "Blitz",
+        "Gift (immun)",
+        "Geist (immun)"
+      ],
+      "tipp": "Schläft im Schnee neben Zimmerholz-Bäumen und erwacht, wenn du näher kommst. 2200 Leben, Schläge mit 100 bis 190 Stumpf plus Frost. Gegen fast alles resistent, nur Feuer und Fällschaden (Axt) wirken. Feuerpfeile aus der Distanz sind der sichere Weg.",
+      "drops": [
+        "frozen-branch",
+        "barka-trophy"
+      ]
+    },
+    {
+      "id": "gammeltroll",
+      "name": {
+        "de": "Gammeltroll",
+        "en": "Gammeltroll"
+      },
+      "gefahr": 4,
+      "schwaeche": [
+        "Kopftreffer (Spitzhackenschaden doppelt)"
+      ],
+      "resistenz": [
+        "Stumpf",
+        "Hieb",
+        "Stich",
+        "Frost",
+        "Feuer (immun)",
+        "Geist (immun)"
+      ],
+      "tipp": "Riesig, 3000 Leben, steht allein in den Höhenlagen. Faust 220 Stumpf, Stampfer 200, und er wirft alle zwölf Sekunden acht Baumstammhälften mit je 150 Stumpf. Zielt auf den Kopf, dort ist er verwundbar. Nach dem Tod wird er zur Statue, die du nur mit Glutladungen sprengst: Das ist deine Quelle für Versteinertes Gewebe.",
+      "drops": [
+        "petrified-tissue"
+      ]
+    },
+    {
+      "id": "elaking",
+      "name": {
+        "de": "Elaking",
+        "en": "Elaking"
+      },
+      "gefahr": 2,
+      "schwaeche": [
+        "Feuer"
+      ],
+      "resistenz": [
+        "Frost",
+        "Geist (immun)"
+      ],
+      "tipp": "Nachts im Norden unterwegs und zu Hause in den Gewundenen Tunneln. 350 Leben, Krallen 100 Hieb, Sprung mit 200 Fällschaden. Die Variante mit Laterne brennt. Ohne Laterne lassen sie ab und zu die Gussform für den Verschnörkelten Schlüssel fallen.",
+      "drops": [
+        "elaking-hair-bundle",
+        "mould-intricate-key",
+        "elaking-trophy"
+      ]
+    },
+    {
+      "id": "eyeless-one",
+      "name": {
+        "de": "Augenloser",
+        "en": "Eyeless One"
+      },
+      "gefahr": 3,
+      "schwaeche": [],
+      "resistenz": [
+        "Frost",
+        "Geist (immun)"
+      ],
+      "tipp": "Schläft in den Gewundenen Tunneln, bis du näher als sechs Meter kommst. 1400 Leben. Die Klaue macht 80 Stumpf, 40 Hieb und 100 Gift, die Sandwolke trifft sechsmal. Ein Gift-Met hilft. Lässt zu 50 % eine Gussform für den Verschnörkelten Schlüssel fallen.",
+      "drops": [
+        "long-claws",
+        "mould-intricate-key",
+        "eyeless-one-trophy"
+      ]
+    },
+    {
+      "id": "krigen",
+      "name": {
+        "de": "Krigen",
+        "en": "Krigen"
+      },
+      "gefahr": 4,
+      "schwaeche": [],
+      "resistenz": [
+        "Stich",
+        "Frost",
+        "Gift (immun)",
+        "Geist (immun)"
+      ],
+      "tipp": "Der Dungeon-Krieger aus Mörkhalla und den Jötnar-Invasionen, 1300 Leben. Gibt es mit Schwert, zwei Äxten oder Großaxt, Treffer um 150 bis 170 Hieb. Block oder Ausweichrolle (L2 + Kreis), dann Hieb oder Stumpf. Sobald irgendwo ein Krigen oder eine Hexen gefallen ist, streifen beide auch tagsüber durch den Norden. Lässt die Formen für Beschützer- und Vorhut-Rüstung fallen.",
+      "drops": [
+        "leather-straps",
+        "memorial-coal",
+        "krigen-trophy",
+        "mould-helmet-of-the-protector",
+        "mould-breastplate-of-the-protector",
+        "mould-trousers-of-the-protector",
+        "mould-hood-of-the-vanguard",
+        "mould-chestpiece-of-the-vanguard",
+        "mould-trousers-of-the-vanguard"
+      ]
+    },
+    {
+      "id": "hexen",
+      "name": {
+        "de": "Hexen",
+        "en": "Hexen"
+      },
+      "gefahr": 4,
+      "schwaeche": [
+        "Feuer"
+      ],
+      "resistenz": [
+        "Frost",
+        "Gift (immun)",
+        "Geist (immun)"
+      ],
+      "tipp": "Fliegende Zauberin, 800 Leben, wirft Blitze mit 110 bis 120 Schaden alle drei Sekunden. Bogen oder Armbrust, am besten mit Feuer. Fall sie zuerst, bevor du dich um die Krieger kümmerst. Lässt Nornagarn, ab und zu einen Schlüssel und die Formen der Rufer-Rüstung fallen.",
+      "drops": [
+        "nornathread",
+        "intricate-key",
+        "hexen-trophy",
+        "mould-headdress-of-the-caller",
+        "mould-robes-of-the-caller",
+        "mould-trousers-of-the-caller"
+      ]
+    },
+    {
+      "id": "fallen-warrior",
+      "name": {
+        "de": "Gefallener Krieger",
+        "en": "Fallen Warrior"
+      },
+      "gefahr": 3,
+      "schwaeche": [
+        "Geist"
+      ],
+      "resistenz": [
+        "Stumpf",
+        "Hieb",
+        "Stich",
+        "Feuer",
+        "Gift (immun)"
+      ],
+      "tipp": "Du rufst ihn selbst: Drei Gedenkkohle am Uralten Altar einer Gedenkstätte. 750 Leben, es gibt sieben Varianten von Bronzeaxt bis Feuermagier. Er ist schwach gegen Geist, aber resistent gegen fast alles andere. Jeder Kampf bringt mit je 50 % eine Frostfeuer- und eine Donnerblut-Essenz.",
+      "drops": [
+        "frostfire-essence",
+        "thunderblood-essence"
+      ]
+    }
+  ],
+  "rohstoffe": [
+    {
+      "id": "petrified-tissue-quelle",
+      "name": {
+        "de": "Versteinertes Gewebe",
+        "en": "Petrified Tissue"
+      },
+      "fundort": "Aus Statuen: Jeder erlegte Gammeltroll wird zu einer. Dazu liegen im Norden 30 versteinerte Arme und 30 Beine halb im Schnee. Ein Arm gibt im Schnitt 6 Gewebe, ein Bein 17, eine ganze Statue 43.",
+      "werkzeug": "Glutladung",
+      "wofuer": [
+        "bloodgold"
+      ]
+    },
+    {
+      "id": "bloodgold-quelle",
+      "name": {
+        "de": "Blutgold",
+        "en": "Bloodgold"
+      },
+      "fundort": "Schmilzt im Hochofen aus Versteinertem Gewebe, 1 Stück je Stange, 2 Kohle pro Stange.",
+      "wofuer": [
+        "nord-sword",
+        "nord-sledge",
+        "cast-intricate-key",
+        "crown-of-valheim",
+        "smiths-aprons"
+      ]
+    },
+    {
+      "id": "timberwood-quelle",
+      "name": {
+        "de": "Zimmerholz",
+        "en": "Timberwood"
+      },
+      "fundort": "Fäll die Bäume des Nordens (Tannen und Kiefern) und zerleg die Stämme. Äste auf dem Boden geben je 1 Stück. Auch aus Stümpfen, Wurzelwänden und Möbeln.",
+      "werkzeug": "Axt",
+      "wofuer": [
+        "nord-sword",
+        "nord-shield",
+        "snow-lantern",
+        "timberwood-gate"
+      ]
+    },
+    {
+      "id": "ice-quelle",
+      "name": {
+        "de": "Eis",
+        "en": "Ice"
+      },
+      "fundort": "Eisschollen an der Küste (Eisenspitzhacke oder besser, du musst dafür schwimmen), Eisteiche im Land (jede Spitzhacke, ein Teich gibt rund 200 Eis), gefrorene Figuren und Drops von Graudwerg und Skelett.",
+      "werkzeug": "Spitzhacke",
+      "wofuer": [
+        "liquid-frost",
+        "frigid-kiln",
+        "seal-meat-soup",
+        "lingonberry-juice"
+      ]
+    },
+    {
+      "id": "frostcore-quelle",
+      "name": {
+        "de": "Frostkern",
+        "en": "Frostcore"
+      },
+      "fundort": "Hängt am Ende der meisten Gänge der Gewundenen Tunnel (Winding tunnels). Du brauchst 20 für die beiden Nord-Stationen.",
+      "wofuer": [
+        "frost-foundry",
+        "frigid-kiln"
+      ]
+    },
+    {
+      "id": "moulds-quelle",
+      "name": {
+        "de": "Gussformen",
+        "en": "Moulds"
+      },
+      "fundort": "In den Gewundenen Tunneln (Müllhaufen, Wardrobe-Schächte), in Gedenkstätten (vergrabene Truhen), in Fässern der Dörfer und an Waffenständern in Mörkhalla. Krigen und Hexen lassen Rüstungsformen fallen.",
+      "wofuer": [
+        "mould-intricate-key",
+        "mould-nord-sword",
+        "mould-nord-sledge",
+        "mould-nord-shield",
+        "mould-breastplate-of-the-protector"
+      ]
+    },
+    {
+      "id": "seal-quelle",
+      "name": {
+        "de": "Robbe",
+        "en": "Seal"
+      },
+      "fundort": "Robben liegen an den Küsten und in Dörfern am Wasser. Sie greifen nicht an. Je Robbe 2 Pelz und 2 Blubber, mit Sternen mehr.",
+      "wofuer": [
+        "ember-charge",
+        "cooked-seal-blubber",
+        "seal-meat-soup",
+        "moose-saddle"
+      ]
+    },
+    {
+      "id": "embers-quelle",
+      "name": {
+        "de": "Glut",
+        "en": "Embers"
+      },
+      "fundort": "Am Ewigen Scheiterhaufen (Eternal pyre), den du nach Fader bauen kannst. Er lockt Glutgeister an, jeder gibt 1 Glut.",
+      "wofuer": [
+        "ember-charge",
+        "snow-shovel"
+      ]
+    },
+    {
+      "id": "moose-quelle",
+      "name": {
+        "de": "Elch (Fleisch, Haut, Sehne)",
+        "en": "Moose"
+      },
+      "fundort": "Elche streifen überall im Norden. Je Elch 4 bis 5 Fleisch, 2 Haut, 2 Sehne und zu 10 % die Trophäe.",
+      "wofuer": [
+        "cooked-moose-meat",
+        "smoked-moose-meat",
+        "moose-hide-cape",
+        "breastplate-of-the-protector"
+      ]
+    },
+    {
+      "id": "lingonberries-quelle",
+      "name": {
+        "de": "Preiselbeeren",
+        "en": "Lingonberries"
+      },
+      "fundort": "Büsche in den Wäldern des Nordens, wachsen langsam nach. Auch von Gefangenen Fulingen in Mörkhalla.",
+      "wofuer": [
+        "lingonberries",
+        "lingonberry-juice"
+      ]
+    },
+    {
+      "id": "kale-quelle",
+      "name": {
+        "de": "Grünkohl",
+        "en": "Kale"
+      },
+      "fundort": "Wild im Norden, gibt 3 Samen. Anbauen kannst du ihn nur in den Wiesen, im Schwarzwald, in den Ebenen und in den Aschlanden.",
+      "wofuer": [
+        "kale",
+        "smoked-moose-meat",
+        "seal-meat-soup"
+      ]
+    },
+    {
+      "id": "memorial-coal-quelle",
+      "name": {
+        "de": "Gedenkkohle",
+        "en": "Memorial Coal"
+      },
+      "fundort": "Feuerstellen und Kohlehaufen in Mörkhalla, außerdem von Krigen.",
+      "wofuer": [
+        "frostfire-essence",
+        "thunderblood-essence"
+      ]
+    },
+    {
+      "id": "nornathread-quelle",
+      "name": {
+        "de": "Nornagarn",
+        "en": "Nornathread"
+      },
+      "fundort": "Fällt von Hexen. Alles Magische im Norden braucht es.",
+      "wofuer": [
+        "standing-loom",
+        "witch-crown",
+        "robes-of-the-caller"
+      ]
+    },
+    {
+      "id": "leather-straps-quelle",
+      "name": {
+        "de": "Lederriemen",
+        "en": "Leather Straps"
+      },
+      "fundort": "Fallen von Krigen, 1 bis 2 pro Gegner, mit Sternen mehr.",
+      "wofuer": [
+        "breastplate-of-the-protector",
+        "chestpiece-of-the-vanguard"
+      ]
+    }
+  ],
+  "freischaltungen": [
+    {
+      "id": "r-cast-nord-sword",
+      "ergebnis": "cast-nord-sword",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-nord-sword",
+          "menge": 1
+        },
+        {
+          "item": "timberwood",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-nord-sword",
+      "ergebnis": "nord-sword",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-sword",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-nord-greatsword",
+      "ergebnis": "cast-nord-greatsword",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-nord-greatsword",
+          "menge": 1
+        },
+        {
+          "item": "frozen-branch",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-nord-greatsword",
+      "ergebnis": "nord-greatsword",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-greatsword",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-nord-axe",
+      "ergebnis": "cast-nord-axe",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-nord-axe",
+          "menge": 1
+        },
+        {
+          "item": "timberwood",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-nord-axe",
+      "ergebnis": "nord-axe",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-axe",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-nord-greataxe",
+      "ergebnis": "cast-nord-greataxe",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-nord-greataxe",
+          "menge": 1
+        },
+        {
+          "item": "timberwood",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-nord-greataxe",
+      "ergebnis": "nord-greataxe",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-greataxe",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-nord-atgeir",
+      "ergebnis": "cast-nord-atgeir",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-nord-atgeir",
+          "menge": 1
+        },
+        {
+          "item": "timberwood",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-nord-atgeir",
+      "ergebnis": "nord-atgeir",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-atgeir",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-nord-spear",
+      "ergebnis": "cast-nord-spear",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-nord-spear",
+          "menge": 1
+        },
+        {
+          "item": "timberwood",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-nord-spear",
+      "ergebnis": "nord-spear",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-spear",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-nord-dagger",
+      "ergebnis": "cast-nord-dagger",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-nord-dagger",
+          "menge": 1
+        },
+        {
+          "item": "timberwood",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-nord-dagger",
+      "ergebnis": "nord-dagger",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-dagger",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-nord-mace",
+      "ergebnis": "cast-nord-mace",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-nord-mace",
+          "menge": 1
+        },
+        {
+          "item": "timberwood",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-nord-mace",
+      "ergebnis": "nord-mace",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-mace",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-nord-sledge",
+      "ergebnis": "cast-nord-sledge",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-nord-sledge",
+          "menge": 1
+        },
+        {
+          "item": "timberwood",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-nord-sledge",
+      "ergebnis": "nord-sledge",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-sledge",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-nord-knucklechains",
+      "ergebnis": "cast-nord-knucklechains",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-nord-knucklechains",
+          "menge": 1
+        },
+        {
+          "item": "long-claws",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-nord-knucklechains",
+      "ergebnis": "nord-knucklechains",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-knucklechains",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-nord-bow",
+      "ergebnis": "cast-nord-bow",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-nord-bow",
+          "menge": 1
+        },
+        {
+          "item": "timberwood",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-nord-bow",
+      "ergebnis": "nord-bow",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-bow",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-nord-crossbow",
+      "ergebnis": "cast-nord-crossbow",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-nord-crossbow",
+          "menge": 1
+        },
+        {
+          "item": "timberwood",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-nord-crossbow",
+      "ergebnis": "nord-crossbow",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-crossbow",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-nord-buckler",
+      "ergebnis": "cast-nord-buckler",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 10
+        },
+        {
+          "item": "timberwood",
+          "menge": 10
+        },
+        {
+          "item": "mould-nord-buckler",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-nord-buckler",
+      "ergebnis": "nord-buckler",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-buckler",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-nord-shield",
+      "ergebnis": "cast-nord-shield",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 15
+        },
+        {
+          "item": "timberwood",
+          "menge": 10
+        },
+        {
+          "item": "mould-nord-shield",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-nord-shield",
+      "ergebnis": "nord-shield",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-shield",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-nord-greatshield",
+      "ergebnis": "cast-nord-greatshield",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "timberwood",
+          "menge": 20
+        },
+        {
+          "item": "mould-nord-greatshield",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-nord-greatshield",
+      "ergebnis": "nord-greatshield",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-nord-greatshield",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-frostfire-sword",
+      "ergebnis": "frostfire-sword",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "nord-sword",
+          "menge": 1
+        },
+        {
+          "item": "frostfire-essence",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-thunderblood-sword",
+      "ergebnis": "thunderblood-sword",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "nord-sword",
+          "menge": 1
+        },
+        {
+          "item": "thunderblood-essence",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-frostfire-greatsword",
+      "ergebnis": "frostfire-greatsword",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "nord-greatsword",
+          "menge": 1
+        },
+        {
+          "item": "frostfire-essence",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-thunderblood-greatsword",
+      "ergebnis": "thunderblood-greatsword",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "nord-greatsword",
+          "menge": 1
+        },
+        {
+          "item": "thunderblood-essence",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-frostfire-sledge",
+      "ergebnis": "frostfire-sledge",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "nord-sledge",
+          "menge": 1
+        },
+        {
+          "item": "frostfire-essence",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-thunderblood-sledge",
+      "ergebnis": "thunderblood-sledge",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "nord-sledge",
+          "menge": 1
+        },
+        {
+          "item": "thunderblood-essence",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-cast-helmet-of-the-protector",
+      "ergebnis": "cast-helmet-of-the-protector",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-helmet-of-the-protector",
+          "menge": 1
+        },
+        {
+          "item": "moose-hide",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-helmet-of-the-protector",
+      "ergebnis": "helmet-of-the-protector",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-helmet-of-the-protector",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-breastplate-of-the-protector",
+      "ergebnis": "cast-breastplate-of-the-protector",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-breastplate-of-the-protector",
+          "menge": 1
+        },
+        {
+          "item": "moose-hide",
+          "menge": 8
+        },
+        {
+          "item": "leather-straps",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-breastplate-of-the-protector",
+      "ergebnis": "breastplate-of-the-protector",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-breastplate-of-the-protector",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-trousers-of-the-protector",
+      "ergebnis": "cast-trousers-of-the-protector",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 20
+        },
+        {
+          "item": "mould-trousers-of-the-protector",
+          "menge": 1
+        },
+        {
+          "item": "moose-hide",
+          "menge": 8
+        },
+        {
+          "item": "leather-straps",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-trousers-of-the-protector",
+      "ergebnis": "trousers-of-the-protector",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-trousers-of-the-protector",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-hood-of-the-vanguard",
+      "ergebnis": "cast-hood-of-the-vanguard",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "seal-pelt",
+          "menge": 5
+        },
+        {
+          "item": "mould-hood-of-the-vanguard",
+          "menge": 1
+        },
+        {
+          "item": "moose-hide",
+          "menge": 5
+        },
+        {
+          "item": "moose-sinew",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-hood-of-the-vanguard",
+      "ergebnis": "hood-of-the-vanguard",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-hood-of-the-vanguard",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-chestpiece-of-the-vanguard",
+      "ergebnis": "cast-chestpiece-of-the-vanguard",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 12
+        },
+        {
+          "item": "mould-chestpiece-of-the-vanguard",
+          "menge": 1
+        },
+        {
+          "item": "elaking-hair-bundle",
+          "menge": 8
+        },
+        {
+          "item": "leather-straps",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-chestpiece-of-the-vanguard",
+      "ergebnis": "chestpiece-of-the-vanguard",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-chestpiece-of-the-vanguard",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-trousers-of-the-vanguard",
+      "ergebnis": "cast-trousers-of-the-vanguard",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 12
+        },
+        {
+          "item": "mould-trousers-of-the-vanguard",
+          "menge": 1
+        },
+        {
+          "item": "elaking-hair-bundle",
+          "menge": 8
+        },
+        {
+          "item": "seal-pelt",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-trousers-of-the-vanguard",
+      "ergebnis": "trousers-of-the-vanguard",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-trousers-of-the-vanguard",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-headdress-of-the-caller",
+      "ergebnis": "cast-headdress-of-the-caller",
+      "station": "galdr-tisch",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "moose-sinew",
+          "menge": 2
+        },
+        {
+          "item": "mould-headdress-of-the-caller",
+          "menge": 1
+        },
+        {
+          "item": "moose-trophy",
+          "menge": 1
+        },
+        {
+          "item": "nornathread",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-headdress-of-the-caller",
+      "ergebnis": "headdress-of-the-caller",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-headdress-of-the-caller",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-robes-of-the-caller",
+      "ergebnis": "cast-robes-of-the-caller",
+      "station": "galdr-tisch",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 6
+        },
+        {
+          "item": "mould-robes-of-the-caller",
+          "menge": 1
+        },
+        {
+          "item": "moose-hide",
+          "menge": 6
+        },
+        {
+          "item": "nornathread",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-robes-of-the-caller",
+      "ergebnis": "robes-of-the-caller",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-robes-of-the-caller",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cast-trousers-of-the-caller",
+      "ergebnis": "cast-trousers-of-the-caller",
+      "station": "galdr-tisch",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 6
+        },
+        {
+          "item": "mould-trousers-of-the-caller",
+          "menge": 1
+        },
+        {
+          "item": "moose-hide",
+          "menge": 6
+        },
+        {
+          "item": "nornathread",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-trousers-of-the-caller",
+      "ergebnis": "trousers-of-the-caller",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-trousers-of-the-caller",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-frost-foundry",
+      "ergebnis": "frost-foundry",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 15
+        },
+        {
+          "item": "stone",
+          "menge": 20
+        },
+        {
+          "item": "frostcore",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-frigid-kiln",
+      "ergebnis": "frigid-kiln",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "stone",
+          "menge": 20
+        },
+        {
+          "item": "frostcore",
+          "menge": 10
+        },
+        {
+          "item": "ice",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-smiths-aprons",
+      "ergebnis": "smiths-aprons",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 5
+        },
+        {
+          "item": "timberwood",
+          "menge": 8
+        },
+        {
+          "item": "moose-hide",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-smoker",
+      "ergebnis": "smoker",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 5
+        },
+        {
+          "item": "timberwood",
+          "menge": 6
+        }
+      ]
+    },
+    {
+      "id": "r-standing-loom",
+      "ergebnis": "standing-loom",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "timberwood",
+          "menge": 5
+        },
+        {
+          "item": "nornathread",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-bloodgold",
+      "ergebnis": "bloodgold",
+      "station": "schmelze",
+      "zutaten": [
+        {
+          "item": "petrified-tissue",
+          "menge": 1
+        },
+        {
+          "item": "coal",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-liquid-frost",
+      "ergebnis": "liquid-frost",
+      "station": "schmelze",
+      "zutaten": [
+        {
+          "item": "ice",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-ember-charge",
+      "ergebnis": "ember-charge",
+      "station": "werkbank",
+      "menge": 10,
+      "zutaten": [
+        {
+          "item": "seal-pelt",
+          "menge": 2
+        },
+        {
+          "item": "embers",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-snow-shovel",
+      "ergebnis": "snow-shovel",
+      "station": "schwarze-schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 5
+        },
+        {
+          "item": "flametal",
+          "menge": 4
+        },
+        {
+          "item": "embers",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-moose-saddle",
+      "ergebnis": "moose-saddle",
+      "station": "schwarze-schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 4
+        },
+        {
+          "item": "seal-pelt",
+          "menge": 5
+        },
+        {
+          "item": "timberwood",
+          "menge": 5
+        },
+        {
+          "item": "linen-thread",
+          "menge": 15
+        }
+      ]
+    },
+    {
+      "id": "r-bloodgold-arrow",
+      "ergebnis": "bloodgold-arrow",
+      "station": "schwarze-schmiede",
+      "menge": 20,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 1
+        },
+        {
+          "item": "feathers",
+          "menge": 2
+        },
+        {
+          "item": "timberwood",
+          "menge": 8
+        }
+      ]
+    },
+    {
+      "id": "r-cast-intricate-key",
+      "ergebnis": "cast-intricate-key",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 5
+        },
+        {
+          "item": "mould-intricate-key",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-intricate-key",
+      "ergebnis": "intricate-key",
+      "station": "frost-giesserei",
+      "zutaten": [
+        {
+          "item": "cast-intricate-key",
+          "menge": 1
+        },
+        {
+          "item": "liquid-frost",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-moose-hide-cape",
+      "ergebnis": "moose-hide-cape",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "moose-hide",
+          "menge": 6
+        },
+        {
+          "item": "moose-sinew",
+          "menge": 2
+        },
+        {
+          "item": "bloodgold",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-neckstabber",
+      "ergebnis": "neckstabber",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 5
+        },
+        {
+          "item": "long-claws",
+          "menge": 5
+        },
+        {
+          "item": "moose-trophy",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-witch-crown",
+      "ergebnis": "witch-crown",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 5
+        },
+        {
+          "item": "nornathread",
+          "menge": 5
+        },
+        {
+          "item": "hexen-trophy",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-crown-of-valheim",
+      "ergebnis": "crown-of-valheim",
+      "station": "schwarze-schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 5
+        },
+        {
+          "item": "crown-jewel",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-cooked-moose-meat",
+      "ergebnis": "cooked-moose-meat",
+      "station": "feuer",
+      "zutaten": [
+        {
+          "item": "moose-meat",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-smoked-moose-meat",
+      "ergebnis": "smoked-moose-meat",
+      "station": "kessel",
+      "stufe": 7,
+      "zutaten": [
+        {
+          "item": "moose-meat",
+          "menge": 1
+        },
+        {
+          "item": "kale",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-seal-meat-soup",
+      "ergebnis": "seal-meat-soup",
+      "station": "kessel",
+      "stufe": 7,
+      "zutaten": [
+        {
+          "item": "seal-blubber",
+          "menge": 2
+        },
+        {
+          "item": "kale",
+          "menge": 2
+        },
+        {
+          "item": "ice",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-lingonberry-juice",
+      "ergebnis": "lingonberry-juice",
+      "station": "kessel",
+      "stufe": 6,
+      "zutaten": [
+        {
+          "item": "lingonberries",
+          "menge": 5
+        },
+        {
+          "item": "ice",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cooked-seal-blubber",
+      "ergebnis": "cooked-seal-blubber",
+      "station": "feuer",
+      "zutaten": [
+        {
+          "item": "seal-blubber",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-timber-pole-2m",
+      "ergebnis": "timber-pole-2m",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "timberwood",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-timber-beam-2m",
+      "ergebnis": "timber-beam-2m",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "timberwood",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-timber-wall",
+      "ergebnis": "timber-wall",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "timberwood",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-timberwood-gate",
+      "ergebnis": "timberwood-gate",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "timberwood",
+          "menge": 24
+        },
+        {
+          "item": "bloodgold",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-timberwood-drawbridge",
+      "ergebnis": "timberwood-drawbridge",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "timberwood",
+          "menge": 24
+        },
+        {
+          "item": "bloodgold",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-timberwood-stack",
+      "ergebnis": "timberwood-stack",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "timberwood",
+          "menge": 50
+        }
+      ]
+    },
+    {
+      "id": "r-bloodgold-stack",
+      "ergebnis": "bloodgold-stack",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "bloodgold",
+          "menge": 30
+        }
+      ]
+    },
+    {
+      "id": "r-snow-lantern",
+      "ergebnis": "snow-lantern",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "snowball",
+          "menge": 8
+        }
+      ]
+    }
+  ],
   "items": [
+    {
+      "id": "bloodgold",
+      "name": {
+        "de": "Blutgold",
+        "en": "Bloodgold"
+      },
+      "typ": "material",
+      "hinweis": "Das Metall des Tiefen Nordens. Entsteht im Hochofen (Blast furnace) aus Versteinertem Gewebe, eine Stange dauert 30 Sekunden und braucht 2 Kohle. Sehr schwer und nicht portalfähig. Im Spiel am Hochofen, hier unter Schmelze eingeordnet."
+    },
+    {
+      "id": "petrified-tissue",
+      "name": {
+        "de": "Versteinertes Gewebe",
+        "en": "Petrified Tissue"
+      },
+      "typ": "material",
+      "hinweis": "Erz aus versteinerten Gammeltrollen. Sehr schwer und nicht durch normale Portale zu schicken."
+    },
+    {
+      "id": "timberwood",
+      "name": {
+        "de": "Zimmerholz",
+        "en": "Timberwood"
+      },
+      "typ": "material",
+      "hinweis": "Hartholz der Tiefen-Norden-Bäume. Zutat für fast alle Nord-Waffen und die Holzbauteile des Nordens."
+    },
+    {
+      "id": "frostcore",
+      "name": {
+        "de": "Frostkern",
+        "en": "Frostcore"
+      },
+      "typ": "material",
+      "hinweis": "Hängt in den Gewundenen Tunneln (Winding Tunnels). Du brauchst 20 Stück für Eisigen Brennofen und Frost-Gießerei."
+    },
+    {
+      "id": "liquid-frost",
+      "name": {
+        "de": "Flüssigfrost",
+        "en": "Liquid Frost"
+      },
+      "typ": "material",
+      "hinweis": "Brennstoff der Frost-Gießerei. Entsteht im Eisigen Brennofen (Frigid kiln): 5 Eis ergeben 1 Flüssigfrost in 30 Sekunden. Im Spiel am Eisigen Brennofen, hier unter Schmelze eingeordnet."
+    },
+    {
+      "id": "ice",
+      "name": {
+        "de": "Eis",
+        "en": "Ice"
+      },
+      "typ": "material",
+      "hinweis": "Aus Eisschollen, Eisteichen, gefrorenen Figuren und von Graudwerg und Skelett im Norden."
+    },
     {
       "id": "malicious-blood",
       "name": {
-        "de": "Bösartiges Blut",
+        "de": "Böses Blut",
         "en": "Malicious blood"
+      },
+      "typ": "material",
+      "hinweis": "Fällt, wenn du das Bösartige Eis (Malicious ice) im Zentrum einer Jötnar-Invasion zerstörst. Drei Stück öffnen den Aesir-Übergang."
+    },
+    {
+      "id": "sacrificial-blood",
+      "name": {
+        "de": "Opferblut",
+        "en": "Sacrificial Blood"
+      },
+      "typ": "material",
+      "hinweis": "Fällt von Kall. Nicht teleportierbar, auch nicht mit dem Portalstein. Am Opferstein-Platz am Start löst es das Ende aus."
+    },
+    {
+      "id": "crown-jewel",
+      "name": {
+        "de": "Kronjuwel",
+        "en": "Crown Jewel"
+      },
+      "typ": "material",
+      "hinweis": "Fällt von Kall. Mit 5 Blutgold wird daraus die Krone von Valheim."
+    },
+    {
+      "id": "moose-meat",
+      "name": {
+        "de": "Elchfleisch",
+        "en": "Moose Meat"
+      },
+      "typ": "material",
+      "hinweis": "Roh nur Zutat. Zum Essen auf der Eisernen Kochstation garen."
+    },
+    {
+      "id": "moose-hide",
+      "name": {
+        "de": "Elchhaut",
+        "en": "Moose Hide"
       },
       "typ": "material"
     },
     {
-      "id": "kall-trophy",
+      "id": "moose-sinew",
       "name": {
-        "de": "Kall-Trophäe",
-        "en": "Kall trophy"
+        "de": "Elchsehne",
+        "en": "Moose Sinew"
       },
       "typ": "material"
+    },
+    {
+      "id": "seal-pelt",
+      "name": {
+        "de": "Robbenpelz",
+        "en": "Seal Pelt"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "seal-blubber",
+      "name": {
+        "de": "Robbenblubber",
+        "en": "Seal Blubber"
+      },
+      "typ": "material",
+      "hinweis": "Zutat für Robbenfleischsuppe oder im Steinofen zu Gekochtem Robbenblubber garen."
+    },
+    {
+      "id": "embers",
+      "name": {
+        "de": "Glut",
+        "en": "Embers"
+      },
+      "typ": "material",
+      "hinweis": "Sammelst du am Ewigen Scheiterhaufen (Eternal pyre), den du nach Fader bauen kannst."
+    },
+    {
+      "id": "frozen-branch",
+      "name": {
+        "de": "Gefrorener Ast",
+        "en": "Frozen Branch"
+      },
+      "typ": "material",
+      "hinweis": "Fällt von Barkas. Zutat für den Nord-Großschwert-Guss."
+    },
+    {
+      "id": "leather-straps",
+      "name": {
+        "de": "Lederriemen",
+        "en": "Leather Straps"
+      },
+      "typ": "material",
+      "hinweis": "Fällt von Krigen."
+    },
+    {
+      "id": "elaking-hair-bundle",
+      "name": {
+        "de": "Elaking-Haarbüschel",
+        "en": "Elaking Hair Bundle"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nornathread",
+      "name": {
+        "de": "Nornagarn",
+        "en": "Nornathread"
+      },
+      "typ": "material",
+      "hinweis": "Fällt von Hexen. Für Magie-Ausrüstung des Nordens und den Standwebstuhl."
+    },
+    {
+      "id": "long-claws",
+      "name": {
+        "de": "Lange Klauen",
+        "en": "Long Claws"
+      },
+      "typ": "material",
+      "hinweis": "Fällt vom Augenlosen. Für Nord-Knöchelketten und Halsstecher."
+    },
+    {
+      "id": "memorial-coal",
+      "name": {
+        "de": "Gedenkkohle",
+        "en": "Memorial Coal"
+      },
+      "typ": "material",
+      "hinweis": "Aus Feuerstellen und Kohlehaufen in Mörkhalla und von Krigen. Drei Stück am Uralten Altar rufen einen Gefallenen Krieger."
+    },
+    {
+      "id": "frostfire-essence",
+      "name": {
+        "de": "Frostfeuer-Essenz",
+        "en": "Frostfire Essence"
+      },
+      "typ": "material",
+      "hinweis": "Fällt mit 50 % Chance von Gefallenen Kriegern. Verwandelt eine Nord-Waffe in die Frostfeuer-Version."
+    },
+    {
+      "id": "thunderblood-essence",
+      "name": {
+        "de": "Donnerblut-Essenz",
+        "en": "Thunderblood Essence"
+      },
+      "typ": "material",
+      "hinweis": "Fällt mit 50 % Chance von Gefallenen Kriegern. Verwandelt eine Nord-Waffe in die Donnerblut-Version mit Blitzschaden."
+    },
+    {
+      "id": "kale-seeds",
+      "name": {
+        "de": "Grünkohlsamen",
+        "en": "Kale Seeds"
+      },
+      "typ": "material",
+      "hinweis": "Wilder Grünkohl gibt 3 Samen. Anbau nur in Wiesen, Schwarzwald, Ebenen und Aschlanden, nicht im Norden."
+    },
+    {
+      "id": "intricate-key",
+      "name": {
+        "de": "Verschnörkelter Schlüssel",
+        "en": "Intricate Key"
+      },
+      "typ": "material",
+      "hinweis": "Öffnet die Tore von Mörkhalla und wird dabei verbraucht. Hexen lassen sie mit 10 % Chance fallen."
+    },
+    {
+      "id": "mould-intricate-key",
+      "name": {
+        "de": "Gussform: Verschnörkelter Schlüssel",
+        "en": "Mould: Intricate Key"
+      },
+      "typ": "material",
+      "hinweis": "Fällt zu 50 % vom Augenlosen, zu 20 % vom Elaking ohne Laterne, und liegt in den Gewundenen Tunneln."
+    },
+    {
+      "id": "cast-intricate-key",
+      "name": {
+        "de": "Guss: Verschnörkelter Schlüssel",
+        "en": "Cast: Intricate Key"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "moose-trophy",
+      "name": {
+        "de": "Elch-Trophäe",
+        "en": "Moose Trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "barka-trophy",
+      "name": {
+        "de": "Barka-Trophäe",
+        "en": "Barka Trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "elaking-trophy",
+      "name": {
+        "de": "Elaking-Trophäe",
+        "en": "Elaking Trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "eyeless-one-trophy",
+      "name": {
+        "de": "Augenloser-Trophäe",
+        "en": "Eyeless One Trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "krigen-trophy",
+      "name": {
+        "de": "Krigen-Trophäe",
+        "en": "Krigen Trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "hexen-trophy",
+      "name": {
+        "de": "Hexen-Trophäe",
+        "en": "Hexen Trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "grappling-hook",
+      "name": {
+        "de": "Enterhaken",
+        "en": "Grappling Hook"
+      },
+      "typ": "werkzeug",
+      "hinweis": "Nebellande-Werkzeug. Mit R2 feuern, Kreis zieht ihn mitten in der Luft ein. In Mörkhalla bringt er dich zurück nach oben."
+    },
+    {
+      "id": "lingonberries",
+      "name": {
+        "de": "Preiselbeeren",
+        "en": "Lingonberries"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 35,
+        "ausdauer": 35,
+        "dauer": 900
+      },
+      "hinweis": "Wächst an Büschen im Norden. Köder zum Zähmen von Elchen."
+    },
+    {
+      "id": "kale",
+      "name": {
+        "de": "Grünkohl",
+        "en": "Kale"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 35,
+        "ausdauer": 35,
+        "dauer": 900
+      }
+    },
+    {
+      "id": "cooked-moose-meat",
+      "name": {
+        "de": "Gekochtes Elchfleisch",
+        "en": "Cooked Moose Meat"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 80,
+        "ausdauer": 27,
+        "dauer": 1200
+      }
+    },
+    {
+      "id": "smoked-moose-meat",
+      "name": {
+        "de": "Geräuchertes Elchfleisch",
+        "en": "Smoked Moose Meat"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 105,
+        "ausdauer": 35,
+        "dauer": 1500
+      },
+      "hinweis": "Braucht einen Kessel der Stufe 7, also mit Räucherkammer."
+    },
+    {
+      "id": "seal-meat-soup",
+      "name": {
+        "de": "Robbenfleischsuppe",
+        "en": "Seal Meat Soup"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 110,
+        "ausdauer": 37,
+        "dauer": 1800
+      },
+      "hinweis": "Das Essen mit dem meisten Leben im ganzen Spiel (gleichauf mit Fleisch im Brot). Kessel Stufe 7."
+    },
+    {
+      "id": "lingonberry-juice",
+      "name": {
+        "de": "Preiselbeersaft",
+        "en": "Lingonberry Juice"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 35,
+        "ausdauer": 105,
+        "dauer": 1500
+      },
+      "hinweis": "Viel Ausdauer. Kessel Stufe 6."
+    },
+    {
+      "id": "cooked-seal-blubber",
+      "name": {
+        "de": "Gekochter Robbenblubber",
+        "en": "Cooked Seal Blubber"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 60,
+        "ausdauer": 20,
+        "dauer": 1200
+      },
+      "hinweis": "Gart im Steinofen etwa 50 Sekunden. Länger drin wird er zu Kohle."
+    },
+    {
+      "id": "frost-foundry",
+      "name": {
+        "de": "Frost-Gießerei",
+        "en": "Frost Foundry"
+      },
+      "typ": "station",
+      "hinweis": "Härtet Güsse zu fertigen Nord-Gegenständen. Hält 20 Flüssigfrost, ein Guss braucht 5 und 50 Sekunden. Braucht eine Werkbank in der Nähe."
+    },
+    {
+      "id": "frigid-kiln",
+      "name": {
+        "de": "Eisiger Brennofen",
+        "en": "Frigid Kiln"
+      },
+      "typ": "station",
+      "hinweis": "Macht aus Eis Flüssigfrost. Hält 25 Eis, alle 30 Sekunden entsteht 1 Flüssigfrost. Der Rauch braucht freien Himmel."
+    },
+    {
+      "id": "smiths-aprons",
+      "name": {
+        "de": "Schmiedeschürze",
+        "en": "Smith's Aprons"
+      },
+      "typ": "station",
+      "hinweis": "Ausbau der Schwarzschmiede, braucht Material aus dem Norden. Hebt die Stufe für höhere Qualität."
+    },
+    {
+      "id": "smoker",
+      "name": {
+        "de": "Räucherkammer",
+        "en": "Smoker"
+      },
+      "typ": "station",
+      "hinweis": "Ausbau des Kessels (innerhalb von 5 Metern). Hebt ihn auf Stufe 7."
+    },
+    {
+      "id": "standing-loom",
+      "name": {
+        "de": "Standwebstuhl",
+        "en": "Standing Loom"
+      },
+      "typ": "station",
+      "hinweis": "Ausbau des Galdr-Tischs für höhere Qualitätsstufen bei Magie-Ausrüstung."
+    },
+    {
+      "id": "snow-shovel",
+      "name": {
+        "de": "Schneeschaufel",
+        "en": "Snow Shovel"
+      },
+      "typ": "werkzeug",
+      "werte": {
+        "haltbarkeit": 200
+      },
+      "hinweis": "Räumt Schnee, nur im Tiefen Norden wirksam. Ohne sie kannst du dort nicht auf dem Boden bauen. Der Zweitangriff räumt einen größeren Kreis (3 m statt 2 m)."
+    },
+    {
+      "id": "moose-saddle",
+      "name": {
+        "de": "Elchsattel",
+        "en": "Moose Saddle"
+      },
+      "typ": "werkzeug",
+      "hinweis": "Damit reitest du einen gezähmten Elch. Zähmen: Preiselbeeren vor die Füße eines gefangenen Elchs werfen."
+    },
+    {
+      "id": "ember-charge",
+      "name": {
+        "de": "Glutladung",
+        "en": "Ember Charge"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stumpf": 140
+      },
+      "hinweis": "Wurfbombe, die als Einzige versteinerte Gammeltrolle aufsprengt. 3 Meter Radius."
+    },
+    {
+      "id": "bloodgold-arrow",
+      "name": {
+        "de": "Blutgold-Pfeil",
+        "en": "Bloodgold Arrow"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 100
+      }
+    },
+    {
+      "id": "nord-sword",
+      "name": {
+        "de": "Nord-Schwert",
+        "en": "Nord Sword"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 170
+      }
+    },
+    {
+      "id": "mould-nord-sword",
+      "name": {
+        "de": "Gussform: Nord-Schwert",
+        "en": "Mould: Nord Sword"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-sword",
+      "name": {
+        "de": "Guss: Nord-Schwert",
+        "en": "Cast: Nord Sword"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nord-greatsword",
+      "name": {
+        "de": "Nord-Großschwert",
+        "en": "Nord Greatsword"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 210
+      }
+    },
+    {
+      "id": "mould-nord-greatsword",
+      "name": {
+        "de": "Gussform: Nord-Großschwert",
+        "en": "Mould: Nord Greatsword"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-greatsword",
+      "name": {
+        "de": "Guss: Nord-Großschwert",
+        "en": "Cast: Nord Greatsword"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nord-axe",
+      "name": {
+        "de": "Nord-Axt",
+        "en": "Nord Axe"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 176
+      },
+      "hinweis": "Fällt auch Bäume."
+    },
+    {
+      "id": "mould-nord-axe",
+      "name": {
+        "de": "Gussform: Nord-Axt",
+        "en": "Mould: Nord Axe"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-axe",
+      "name": {
+        "de": "Guss: Nord-Axt",
+        "en": "Cast: Nord Axe"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nord-greataxe",
+      "name": {
+        "de": "Nord-Großaxt",
+        "en": "Nord Greataxe"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 188
+      },
+      "hinweis": "Fällt auch Bäume, alle Sorten."
+    },
+    {
+      "id": "mould-nord-greataxe",
+      "name": {
+        "de": "Gussform: Nord-Großaxt",
+        "en": "Mould: Nord Greataxe"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-greataxe",
+      "name": {
+        "de": "Guss: Nord-Großaxt",
+        "en": "Cast: Nord Greataxe"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nord-atgeir",
+      "name": {
+        "de": "Nord-Atgeir",
+        "en": "Nord Atgeir"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 182
+      }
+    },
+    {
+      "id": "mould-nord-atgeir",
+      "name": {
+        "de": "Gussform: Nord-Atgeir",
+        "en": "Mould: Nord Atgeir"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-atgeir",
+      "name": {
+        "de": "Guss: Nord-Atgeir",
+        "en": "Cast: Nord Atgeir"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nord-spear",
+      "name": {
+        "de": "Nord-Speer",
+        "en": "Nord Spear"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 170
+      }
+    },
+    {
+      "id": "mould-nord-spear",
+      "name": {
+        "de": "Gussform: Nord-Speer",
+        "en": "Mould: Nord Spear"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-spear",
+      "name": {
+        "de": "Guss: Nord-Speer",
+        "en": "Cast: Nord Spear"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nord-dagger",
+      "name": {
+        "de": "Nord-Dolch",
+        "en": "Nord Dagger"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 75,
+        "stich": 75
+      }
+    },
+    {
+      "id": "mould-nord-dagger",
+      "name": {
+        "de": "Gussform: Nord-Dolch",
+        "en": "Mould: Nord Dagger"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-dagger",
+      "name": {
+        "de": "Guss: Nord-Dolch",
+        "en": "Cast: Nord Dagger"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nord-mace",
+      "name": {
+        "de": "Nord-Streitkolben",
+        "en": "Nord Mace"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stumpf": 170
+      }
+    },
+    {
+      "id": "mould-nord-mace",
+      "name": {
+        "de": "Gussform: Nord-Streitkolben",
+        "en": "Mould: Nord Mace"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-mace",
+      "name": {
+        "de": "Guss: Nord-Streitkolben",
+        "en": "Cast: Nord Mace"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nord-sledge",
+      "name": {
+        "de": "Nord-Hammer",
+        "en": "Nord Sledge"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stumpf": 225
+      },
+      "hinweis": "Zweihandhammer: Schlag auf den Boden, betäubt stark und stößt in 4 Metern Umkreis zurück. Langsam (minus 20 % Tempo)."
+    },
+    {
+      "id": "mould-nord-sledge",
+      "name": {
+        "de": "Gussform: Nord-Hammer",
+        "en": "Mould: Nord Sledge"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-sledge",
+      "name": {
+        "de": "Guss: Nord-Hammer",
+        "en": "Cast: Nord Sledge"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nord-knucklechains",
+      "name": {
+        "de": "Nord-Knöchelketten",
+        "en": "Nord Knucklechains"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stumpf": 114
+      }
+    },
+    {
+      "id": "mould-nord-knucklechains",
+      "name": {
+        "de": "Gussform: Nord-Knöchelketten",
+        "en": "Mould: Nord Knucklechains"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-knucklechains",
+      "name": {
+        "de": "Guss: Nord-Knöchelketten",
+        "en": "Cast: Nord Knucklechains"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nord-bow",
+      "name": {
+        "de": "Nord-Bogen",
+        "en": "Nord Bow"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 100,
+        "geist": 10
+      }
+    },
+    {
+      "id": "mould-nord-bow",
+      "name": {
+        "de": "Gussform: Nord-Bogen",
+        "en": "Mould: Nord Bow"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-bow",
+      "name": {
+        "de": "Guss: Nord-Bogen",
+        "en": "Cast: Nord Bow"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nord-crossbow",
+      "name": {
+        "de": "Nord-Armbrust",
+        "en": "Nord Crossbow"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 264
+      }
+    },
+    {
+      "id": "mould-nord-crossbow",
+      "name": {
+        "de": "Gussform: Nord-Armbrust",
+        "en": "Mould: Nord Crossbow"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-crossbow",
+      "name": {
+        "de": "Guss: Nord-Armbrust",
+        "en": "Cast: Nord Crossbow"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nord-buckler",
+      "name": {
+        "de": "Nord-Buckler",
+        "en": "Nord Buckler"
+      },
+      "typ": "schild",
+      "werte": {
+        "block": 88
+      },
+      "hinweis": "Bester Schild zum Parieren, zum bloßen Blocken aber der schwächste der drei."
+    },
+    {
+      "id": "mould-nord-buckler",
+      "name": {
+        "de": "Gussform: Nord-Buckler",
+        "en": "Mould: Nord Buckler"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-buckler",
+      "name": {
+        "de": "Guss: Nord-Buckler",
+        "en": "Cast: Nord Buckler"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nord-shield",
+      "name": {
+        "de": "Nord-Schild",
+        "en": "Nord Shield"
+      },
+      "typ": "schild",
+      "werte": {
+        "block": 132
+      }
+    },
+    {
+      "id": "mould-nord-shield",
+      "name": {
+        "de": "Gussform: Nord-Schild",
+        "en": "Mould: Nord Shield"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-shield",
+      "name": {
+        "de": "Guss: Nord-Schild",
+        "en": "Cast: Nord Shield"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "nord-greatshield",
+      "name": {
+        "de": "Nord-Großschild",
+        "en": "Nord Greatshield"
+      },
+      "typ": "schild",
+      "werte": {
+        "block": 158
+      },
+      "hinweis": "Turmschild: höchster Block, kostet 10 % Tempo. Parieren geht damit nicht."
+    },
+    {
+      "id": "mould-nord-greatshield",
+      "name": {
+        "de": "Gussform: Nord-Großschild",
+        "en": "Mould: Nord Greatshield"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-nord-greatshield",
+      "name": {
+        "de": "Guss: Nord-Großschild",
+        "en": "Cast: Nord Greatshield"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "frostfire-sword",
+      "name": {
+        "de": "Frostfeuer-Schwert",
+        "en": "Frostfire Sword"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 138,
+        "feuer": 12,
+        "frost": 88
+      },
+      "hinweis": "Weniger Grundschaden, dafür Feuer und Frost. Kall und viele Nordgegner halbieren Frost, deshalb ist Donnerblut meist die bessere Wahl."
+    },
+    {
+      "id": "thunderblood-sword",
+      "name": {
+        "de": "Donnerblut-Schwert",
+        "en": "Thunderblood Sword"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 180,
+        "blitz": 45
+      },
+      "hinweis": "Mehr Grundschaden plus Blitz, 25 % Chance auf Kettenblitz, mehr Schaden bei weniger eigenem Leben."
+    },
+    {
+      "id": "frostfire-greatsword",
+      "name": {
+        "de": "Frostfeuer-Großschwert",
+        "en": "Frostfire Greatsword"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 186,
+        "feuer": 12,
+        "frost": 88
+      },
+      "hinweis": "Weniger Grundschaden, dafür Feuer und Frost. Kall und viele Nordgegner halbieren Frost, deshalb ist Donnerblut meist die bessere Wahl."
+    },
+    {
+      "id": "thunderblood-greatsword",
+      "name": {
+        "de": "Donnerblut-Großschwert",
+        "en": "Thunderblood Greatsword"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 220,
+        "blitz": 45
+      },
+      "hinweis": "Mehr Grundschaden plus Blitz, 25 % Chance auf Kettenblitz, mehr Schaden bei weniger eigenem Leben."
+    },
+    {
+      "id": "frostfire-sledge",
+      "name": {
+        "de": "Frostfeuer-Hammer",
+        "en": "Frostfire Sledge"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stumpf": 200,
+        "feuer": 12,
+        "frost": 88
+      },
+      "hinweis": "Weniger Grundschaden, dafür Feuer und Frost. Kall und viele Nordgegner halbieren Frost, deshalb ist Donnerblut meist die bessere Wahl."
+    },
+    {
+      "id": "thunderblood-sledge",
+      "name": {
+        "de": "Donnerblut-Hammer",
+        "en": "Thunderblood Sledge"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stumpf": 235,
+        "blitz": 45
+      },
+      "hinweis": "Mehr Grundschaden plus Blitz, 25 % Chance auf Kettenblitz, mehr Schaden bei weniger eigenem Leben."
+    },
+    {
+      "id": "helmet-of-the-protector",
+      "name": {
+        "de": "Helm des Beschützers",
+        "en": "Helmet of the Protector"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 44
+      }
+    },
+    {
+      "id": "mould-helmet-of-the-protector",
+      "name": {
+        "de": "Gussform: Helm des Beschützers",
+        "en": "Mould: Helmet of the Protector"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-helmet-of-the-protector",
+      "name": {
+        "de": "Guss: Helm des Beschützers",
+        "en": "Cast: Helmet of the Protector"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "breastplate-of-the-protector",
+      "name": {
+        "de": "Brustpanzer des Beschützers",
+        "en": "Breastplate of the Protector"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 44
+      },
+      "hinweis": "Verleiht Frostwiderstand."
+    },
+    {
+      "id": "mould-breastplate-of-the-protector",
+      "name": {
+        "de": "Gussform: Brustpanzer des Beschützers",
+        "en": "Mould: Breastplate of the Protector"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-breastplate-of-the-protector",
+      "name": {
+        "de": "Guss: Brustpanzer des Beschützers",
+        "en": "Cast: Breastplate of the Protector"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "trousers-of-the-protector",
+      "name": {
+        "de": "Hose des Beschützers",
+        "en": "Trousers of the Protector"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 44
+      }
+    },
+    {
+      "id": "mould-trousers-of-the-protector",
+      "name": {
+        "de": "Gussform: Hose des Beschützers",
+        "en": "Mould: Trousers of the Protector"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-trousers-of-the-protector",
+      "name": {
+        "de": "Guss: Hose des Beschützers",
+        "en": "Cast: Trousers of the Protector"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "hood-of-the-vanguard",
+      "name": {
+        "de": "Haube der Vorhut",
+        "en": "Hood of the Vanguard"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 34
+      },
+      "hinweis": "Set-Bonus Vorhut (alle drei Teile): Laufen 10 % weniger Ausdauer, 10 % mehr Leben- und Ausdauerregeneration, Ausweichen 20 % weniger Ausdauer, 10 % mehr Stichschaden."
+    },
+    {
+      "id": "mould-hood-of-the-vanguard",
+      "name": {
+        "de": "Gussform: Haube der Vorhut",
+        "en": "Mould: Hood of the Vanguard"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-hood-of-the-vanguard",
+      "name": {
+        "de": "Guss: Haube der Vorhut",
+        "en": "Cast: Hood of the Vanguard"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "chestpiece-of-the-vanguard",
+      "name": {
+        "de": "Brustschutz der Vorhut",
+        "en": "Chestpiece of the Vanguard"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 34
+      },
+      "hinweis": "Verleiht Frostwiderstand. Set-Bonus Vorhut."
+    },
+    {
+      "id": "mould-chestpiece-of-the-vanguard",
+      "name": {
+        "de": "Gussform: Brustschutz der Vorhut",
+        "en": "Mould: Chestpiece of the Vanguard"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-chestpiece-of-the-vanguard",
+      "name": {
+        "de": "Guss: Brustschutz der Vorhut",
+        "en": "Cast: Chestpiece of the Vanguard"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "trousers-of-the-vanguard",
+      "name": {
+        "de": "Hose der Vorhut",
+        "en": "Trousers of the Vanguard"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 34
+      },
+      "hinweis": "Set-Bonus Vorhut."
+    },
+    {
+      "id": "mould-trousers-of-the-vanguard",
+      "name": {
+        "de": "Gussform: Hose der Vorhut",
+        "en": "Mould: Trousers of the Vanguard"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-trousers-of-the-vanguard",
+      "name": {
+        "de": "Guss: Hose der Vorhut",
+        "en": "Cast: Trousers of the Vanguard"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "headdress-of-the-caller",
+      "name": {
+        "de": "Kopfschmuck des Rufers",
+        "en": "Headdress of the Caller"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 22
+      },
+      "hinweis": "Magie-Rüstung: 40 % mehr Eitr-Regeneration."
+    },
+    {
+      "id": "mould-headdress-of-the-caller",
+      "name": {
+        "de": "Gussform: Kopfschmuck des Rufers",
+        "en": "Mould: Headdress of the Caller"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-headdress-of-the-caller",
+      "name": {
+        "de": "Guss: Kopfschmuck des Rufers",
+        "en": "Cast: Headdress of the Caller"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "robes-of-the-caller",
+      "name": {
+        "de": "Robe des Rufers",
+        "en": "Robes of the Caller"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 22
+      },
+      "hinweis": "Magie-Rüstung: 60 % mehr Eitr-Regeneration, Frostwiderstand, 2 % langsamer."
+    },
+    {
+      "id": "mould-robes-of-the-caller",
+      "name": {
+        "de": "Gussform: Robe des Rufers",
+        "en": "Mould: Robes of the Caller"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-robes-of-the-caller",
+      "name": {
+        "de": "Guss: Robe des Rufers",
+        "en": "Cast: Robes of the Caller"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "trousers-of-the-caller",
+      "name": {
+        "de": "Hose des Rufers",
+        "en": "Trousers of the Caller"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 22
+      },
+      "hinweis": "Magie-Rüstung: 60 % mehr Eitr-Regeneration, 2 % langsamer."
+    },
+    {
+      "id": "mould-trousers-of-the-caller",
+      "name": {
+        "de": "Gussform: Hose des Rufers",
+        "en": "Mould: Trousers of the Caller"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cast-trousers-of-the-caller",
+      "name": {
+        "de": "Guss: Hose des Rufers",
+        "en": "Cast: Trousers of the Caller"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "moose-hide-cape",
+      "name": {
+        "de": "Elchfellumhang",
+        "en": "Moose Hide Cape"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 12
+      },
+      "hinweis": "Umhang: Frostwiderstand, 20 % weniger Ausdauer fürs Angreifen und Rennen."
+    },
+    {
+      "id": "neckstabber",
+      "name": {
+        "de": "Halsstecher",
+        "en": "Neckstabber"
+      },
+      "typ": "ruestung",
+      "hinweis": "Schmuckstück (Trinket). Nach genug Adrenalin: 100 Leben sofort, danach 30 Sekunden weniger Ausdauerverbrauch, mehr Lebensregeneration und 20 Rüstung."
+    },
+    {
+      "id": "witch-crown",
+      "name": {
+        "de": "Hexenkrone",
+        "en": "Witch Crown"
+      },
+      "typ": "ruestung",
+      "hinweis": "Schmuckstück (Trinket). Nach genug Adrenalin: 50 Ausdauer und 50 Eitr sofort, danach 30 Sekunden mehr Regeneration."
+    },
+    {
+      "id": "crown-of-valheim",
+      "name": {
+        "de": "Krone von Valheim",
+        "en": "Crown of Valheim"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 50
+      },
+      "hinweis": "Helm. 5 % schneller, 20 % weniger Ausdauer fürs Angreifen, Rennen, Schwimmen und Schleichen. Normale Tiere und Monster fliehen vor dir, Bosse nicht."
+    },
+    {
+      "id": "timber-pole-2m",
+      "name": {
+        "de": "Zimmerholzpfahl 2 m",
+        "en": "Timber Pole 2m"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "timber-beam-2m",
+      "name": {
+        "de": "Zimmerholzbalken 2 m",
+        "en": "Timber Beam 2m"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "timber-wall",
+      "name": {
+        "de": "Zimmerholzwand",
+        "en": "Timber Wall"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "timberwood-gate",
+      "name": {
+        "de": "Zimmerholztor",
+        "en": "Timberwood Gate"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "timberwood-drawbridge",
+      "name": {
+        "de": "Zimmerholzzugbrücke",
+        "en": "Timberwood Drawbridge"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "timberwood-stack",
+      "name": {
+        "de": "Stapel Zimmerholz",
+        "en": "Timberwood Stack"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "bloodgold-stack",
+      "name": {
+        "de": "Stapel Blutgold",
+        "en": "Bloodgold Stack"
+      },
+      "typ": "bauteil",
+      "hinweis": "Lagert Blutgold als Zierstapel."
+    },
+    {
+      "id": "snow-lantern",
+      "name": {
+        "de": "Schneelaterne",
+        "en": "Snow Lantern"
+      },
+      "typ": "bauteil",
+      "hinweis": "Schmilzt außerhalb von Bergen und Tiefem Norden."
+    },
+    {
+      "id": "snowball",
+      "name": {
+        "de": "Schneeball",
+        "en": "Snowball"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stumpf": 5,
+        "frost": 10
+      },
+      "hinweis": "Liegt überall im Norden herum, 5 Eis ergeben 10 Stück. Zutat der Schneelaterne."
     }
   ],
   "checkliste": [
+    {
+      "id": "z-fader-glut",
+      "text": "Fader besiegt? Ewigen Scheiterhaufen bauen, Glut sammeln, Schneeschaufel herstellen, Frostresistenz-Met brauen"
+    },
+    {
+      "id": "z-landung",
+      "text": "Per Schiff in den Tiefen Norden, Lager bauen: Schnee wegschaufeln, Werkbank, Bett, Feuer"
+    },
+    {
+      "id": "z-gammeltroll",
+      "text": "Robben jagen, Glutladungen herstellen, einen Gammeltroll legen und die Statue sprengen"
+    },
+    {
+      "id": "z-blutgold",
+      "text": "Versteinertes Gewebe zu Blutgold schmelzen, Schwarzschmiede auf Stufe 4 bringen"
+    },
+    {
+      "id": "z-tunnel",
+      "text": "In den Gewundenen Tunneln Frostkerne und Gussformen sammeln (drei für den Schlüssel)"
+    },
+    {
+      "id": "z-giesserei",
+      "text": "Eisigen Brennofen und Frost-Gießerei bauen, Flüssigfrost machen, drei Schlüssel gießen"
+    },
+    {
+      "id": "z-ausruestung",
+      "text": "Nord-Waffe, Schild und Rüstung gießen, Essen und Met vorbereiten"
+    },
+    {
+      "id": "z-moerkhalla",
+      "text": "Dreimal Mörkhalla: Bösartiges Eis zerstören, Invasion beenden, 3x Böses Blut sammeln"
+    },
     {
       "id": "z-kall-fimbulbringer",
       "text": "Kall Fimbulbringer besiegen",
