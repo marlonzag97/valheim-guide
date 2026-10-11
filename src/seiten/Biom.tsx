@@ -1,8 +1,9 @@
+import { useEffect, useState } from 'react'
 import { useParams, Link } from 'react-router'
 import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { BIOME, biom, guideAbschnitte, itemName } from '../daten/laden'
-import { H2_REIHENFOLGE, type BiomId } from '../daten/schema'
+import { H2_REIHENFOLGE, type Abschnitt, type BiomId } from '../daten/schema'
 import { useFortschritt, useNeuBiome } from '../fortschritt/kontext'
 import { biomStatus } from '../logik/progression'
 import { Karte } from '../komponenten/Karte'
@@ -34,6 +35,15 @@ export function BiomSeite() {
   const b = biom(id as BiomId)
   const { stand, senden } = useFortschritt()
   const neuBiome = useNeuBiome()
+  const [prosa, setProsa] = useState<Partial<Record<Abschnitt, string>>>({})
+  useEffect(() => {
+    let aktiv = true
+    setProsa({})
+    if (b) guideAbschnitte(b.id).then((p) => aktiv && setProsa(p))
+    return () => {
+      aktiv = false
+    }
+  }, [b])
   if (!b) {
     return (
       <p>
@@ -42,7 +52,6 @@ export function BiomSeite() {
     )
   }
   const status = biomStatus(BIOME, stand)[b.id]
-  const prosa = guideAbschnitte(b.id)
   const besiegt = stand.besiegteBosse.has(b.boss.id)
   const neu = neuBiome.has(b.id)
 

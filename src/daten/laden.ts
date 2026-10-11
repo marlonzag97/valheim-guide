@@ -1,7 +1,7 @@
 import { BiomSchema, H2_REIHENFOLGE, type Abschnitt, type Biom, type BiomId } from './schema'
 
 const rohDaten = import.meta.glob('../../inhalt/*/daten.json', { eager: true, import: 'default' })
-const rohGuides = import.meta.glob('../../inhalt/*/guide.md', { eager: true, import: 'default', query: '?raw' })
+const rohGuides = import.meta.glob('../../inhalt/*/guide.md', { import: 'default', query: '?raw' }) as Record<string, () => Promise<string>>
 
 function ordner(pfad: string): string {
   return pfad.split('/').at(-2) ?? pfad
@@ -15,7 +15,7 @@ export const BIOME: Biom[] = Object.entries(rohDaten)
   })
   .sort((a, b) => a.reihenfolge - b.reihenfolge)
 
-const guideProOrdner = new Map(Object.entries(rohGuides).map(([pfad, text]) => [ordner(pfad), text as string]))
+const guideLaderProOrdner = new Map(Object.entries(rohGuides).map(([pfad, lader]) => [ordner(pfad), lader]))
 const ordnerProBiom = new Map(
   Object.keys(rohDaten).map((pfad) => {
     const roh = rohDaten[pfad] as { id: BiomId }
@@ -27,9 +27,14 @@ export function biom(id: BiomId): Biom | undefined {
   return BIOME.find((b) => b.id === id)
 }
 
-/** Zerlegt guide.md in die sechs festen Abschnitte (H2). */
-export function guideAbschnitte(id: BiomId): Partial<Record<Abschnitt, string>> {
-  const text = guideProOrdner.get(ordnerProBiom.get(id) ?? '') ?? ''
+/** Lädt guide.md eines Bioms nach (eigener Chunk), zerlegt in die sechs festen Abschnitte (H2). */
+export async function guideAbschnitte(id: BiomId): Promise<Partial<Record<Abschnitt, string>>> {
+  const lader = guideLaderProOrdner.get(ordnerProBiom.get(id) ?? '')
+  const text = lader ? await lader() : ''
+  return guideZerlegen(text)
+}
+
+export function guideZerlegen(text: string): Partial<Record<Abschnitt, string>> {
   const teile: Partial<Record<Abschnitt, string>> = {}
   const re = /^## (.+)$/gm
   const treffer = [...text.matchAll(re)]
