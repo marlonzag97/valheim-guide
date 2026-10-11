@@ -7,14 +7,14 @@
   },
   "farbe": "ebenen",
   "untertitel": "Fulinge, Todesmücken, Schwarzmetall und Gerste.",
-  "status": "geruest",
+  "status": "voll",
   "boss": {
     "id": "yagluth",
     "name": {
       "de": "Yagluth",
       "en": "Yagluth"
     },
-    "altar": "Altar in den Ebenen, Ort per Vegvisir an Steinmonumenten.",
+    "altar": "Yagluths Altar (Forsaken Altar) in den Ebenen. Den Ort verrät ein Vegvisir-Runenstein in den Steinmonumenten (Stonehenge), den es aber nur mit kleiner Chance gibt. Oft ist es einfacher, den Altar direkt zu suchen.",
     "opfergabe": [
       {
         "item": "fuling-totem",
@@ -27,13 +27,1042 @@
     ],
     "macht": {
       "name": "Yagluth",
-      "wirkung": "Weniger Elementarschaden."
-    }
+      "wirkung": "50 % weniger Blitzschaden, +25 auf die Ackerbau-Fertigkeit (Farming) und 10 % mehr Schaden. 5 Minuten aktiv, 20 Minuten Abklingzeit."
+    },
+    "leben": 10000,
+    "schwaeche": [],
+    "resistenz": [
+      "Feuer",
+      "Stich (stark)",
+      "Gift (immun)",
+      "Taumeln (immun)"
+    ]
   },
-  "vorbereitung": [],
-  "gefahren": [],
-  "rohstoffe": [],
-  "freischaltungen": [],
+  "vorbereitung": [
+    {
+      "item": "dragon-tear",
+      "grund": "Moders Drachentränen (2 Stück) öffnen den Kunsthandwerkstisch. Ohne ihn gibt es hier weder Hochofen noch Windmühle noch Spinnrad.",
+      "pflicht": true
+    },
+    {
+      "item": "iron",
+      "grund": "Eisenbarren für Eisennägel (Windmühle, Spinnrad), Hochofen, Steinofen und die Gepolsterte Rüstung. Nimm mindestens 100 mit.",
+      "pflicht": true
+    },
+    {
+      "item": "surtling-core",
+      "grund": "5 für den Hochofen, 4 für den Steinofen.",
+      "pflicht": true
+    },
+    {
+      "item": "fine-wood",
+      "grund": "Hochofen, Spinnrad, Zubereitungstisch und alle Schwarzmetallwaffen brauchen Feinholz. Birken gibt es auch in den Ebenen.",
+      "pflicht": true
+    },
+    {
+      "item": "coal",
+      "grund": "2 Kohle pro Schwarzmetallbarren. Nimm einen großen Vorrat mit oder bau gleich einen Köhler in die Nähe.",
+      "pflicht": true
+    },
+    {
+      "item": "cultivator",
+      "grund": "Gerste und Flachs wachsen nur in den Ebenen. Mit dem Kultivator pflanzt du sie nach, sobald du erste Samen aus einem Fuling-Dorf hast.",
+      "pflicht": true
+    },
+    {
+      "item": "campfire",
+      "grund": "Gegen Fulinge, die nachts in Gruppen kommen, hilft ein Lager mit Feuer, Bett und Dach.",
+      "pflicht": false
+    },
+    {
+      "item": "fire-resistance-barley-wine",
+      "grund": "Für Yagluth. Die Gerste dafür findest du erst hier, also brau ihn später.",
+      "pflicht": false
+    }
+  ],
+  "gefahren": [
+    {
+      "id": "deathsquito",
+      "name": {
+        "de": "Todesmücke",
+        "en": "Deathsquito"
+      },
+      "gefahr": 4,
+      "schwaeche": [],
+      "resistenz": [
+        "Geist (immun)",
+        "Taumeln (immun)"
+      ],
+      "tipp": "Winzig (10 Leben), aber schnell und tödlich: Ein Stich macht 90 Stichschaden. Sie schwirren schon am Strand heran und verfolgen dich bis weit aufs Wasser. Waffe immer in der Hand halten, den Stich abwarten und dann sofort zuschlagen. Die Nadel, die sie fallen lassen, brauchst du für Nadelpfeile und den Porcupine.",
+      "drops": [
+        "needle",
+        "deathsquito-trophy"
+      ]
+    },
+    {
+      "id": "fuling",
+      "name": {
+        "de": "Fuling",
+        "en": "Fuling"
+      },
+      "gefahr": 3,
+      "schwaeche": [],
+      "resistenz": [
+        "Geist (immun)"
+      ],
+      "tipp": "Kleine, flinke Goblins mit Keule, Speer, Schwert oder Fackel. Ein Treffer macht um die 85 Schaden, der Speer fliegt auf 14 Meter. Sie hören extrem gut, schon Holzfällen oder Erzabbau lockt sie an. Nachts kommen bis zu fünf auf einmal. Einzeln anlocken, mit dem Bogen ausdünnen und im Wasser oder Graben erwischen: Sie schwimmen schlecht. Sie lassen Schwarzmetall-Schrott fallen.",
+      "drops": [
+        "black-metal-scrap",
+        "fuling-trophy"
+      ]
+    },
+    {
+      "id": "fuling-berserker",
+      "name": {
+        "de": "Fuling-Berserker",
+        "en": "Fuling berserker"
+      },
+      "gefahr": 5,
+      "schwaeche": [],
+      "resistenz": [
+        "Geist (immun)"
+      ],
+      "tipp": "Der Brocken der Fulinge: 800 Leben, schlägt mit 130 stumpfem Schaden zu und zerlegt Bäume und Felsen. Seine Wut-Attacke (alle 20 Sekunden) besteht aus drei Keulenschlägen nacheinander. Aus der Distanz anschießen, bei der Wut zurückweichen und nur zwischen den Schlägen kontern. Er lässt 3 bis 4 Schrott fallen und mit 10 % Chance ein Fuling-Totem.",
+      "drops": [
+        "black-metal-scrap",
+        "fuling-totem",
+        "fuling-berserker-trophy"
+      ]
+    },
+    {
+      "id": "fuling-shaman",
+      "name": {
+        "de": "Fuling-Schamane",
+        "en": "Fuling shaman"
+      },
+      "gefahr": 3,
+      "schwaeche": [],
+      "resistenz": [
+        "Geist (immun)"
+      ],
+      "tipp": "Nur 100 Leben, aber er schützt alle Fulinge im Umkreis von 6 Metern mit einem Schild, das 100 Schaden schluckt, und schießt Feuerbälle (Brennen). Zuerst ausschalten, am besten mit dem Bogen, sonst fressen deine Pfeile die Schilde der anderen.",
+      "drops": [
+        "black-metal-scrap",
+        "fuling-shaman-trophy"
+      ]
+    },
+    {
+      "id": "lox",
+      "name": {
+        "de": "Lox",
+        "en": "Lox"
+      },
+      "gefahr": 4,
+      "schwaeche": [
+        "Feuer"
+      ],
+      "resistenz": [
+        "Stumpf",
+        "Frost",
+        "Hieb",
+        "Geist (immun)"
+      ],
+      "tipp": "Riesig (1000 Leben), beißt (130 Hieb) und stampft (120 stumpf plus Flächenschaden auf Holz und Stein). Sie bleiben in Herden und werden aggressiv, sobald du dich näherst. Eine Grube oder Pfeile aus der Distanz helfen, Feuerpfeile am besten. Wirf ihnen aber lieber Moltebeeren, Flachs oder Gerste hin: Loxe sind zähmbar, liefern Fleisch und Fell, und ein Sattel macht sie zum Reittier.",
+      "drops": [
+        "lox-meat",
+        "lox-pelt",
+        "lox-trophy"
+      ]
+    },
+    {
+      "id": "growth",
+      "name": {
+        "de": "Düsterblob",
+        "en": "Growth"
+      },
+      "gefahr": 3,
+      "schwaeche": [
+        "Stumpf",
+        "Feuer"
+      ],
+      "resistenz": [
+        "Frost",
+        "Stich",
+        "Hieb",
+        "Gift (immun)",
+        "Taumeln (immun)"
+      ],
+      "tipp": "Lebt in Teergruben. Verschießt sechs Teerkugeln auf einmal (Gift und Teer-Debuff) und ist in der Teergrube schwer zu sehen. Stumpfe Waffen und Feuerpfeile wirken am besten. Mehrere auf einmal sind gefährlich, also ziehe sie aus der Grube heraus. Er lässt Teer fallen.",
+      "drops": [
+        "tar",
+        "growth-trophy"
+      ]
+    },
+    {
+      "id": "vile",
+      "name": {
+        "de": "Vile",
+        "en": "Vile"
+      },
+      "gefahr": 4,
+      "schwaeche": [
+        "Feuer",
+        "Geist"
+      ],
+      "resistenz": [
+        "Frost",
+        "Stumpf",
+        "Stich",
+        "Hieb",
+        "Gift (immun)"
+      ],
+      "tipp": "Untote, stärkere Bären-Variante, die nur nachts durch die Ebenen streift (1200 Leben). Weicht Feuer aus: Eine Fackel in der Hand lässt viele Schläge danebengehen. Aus der Distanz mit Feuerpfeilen, sonst drauf und weg. Er frisst Blaubeeren vom Boden, ist aber nicht zähmbar.",
+      "drops": [
+        "bear-hide",
+        "bear-meat",
+        "vile-trophy"
+      ]
+    }
+  ],
+  "rohstoffe": [
+    {
+      "id": "black-metal-scrap-quelle",
+      "name": {
+        "de": "Schwarzmetall-Schrott",
+        "en": "Black metal scrap"
+      },
+      "fundort": "Gibt es als Erz nicht. Fulinge lassen ihn fallen (Berserker am meisten) und er liegt in Truhen der Fuling-Dörfer, -Außenposten und -Ruinen (je 2 bis 5).",
+      "wofuer": [
+        "black-metal"
+      ]
+    },
+    {
+      "id": "flax-quelle",
+      "name": {
+        "de": "Flachs",
+        "en": "Flax"
+      },
+      "fundort": "Auf kleinen Feldern in Fuling-Dörfern, etwa 11 Pflanzen mit je 2 Flachs. Nur in den Ebenen nachpflanzbar, mit dem Kultivator, Wachstumszeit gut zwei Tage.",
+      "werkzeug": "Kultivator",
+      "wofuer": [
+        "linen-thread"
+      ]
+    },
+    {
+      "id": "barley-quelle",
+      "name": {
+        "de": "Gerste",
+        "en": "Barley"
+      },
+      "fundort": "Ebenfalls auf Feldern in Fuling-Dörfern (etwa 12 Pflanzen mit je 2 Gerste) und in Truhen der Dörfer. Wie Flachs nur in den Ebenen anbaubar.",
+      "werkzeug": "Kultivator",
+      "wofuer": [
+        "barley-flour",
+        "barley-wine-base-fire-resistance"
+      ]
+    },
+    {
+      "id": "cloudberries-quelle",
+      "name": {
+        "de": "Moltebeeren",
+        "en": "Cloudberries"
+      },
+      "fundort": "Büsche überall in den Ebenen, wachsen nach 5 Stunden nach. Nahrung, Köder für Loxe und Zutat für Gerstenwein und Pastete.",
+      "wofuer": [
+        "cloudberries",
+        "unbaked-lox-pie",
+        "barley-wine-base-fire-resistance"
+      ]
+    },
+    {
+      "id": "tar-quelle",
+      "name": {
+        "de": "Teer",
+        "en": "Tar"
+      },
+      "fundort": "In und um Teergruben, die von Düsterblobs bewacht werden. Die Grube leerst du, indem du mit der Harke einen Graben bergab ziehst. Danach holst du den Teer von Hand ab: kleine Klumpen bringen 4, große am Grund 15.",
+      "wofuer": [
+        "darkwood-pole-2m",
+        "darkwood-beam-2m",
+        "shingle-roof-26",
+        "black-metal-chest"
+      ]
+    },
+    {
+      "id": "needle-quelle",
+      "name": {
+        "de": "Nadel",
+        "en": "Needle"
+      },
+      "fundort": "Todesmücken lassen je eine fallen, dazu liegen Nadeln in Truhen der Dörfer (2 bis 5).",
+      "wofuer": [
+        "needle-arrow",
+        "porcupine"
+      ]
+    },
+    {
+      "id": "lox-meat-quelle",
+      "name": {
+        "de": "Loxfleisch",
+        "en": "Lox meat"
+      },
+      "fundort": "Von Loxen, 4 bis 5 Stück pro Tier. Roh essen geht nicht, es muss auf die Eisenkochstation oder in Pastete.",
+      "wofuer": [
+        "cooked-lox-meat",
+        "unbaked-lox-pie"
+      ]
+    },
+    {
+      "id": "lox-pelt-quelle",
+      "name": {
+        "de": "Loxfell",
+        "en": "Lox pelt"
+      },
+      "fundort": "Von Loxen, 2 Stück pro Tier.",
+      "wofuer": [
+        "lox-cape",
+        "bracelets-of-the-brave"
+      ]
+    },
+    {
+      "id": "fuling-totem-quelle",
+      "name": {
+        "de": "Fuling-Totem",
+        "en": "Fuling totem"
+      },
+      "fundort": "Auf einem Altar neben den Feuern der Fuling-Dörfer (je 50 % Chance), garantiert in manchen Außenposten, mit 10 % von Berserkern und selten in der Mittelkiste der Steinmonumente. Du brauchst fünf.",
+      "wofuer": []
+    },
+    {
+      "id": "fine-wood-ebenen-quelle",
+      "name": {
+        "de": "Feinholz",
+        "en": "Fine wood"
+      },
+      "fundort": "Von Birken, die in den Ebenen vereinzelt stehen. Du brauchst viel davon, also fäll zwischendurch mit der Eisenaxt mit.",
+      "werkzeug": "Axt",
+      "wofuer": [
+        "blast-furnace",
+        "spinning-wheel",
+        "black-metal-sword"
+      ]
+    },
+    {
+      "id": "chain-quelle",
+      "name": {
+        "de": "Kette",
+        "en": "Chain"
+      },
+      "fundort": "Lässt sich nicht herstellen. Wraiths im Sumpf lassen sie fallen, dazu liegt sie in Sumpftruhen und in den Versiegelten Türmen (Sealed Tower) der Ebenen, die du mit Hildirs Karte findest.",
+      "wofuer": [
+        "black-metal-shield",
+        "black-metal-tower-shield",
+        "iron-cooking-station"
+      ]
+    }
+  ],
+  "freischaltungen": [
+    {
+      "id": "r-blast-furnace",
+      "ergebnis": "blast-furnace",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "stone",
+          "menge": 20
+        },
+        {
+          "item": "surtling-core",
+          "menge": 5
+        },
+        {
+          "item": "iron",
+          "menge": 10
+        },
+        {
+          "item": "fine-wood",
+          "menge": 20
+        }
+      ]
+    },
+    {
+      "id": "r-windmill",
+      "ergebnis": "windmill",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "stone",
+          "menge": 20
+        },
+        {
+          "item": "wood",
+          "menge": 30
+        },
+        {
+          "item": "iron-nails",
+          "menge": 30
+        }
+      ]
+    },
+    {
+      "id": "r-spinning-wheel",
+      "ergebnis": "spinning-wheel",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 20
+        },
+        {
+          "item": "iron-nails",
+          "menge": 10
+        },
+        {
+          "item": "leather-scraps",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-stone-oven",
+      "ergebnis": "stone-oven",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 15
+        },
+        {
+          "item": "stone",
+          "menge": 20
+        },
+        {
+          "item": "surtling-core",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-food-preparation-table",
+      "ergebnis": "food-preparation-table",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 5
+        },
+        {
+          "item": "fine-wood",
+          "menge": 20
+        },
+        {
+          "item": "leather-scraps",
+          "menge": 15
+        }
+      ]
+    },
+    {
+      "id": "r-iron-cooking-station",
+      "ergebnis": "iron-cooking-station",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "chain",
+          "menge": 3
+        },
+        {
+          "item": "iron",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-pots-and-pans",
+      "ergebnis": "pots-and-pans",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 5
+        },
+        {
+          "item": "copper",
+          "menge": 5
+        },
+        {
+          "item": "black-metal",
+          "menge": 5
+        },
+        {
+          "item": "fine-wood",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-black-metal-chest",
+      "ergebnis": "black-metal-chest",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 10
+        },
+        {
+          "item": "tar",
+          "menge": 2
+        },
+        {
+          "item": "black-metal",
+          "menge": 6
+        }
+      ]
+    },
+    {
+      "id": "r-darkwood-pole-2m",
+      "ergebnis": "darkwood-pole-2m",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 2
+        },
+        {
+          "item": "tar",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-darkwood-pole-4m",
+      "ergebnis": "darkwood-pole-4m",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 4
+        },
+        {
+          "item": "tar",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-darkwood-beam-2m",
+      "ergebnis": "darkwood-beam-2m",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 2
+        },
+        {
+          "item": "tar",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-darkwood-beam-4m",
+      "ergebnis": "darkwood-beam-4m",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 4
+        },
+        {
+          "item": "tar",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-shingle-roof-26",
+      "ergebnis": "shingle-roof-26",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 2
+        },
+        {
+          "item": "tar",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-linen-thread",
+      "ergebnis": "linen-thread",
+      "station": "spinnrad",
+      "zutaten": [
+        {
+          "item": "flax",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-barley-flour",
+      "ergebnis": "barley-flour",
+      "station": "muehle",
+      "zutaten": [
+        {
+          "item": "barley",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-black-metal",
+      "ergebnis": "black-metal",
+      "station": "schmelze",
+      "zutaten": [
+        {
+          "item": "black-metal-scrap",
+          "menge": 1
+        },
+        {
+          "item": "coal",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-cooked-lox-meat",
+      "ergebnis": "cooked-lox-meat",
+      "station": "feuer",
+      "zutaten": [
+        {
+          "item": "lox-meat",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-bread-dough",
+      "ergebnis": "bread-dough",
+      "station": "kessel",
+      "menge": 2,
+      "zutaten": [
+        {
+          "item": "barley-flour",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-bread",
+      "ergebnis": "bread",
+      "station": "feuer",
+      "zutaten": [
+        {
+          "item": "bread-dough",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-unbaked-lox-pie",
+      "ergebnis": "unbaked-lox-pie",
+      "station": "kessel",
+      "zutaten": [
+        {
+          "item": "cloudberries",
+          "menge": 2
+        },
+        {
+          "item": "lox-meat",
+          "menge": 2
+        },
+        {
+          "item": "barley-flour",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-lox-meat-pie",
+      "ergebnis": "lox-meat-pie",
+      "station": "feuer",
+      "zutaten": [
+        {
+          "item": "unbaked-lox-pie",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-blood-pudding",
+      "ergebnis": "blood-pudding",
+      "station": "kessel",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "thistle",
+          "menge": 2
+        },
+        {
+          "item": "bloodbag",
+          "menge": 2
+        },
+        {
+          "item": "barley-flour",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-fish-wraps",
+      "ergebnis": "fish-wraps",
+      "station": "kessel",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "cooked-fish",
+          "menge": 2
+        },
+        {
+          "item": "barley-flour",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-barley-wine-base-fire-resistance",
+      "ergebnis": "barley-wine-base-fire-resistance",
+      "station": "kessel",
+      "zutaten": [
+        {
+          "item": "barley",
+          "menge": 10
+        },
+        {
+          "item": "cloudberries",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-fire-resistance-barley-wine",
+      "ergebnis": "fire-resistance-barley-wine",
+      "station": "gaerbottich",
+      "menge": 6,
+      "zutaten": [
+        {
+          "item": "barley-wine-base-fire-resistance",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-black-metal-sword",
+      "ergebnis": "black-metal-sword",
+      "station": "schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 2
+        },
+        {
+          "item": "black-metal",
+          "menge": 20
+        },
+        {
+          "item": "linen-thread",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-black-metal-axe",
+      "ergebnis": "black-metal-axe",
+      "station": "schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 6
+        },
+        {
+          "item": "black-metal",
+          "menge": 20
+        },
+        {
+          "item": "linen-thread",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-black-metal-atgeir",
+      "ergebnis": "black-metal-atgeir",
+      "station": "schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 10
+        },
+        {
+          "item": "black-metal",
+          "menge": 30
+        },
+        {
+          "item": "linen-thread",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-black-metal-knife",
+      "ergebnis": "black-metal-knife",
+      "station": "schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 4
+        },
+        {
+          "item": "black-metal",
+          "menge": 10
+        },
+        {
+          "item": "linen-thread",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-black-metal-battleaxe",
+      "ergebnis": "black-metal-battleaxe",
+      "station": "schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 10
+        },
+        {
+          "item": "black-metal",
+          "menge": 30
+        },
+        {
+          "item": "linen-thread",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-black-metal-shield",
+      "ergebnis": "black-metal-shield",
+      "station": "schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 10
+        },
+        {
+          "item": "black-metal",
+          "menge": 8
+        },
+        {
+          "item": "chain",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-black-metal-tower-shield",
+      "ergebnis": "black-metal-tower-shield",
+      "station": "schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 15
+        },
+        {
+          "item": "black-metal",
+          "menge": 10
+        },
+        {
+          "item": "chain",
+          "menge": 7
+        }
+      ]
+    },
+    {
+      "id": "r-porcupine",
+      "ergebnis": "porcupine",
+      "station": "schmiede",
+      "stufe": 4,
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 5
+        },
+        {
+          "item": "iron",
+          "menge": 20
+        },
+        {
+          "item": "needle",
+          "menge": 5
+        },
+        {
+          "item": "linen-thread",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-needle-arrow",
+      "ergebnis": "needle-arrow",
+      "station": "werkbank",
+      "stufe": 4,
+      "menge": 20,
+      "zutaten": [
+        {
+          "item": "needle",
+          "menge": 4
+        },
+        {
+          "item": "feathers",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-padded-helmet",
+      "ergebnis": "padded-helmet",
+      "station": "schmiede",
+      "stufe": 1,
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 10
+        },
+        {
+          "item": "linen-thread",
+          "menge": 15
+        }
+      ]
+    },
+    {
+      "id": "r-padded-cuirass",
+      "ergebnis": "padded-cuirass",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 10
+        },
+        {
+          "item": "linen-thread",
+          "menge": 20
+        }
+      ]
+    },
+    {
+      "id": "r-padded-greaves",
+      "ergebnis": "padded-greaves",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 10
+        },
+        {
+          "item": "linen-thread",
+          "menge": 20
+        }
+      ]
+    },
+    {
+      "id": "r-lox-cape",
+      "ergebnis": "lox-cape",
+      "station": "werkbank",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "lox-pelt",
+          "menge": 6
+        },
+        {
+          "item": "silver",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-bracelets-of-the-brave",
+      "ergebnis": "bracelets-of-the-brave",
+      "station": "schmiede",
+      "stufe": 1,
+      "zutaten": [
+        {
+          "item": "black-metal",
+          "menge": 5
+        },
+        {
+          "item": "lox-pelt",
+          "menge": 5
+        },
+        {
+          "item": "lox-trophy",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-evasion-mantle",
+      "ergebnis": "evasion-mantle",
+      "station": "schmiede",
+      "stufe": 1,
+      "zutaten": [
+        {
+          "item": "black-metal",
+          "menge": 5
+        },
+        {
+          "item": "fuling-berserker-trophy",
+          "menge": 1
+        },
+        {
+          "item": "linen-thread",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-lox-saddle",
+      "ergebnis": "lox-saddle",
+      "station": "werkbank",
+      "stufe": 1,
+      "zutaten": [
+        {
+          "item": "leather-scraps",
+          "menge": 10
+        },
+        {
+          "item": "linen-thread",
+          "menge": 20
+        },
+        {
+          "item": "black-metal",
+          "menge": 15
+        }
+      ]
+    }
+  ],
   "items": [
     {
       "id": "fuling-totem",
@@ -41,7 +1070,8 @@
         "de": "Fuling-Totem",
         "en": "Fuling totem"
       },
-      "typ": "material"
+      "typ": "material",
+      "hinweis": "Fünf davon beschwören Yagluth. Liegt auf einem Altar neben den Feuern der Fuling-Dörfer."
     },
     {
       "id": "torn-spirit",
@@ -49,7 +1079,8 @@
         "de": "Zerrissener Geist",
         "en": "Torn spirit"
       },
-      "typ": "material"
+      "typ": "material",
+      "hinweis": "Drei Stück von Yagluth. Gebraucht für den Wispbrunnen (Wisp fountain) in den Nebellanden."
     },
     {
       "id": "yagluth-trophy",
@@ -57,10 +1088,625 @@
         "de": "Yagluth-Trophäe",
         "en": "Yagluth trophy"
       },
+      "typ": "material",
+      "hinweis": "An den Opferstein am Start hängen, dann kannst du Yagluths Macht aktivieren."
+    },
+    {
+      "id": "black-metal-scrap",
+      "name": {
+        "de": "Schwarzmetall-Schrott",
+        "en": "Black metal scrap"
+      },
+      "typ": "material",
+      "hinweis": "Nur von Fulingen und aus Truhen. Muss im Hochofen mit Kohle zu Barren werden und geht nicht durch Portale."
+    },
+    {
+      "id": "black-metal",
+      "name": {
+        "de": "Schwarzmetall",
+        "en": "Black metal"
+      },
+      "typ": "material",
+      "hinweis": "Barren aus dem Hochofen (1 Schrott und 2 Kohle). Geht nicht durch Portale."
+    },
+    {
+      "id": "flax",
+      "name": {
+        "de": "Flachs",
+        "en": "Flax"
+      },
+      "typ": "material",
+      "hinweis": "Wächst nur in den Ebenen. Im Spinnrad wird daraus Leinenfaden."
+    },
+    {
+      "id": "barley",
+      "name": {
+        "de": "Gerste",
+        "en": "Barley"
+      },
+      "typ": "material",
+      "hinweis": "Wächst nur in den Ebenen. Zutat für Mehl und Gerstenwein, Köder für Loxe."
+    },
+    {
+      "id": "linen-thread",
+      "name": {
+        "de": "Leinenfaden",
+        "en": "Linen thread"
+      },
+      "typ": "material",
+      "hinweis": "Aus Flachs im Spinnrad, rund 30 Sekunden pro Faden."
+    },
+    {
+      "id": "barley-flour",
+      "name": {
+        "de": "Gerstenmehl",
+        "en": "Barley flour"
+      },
+      "typ": "material",
+      "hinweis": "Aus Gerste in der Windmühle. Grundlage für Brot, Pastete und Blutpudding."
+    },
+    {
+      "id": "bread-dough",
+      "name": {
+        "de": "Brotteig",
+        "en": "Bread dough"
+      },
+      "typ": "material",
+      "hinweis": "Wird am Zubereitungstisch (Food preparation table) angerührt und im Steinofen gebacken."
+    },
+    {
+      "id": "unbaked-lox-pie",
+      "name": {
+        "de": "Ungebackene Lox-Pastete",
+        "en": "Unbaked lox pie"
+      },
+      "typ": "material",
+      "hinweis": "Wird am Zubereitungstisch angerührt und im Steinofen gebacken."
+    },
+    {
+      "id": "tar",
+      "name": {
+        "de": "Teer",
+        "en": "Tar"
+      },
+      "typ": "material",
+      "hinweis": "Aus den Teergruben der Ebenen. Zum Bauen von Dunkelholz, Schindeldächern und Möbeln."
+    },
+    {
+      "id": "needle",
+      "name": {
+        "de": "Nadel",
+        "en": "Needle"
+      },
+      "typ": "material",
+      "hinweis": "Von Todesmücken oder aus Truhen in Fuling-Dörfern."
+    },
+    {
+      "id": "lox-meat",
+      "name": {
+        "de": "Loxfleisch",
+        "en": "Lox meat"
+      },
+      "typ": "material",
+      "hinweis": "Wird auf der Eisenkochstation gegart oder in Pastete verbacken. Auf dem normalen Kochstand geht es nicht."
+    },
+    {
+      "id": "lox-pelt",
+      "name": {
+        "de": "Loxfell",
+        "en": "Lox pelt"
+      },
       "typ": "material"
+    },
+    {
+      "id": "deathsquito-trophy",
+      "name": {
+        "de": "Todesmücken-Trophäe",
+        "en": "Deathsquito trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "fuling-trophy",
+      "name": {
+        "de": "Fuling-Trophäe",
+        "en": "Fuling trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "fuling-berserker-trophy",
+      "name": {
+        "de": "Fuling-Berserker-Trophäe",
+        "en": "Fuling berserker trophy"
+      },
+      "typ": "material",
+      "hinweis": "Zutat für den Ausweichmantel (Evasion Mantle)."
+    },
+    {
+      "id": "fuling-shaman-trophy",
+      "name": {
+        "de": "Fuling-Schamanen-Trophäe",
+        "en": "Fuling shaman trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "lox-trophy",
+      "name": {
+        "de": "Lox-Trophäe",
+        "en": "Lox trophy"
+      },
+      "typ": "material",
+      "hinweis": "Zutat für die Armreifen der Tapferen (Bracelets of the Brave)."
+    },
+    {
+      "id": "growth-trophy",
+      "name": {
+        "de": "Düsterblob-Trophäe",
+        "en": "Growth trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "vile-trophy",
+      "name": {
+        "de": "Vile-Trophäe",
+        "en": "Vile trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "cloudberries",
+      "name": {
+        "de": "Moltebeeren",
+        "en": "Cloudberries"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 13,
+        "ausdauer": 40,
+        "dauer": 900
+      },
+      "hinweis": "Wachsen überall in den Ebenen. Auch Köder für Loxe."
+    },
+    {
+      "id": "cooked-lox-meat",
+      "name": {
+        "de": "Gegartes Loxfleisch",
+        "en": "Cooked lox meat"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 50,
+        "ausdauer": 16,
+        "dauer": 1200
+      },
+      "hinweis": "Nur auf der Eisenkochstation zu garen, mit Feuer oder zwei Lagerfeuern darunter."
+    },
+    {
+      "id": "bread",
+      "name": {
+        "de": "Brot",
+        "en": "Bread"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 23,
+        "ausdauer": 70,
+        "dauer": 1500
+      },
+      "hinweis": "Aus Brotteig im Steinofen, rund 50 Sekunden. Länger als 100 Sekunden wird Kohle daraus."
+    },
+    {
+      "id": "lox-meat-pie",
+      "name": {
+        "de": "Lox-Fleischpastete",
+        "en": "Lox meat pie"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 75,
+        "ausdauer": 24,
+        "dauer": 1800
+      },
+      "hinweis": "Aus ungebackener Pastete im Steinofen, rund 50 Sekunden. Die beste Leben-Nahrung der Ebenen."
+    },
+    {
+      "id": "blood-pudding",
+      "name": {
+        "de": "Blutpudding",
+        "en": "Blood pudding"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 25,
+        "ausdauer": 75,
+        "dauer": 1800
+      },
+      "hinweis": "Braucht einen Kessel auf Stufe 4 (Gewürzregal, Metzgertisch und Töpfe und Pfannen als Ausbauten). Die meiste Ausdauer der Ebenen."
+    },
+    {
+      "id": "fish-wraps",
+      "name": {
+        "de": "Fischwraps",
+        "en": "Fish wraps"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 70,
+        "ausdauer": 23,
+        "dauer": 1500
+      },
+      "hinweis": "Braucht einen Kessel auf Stufe 4."
+    },
+    {
+      "id": "cooked-fish",
+      "name": {
+        "de": "Gegarter Fisch",
+        "en": "Cooked fish"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 45,
+        "ausdauer": 15,
+        "dauer": 1200
+      },
+      "hinweis": "Gefangenen Fisch roh am Zubereitungstisch vorbereiten, dann am Kochstand garen."
+    },
+    {
+      "id": "barley-wine-base-fire-resistance",
+      "name": {
+        "de": "Gerstenwein-Ansatz: Feuerresistenz",
+        "en": "Barley wine base: Fire resistance"
+      },
+      "typ": "met",
+      "hinweis": "Wird am Metkessel (Mead ketill) über einem Feuer angesetzt und danach im Gärbottich vergoren."
+    },
+    {
+      "id": "fire-resistance-barley-wine",
+      "name": {
+        "de": "Feuerresistenz-Gerstenwein",
+        "en": "Fire resistance barley wine"
+      },
+      "typ": "met",
+      "werte": {
+        "dauer": 600
+      },
+      "hinweis": "Halbiert Feuerschaden für 10 Minuten. Ein Ansatz ergibt sechs Fläschchen, die Gärung dauert zwei Spieltage. Unverzichtbar gegen Yagluth."
+    },
+    {
+      "id": "black-metal-sword",
+      "name": {
+        "de": "Schwarzmetallschwert",
+        "en": "Black metal sword"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 95
+      },
+      "hinweis": "Schmiede Stufe 4. Dreier-Kombo mit doppeltem Schaden im letzten Schlag."
+    },
+    {
+      "id": "black-metal-axe",
+      "name": {
+        "de": "Schwarzmetallaxt",
+        "en": "Black metal axe"
+      },
+      "typ": "werkzeug",
+      "werte": {
+        "hieb": 100
+      },
+      "hinweis": "Schmiede Stufe 4. Einhandaxt, fällt auch alle Bäume der Ebenen."
+    },
+    {
+      "id": "black-metal-atgeir",
+      "name": {
+        "de": "Schwarzmetallatgeir",
+        "en": "Black metal atgeir"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 105
+      },
+      "hinweis": "Schmiede Stufe 4. Lange Reichweite, Flächenschlag mit sechsfachem Taumeln."
+    },
+    {
+      "id": "black-metal-knife",
+      "name": {
+        "de": "Schwarzmetallmesser",
+        "en": "Black metal knife"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 34,
+        "stich": 34
+      },
+      "hinweis": "Schmiede Stufe 4. Sechsfacher Schaden gegen Gegner, die dich nicht bemerkt haben."
+    },
+    {
+      "id": "black-metal-battleaxe",
+      "name": {
+        "de": "Schwarzmetall-Streitaxt",
+        "en": "Black metal battleaxe"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 110
+      },
+      "hinweis": "Schmiede Stufe 4. Zweihandaxt, macht dich etwas langsamer (minus 15 % Tempo)."
+    },
+    {
+      "id": "porcupine",
+      "name": {
+        "de": "Porcupine",
+        "en": "Porcupine"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stumpf": 50,
+        "stich": 45
+      },
+      "hinweis": "Schmiede Stufe 4. Einhand-Streitkolben aus Eisen und Nadeln. Stumpf plus Stich, also gegen fast alles solide."
+    },
+    {
+      "id": "needle-arrow",
+      "name": {
+        "de": "Nadelpfeil",
+        "en": "Needle arrow"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 62
+      },
+      "hinweis": "Werkbank Stufe 4. Brauchen kein Holz, nur Nadeln und Federn."
+    },
+    {
+      "id": "black-metal-shield",
+      "name": {
+        "de": "Schwarzmetallschild",
+        "en": "Black metal shield"
+      },
+      "typ": "schild",
+      "werte": {
+        "block": 78
+      },
+      "hinweis": "Schmiede Stufe 3. Rundschild, mit dem du Angriffe parieren kannst."
+    },
+    {
+      "id": "black-metal-tower-shield",
+      "name": {
+        "de": "Schwarzmetallturmschild",
+        "en": "Black metal tower shield"
+      },
+      "typ": "schild",
+      "werte": {
+        "block": 104
+      },
+      "hinweis": "Schmiede Stufe 3. Blockt am meisten, macht dich aber langsamer (minus 10 % Tempo) und lässt sich nicht zum Parieren nutzen."
+    },
+    {
+      "id": "padded-helmet",
+      "name": {
+        "de": "Gepolsterter Helm",
+        "en": "Padded helmet"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 26
+      },
+      "hinweis": "Schmiede Stufe 1."
+    },
+    {
+      "id": "padded-cuirass",
+      "name": {
+        "de": "Gepolsterter Brustpanzer",
+        "en": "Padded cuirass"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 26
+      },
+      "hinweis": "Schmiede Stufe 2. Macht dich etwas langsamer (minus 5 % Tempo)."
+    },
+    {
+      "id": "padded-greaves",
+      "name": {
+        "de": "Gepolsterte Beinschienen",
+        "en": "Padded greaves"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 26
+      },
+      "hinweis": "Schmiede Stufe 2. Macht dich etwas langsamer (minus 5 % Tempo)."
+    },
+    {
+      "id": "lox-cape",
+      "name": {
+        "de": "Lox-Umhang",
+        "en": "Lox cape"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 1
+      },
+      "hinweis": "Werkbank Stufe 2. Halbiert Frostschaden."
+    },
+    {
+      "id": "bracelets-of-the-brave",
+      "name": {
+        "de": "Armreifen der Tapferen",
+        "en": "Bracelets of the Brave"
+      },
+      "typ": "ruestung",
+      "hinweis": "Schmuckstück (Trinket). Lädt sich im Kampf mit Adrenalin auf und zündet bei 85 selbst: sofort 100 Leben, plus 20 Keulen-Fertigkeit und 10 % stumpfer Schaden für 60 Sekunden."
+    },
+    {
+      "id": "evasion-mantle",
+      "name": {
+        "de": "Ausweichmantel",
+        "en": "Evasion Mantle"
+      },
+      "typ": "ruestung",
+      "hinweis": "Schmuckstück (Trinket). Zündet bei 60 Adrenalin selbst: halbe Ausdauer fürs Blocken, mehr Parry-Bonus und +20 Ausweichen für 120 Sekunden."
+    },
+    {
+      "id": "lox-saddle",
+      "name": {
+        "de": "Lox-Sattel",
+        "en": "Lox saddle"
+      },
+      "typ": "werkzeug",
+      "hinweis": "Werkbank Stufe 1. In die Schnellleiste legen und an einem gezähmten Lox benutzen. Reitende Loxe ignorieren dein Traggewicht."
+    },
+    {
+      "id": "blast-furnace",
+      "name": {
+        "de": "Hochofen",
+        "en": "Blast furnace"
+      },
+      "typ": "station",
+      "hinweis": "Schmilzt Schwarzmetall-Schrott mit Kohle (alle 30 Sekunden ein Barren, etwa 1 Kohle alle 15 Sekunden). Muss in der Nähe des Kunsthandwerkstischs stehen."
+    },
+    {
+      "id": "windmill",
+      "name": {
+        "de": "Windmühle",
+        "en": "Windmill"
+      },
+      "typ": "station",
+      "hinweis": "Muss auf Erde oder Stein in der Nähe des Kunsthandwerkstischs stehen. Mahlt Gerste zu Mehl, in den windigen Ebenen am schnellsten. Die Flügel verletzen jeden, der zu nah kommt."
+    },
+    {
+      "id": "spinning-wheel",
+      "name": {
+        "de": "Spinnrad",
+        "en": "Spinning wheel"
+      },
+      "typ": "station",
+      "hinweis": "Muss in der Nähe des Kunsthandwerkstischs stehen. Fasst 40 Flachs und gibt den Leinenfaden von selbst ab."
+    },
+    {
+      "id": "stone-oven",
+      "name": {
+        "de": "Steinofen",
+        "en": "Stone oven"
+      },
+      "typ": "station",
+      "hinweis": "Muss in der Nähe des Kunsthandwerkstischs stehen. Unten Holz, oben Teig einlegen. Backt bis zu vier Stück auf einmal."
+    },
+    {
+      "id": "food-preparation-table",
+      "name": {
+        "de": "Zubereitungstisch",
+        "en": "Food preparation table"
+      },
+      "typ": "station",
+      "hinweis": "An der Werkbank gebaut, braucht ein Dach. Hier machst du Brotteig, Pastetenteig, rohen Fisch und Festessen."
+    },
+    {
+      "id": "iron-cooking-station",
+      "name": {
+        "de": "Eisenkochstation",
+        "en": "Iron cooking station"
+      },
+      "typ": "station",
+      "hinweis": "Gart auch große Fleischsorten wie Loxfleisch. Braucht ein Herdfeuer oder zwei Lagerfeuer darunter."
+    },
+    {
+      "id": "pots-and-pans",
+      "name": {
+        "de": "Töpfe und Pfannen",
+        "en": "Pots and pans"
+      },
+      "typ": "station",
+      "hinweis": "Kessel-Ausbau. Je Ausbau steigt der Kessel eine Stufe; für Blutpudding und Fischwraps brauchst du Stufe 4."
+    },
+    {
+      "id": "black-metal-chest",
+      "name": {
+        "de": "Schwarzmetalltruhe",
+        "en": "Black metal chest"
+      },
+      "typ": "bauteil",
+      "hinweis": "Mit 32 Plätzen die größte Truhe."
+    },
+    {
+      "id": "darkwood-pole-2m",
+      "name": {
+        "de": "Dunkelholzpfosten 2 m",
+        "en": "Darkwood pole 2m"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "darkwood-pole-4m",
+      "name": {
+        "de": "Dunkelholzpfosten 4 m",
+        "en": "Darkwood pole 4m"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "darkwood-beam-2m",
+      "name": {
+        "de": "Dunkelholzbalken 2 m",
+        "en": "Darkwood beam 2m"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "darkwood-beam-4m",
+      "name": {
+        "de": "Dunkelholzbalken 4 m",
+        "en": "Darkwood beam 4m"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "shingle-roof-26",
+      "name": {
+        "de": "Schindeldach 26°",
+        "en": "Shingle roof 26°"
+      },
+      "typ": "bauteil",
+      "hinweis": "Dach aus Holz und Teer, hält Regen ab."
     }
   ],
   "checkliste": [
+    {
+      "id": "z-lager",
+      "text": "Lager am Rand der Ebenen: Werkbank, Bett, Feuer, Truhe"
+    },
+    {
+      "id": "z-kunsthandwerk",
+      "text": "Kunsthandwerkstisch mit Moders Drachentränen bauen"
+    },
+    {
+      "id": "z-fuling-dorf",
+      "text": "Fuling-Dorf ausräumen: Schrott, Flachs, Gerste, Totems"
+    },
+    {
+      "id": "z-hochofen",
+      "text": "Hochofen bauen und Schwarzmetall schmelzen"
+    },
+    {
+      "id": "z-spinnrad-muehle",
+      "text": "Spinnrad und Windmühle bauen, Leinenfaden und Gerstenmehl machen"
+    },
+    {
+      "id": "z-ausruestung",
+      "text": "Gepolsterte Rüstung, Schwarzmetallwaffe und Schild bauen"
+    },
+    {
+      "id": "z-essen",
+      "text": "Brot und Lox-Fleischpastete backen, Feuerresistenz-Gerstenwein brauen"
+    },
+    {
+      "id": "z-totems",
+      "text": "Fünf Fuling-Totems sammeln und Yagluths Altar finden"
+    },
     {
       "id": "z-yagluth",
       "text": "Yagluth besiegen",
