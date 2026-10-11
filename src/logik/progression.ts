@@ -33,5 +33,5 @@ export function naechsterSchritt(biome: Biom[], f: Fortschritt): NaechsterSchrit
   const b = aktuellesBiom(biome, f)
   const offen = b.checkliste.find((z) => z.bedingung !== 'boss' && !f.erledigteZiele.has(z.id))
   if (offen) return { biom: b, text: offen.text, zielId: offen.id, istBoss: false }
-  return { biom: b, text: `Stell dich ${b.boss.name.de}`, istBoss: true }
+  return { biom: b, text: `Zeit für den Boss: ${b.boss.name.de}`, istBoss: true }
 }

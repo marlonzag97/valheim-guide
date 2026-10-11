@@ -21,7 +21,7 @@ describe('progression', () => {
   it('zeigt Boss, wenn alle Ziele erledigt sind', () => {
     let s = reducer(LEER, { typ: 'ziel', id: 'a', erledigt: true })
     s = reducer(s, { typ: 'ziel', id: 'b', erledigt: true })
-    expect(naechsterSchritt(biome, s)).toMatchObject({ istBoss: true, text: 'Stell dich eikthyr' })
+    expect(naechsterSchritt(biome, s)).toMatchObject({ istBoss: true, text: 'Zeit für den Boss: eikthyr' })
   })
   it('schaltet nach Boss-Häkchen weiter', () => {
     const s = reducer(LEER, { typ: 'boss', id: 'eikthyr', besiegt: true })
