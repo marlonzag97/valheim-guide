@@ -16,6 +16,9 @@ export function Layout() {
             Valheim-Guide
           </NavLink>
           <nav className="flex gap-1 text-asche-300">
+            <NavLink to="/tipps" className="rounded-lg p-2 hover:bg-nacht-800 aria-[current=page]:text-glut-300" aria-label="Zehn Tipps">
+              <RunenIcon name="stern" groesse={20} />
+            </NavLink>
             <NavLink to="/suche" className="rounded-lg p-2 hover:bg-nacht-800 aria-[current=page]:text-glut-300" aria-label="Suche">
               <RunenIcon name="suche" groesse={20} />
             </NavLink>

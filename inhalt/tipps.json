@@ -1,0 +1,75 @@
+{
+  "stand": "2026-10-11",
+  "tipps": [
+    {
+      "id": "essen-ist-ruestung",
+      "titel": "Essen ist deine Rüstung",
+      "phase": "immer",
+      "text": "Ohne Essen hast du 25 Leben und kaum Ausdauer. Iss immer drei verschiedene Gerichte, gleiche stapeln nicht. Fleisch gibt Leben, Gemüse und Beeren geben Ausdauer. Vor jedem Kampf und jeder Reise nachessen, sobald die Symbole blinken.",
+      "wow": "Die meisten Tode in den ersten Stunden kommen nicht vom Gegner, sondern vom leeren Magen."
+    },
+    {
+      "id": "ausgeruht",
+      "titel": "Ausgeruht ist der stärkste Buff im Spiel",
+      "phase": "immer",
+      "text": "Steh kurz unter Dach neben einem Feuer, bis das Lagerfeuer-Symbol erscheint: mehr Regeneration, schnellere Fertigkeiten. Möbel, Teppiche, Trophäen und ein höherer Werkbank-Ausbau erhöhen den Komfort und verlängern den Bonus auf über 20 Minuten.",
+      "wow": "Ein Teppich und ein Stuhl sind spielerisch wertvoller als ein neues Schwert."
+    },
+    {
+      "id": "reparieren-gratis",
+      "titel": "Reparieren kostet nichts",
+      "phase": "immer",
+      "text": "An der Werkbank oder Schmiede gibt es einen Hammer-Button: Alles reparieren, ohne Material. Mach das jedes Mal, wenn du heimkommst. Bessere Ausrüstung braucht die passende höhere Station.",
+      "wow": "Viele Spieler bauen monatelang neue Äxte, weil sie den Knopf nie gesehen haben."
+    },
+    {
+      "id": "rauch-und-dach",
+      "titel": "Rauch tötet, und ein Boden ist kein Dach",
+      "phase": "start",
+      "text": "Rauch ist echt simuliert. Ein Feuer im geschlossenen Raum vergiftet dich. Lass eine Öffnung im Dach oder bau einen Kamin. Und die Werkbank braucht ein richtiges Dach plus Wände rundherum, ein Holzboden darüber zählt nicht.",
+      "wow": "Der klassische Anfängertod: in der eigenen Hütte erstickt."
+    },
+    {
+      "id": "parieren",
+      "titel": "Parieren, nicht nur blocken",
+      "phase": "immer",
+      "text": "Block mit L2 genau im Moment des Treffers, dann taumelt der Gegner und dein nächster Schlag macht doppelten Schaden. Ein kleiner Rundschild pariert am besten, ein Turmschild gar nicht. Und: Ausdauer nie auf null, sonst kannst du weder blocken noch weglaufen.",
+      "wow": "Mit Parieren wird der Troll vom Albtraum zum Übungsgegner."
+    },
+    {
+      "id": "portale",
+      "titel": "Portale verbinden alles, außer Metall",
+      "phase": "mitte",
+      "text": "Zwei Portale mit gleichem Namen sind verbunden. Erz und Barren gehen nicht durch, die müssen per Boot oder Karren nach Hause. Bau zuhause ein Reserve-Portal ohne Namen und nimm Material für ein Portal auf jede Reise mit.",
+      "wow": "Ab dem Schwarzwald ist das Portalnetz dein eigentliches Spiel."
+    },
+    {
+      "id": "tod",
+      "titel": "Sterben ist planbar",
+      "phase": "immer",
+      "text": "Dein Grabstein hält alles. Nach dem Tod hast du zehn Minuten Schutz vor weiterem Fertigkeitsverlust, nutz sie für den Rückholweg. Leg Ersatzrüstung und eine Waffe in eine Truhe am Portal. Nur das zuletzt benutzte Bett zählt als Wiederbelebungspunkt, also im Außenposten eins aufstellen.",
+      "wow": "Wer das weiß, verliert beim Tod zehn Minuten statt einen Abend."
+    },
+    {
+      "id": "ahnenmacht",
+      "titel": "Bosstrophäen aufhängen, Macht aktivieren",
+      "phase": "mitte",
+      "text": "Jede Bosstrophäe kommt an ihren Stein bei den Opfersteinen am Start. Dort wählst du eine Ahnen-Macht, aktivieren mit langem Druck aufs Touchpad: 5 Minuten aktiv, 20 Minuten Abklingzeit. Eikthyr spart Ausdauer, der Älteste fällt Bäume schneller, Knochenmasse macht dich im Sumpf fast unverwundbar.",
+      "wow": "Viele spielen 50 Stunden, ohne je eine Macht zu benutzen."
+    },
+    {
+      "id": "haldor",
+      "titel": "Sammle Wertsachen für Haldor",
+      "phase": "mitte",
+      "text": "Bernstein, Perlen, Rubine und Silberketten sind nur zum Verkaufen da. Haldor, der Händler im Schwarzwald, taucht auf der Karte auf, sobald du in der Nähe warst. Erste Käufe: Megingjord (950, mehr Traglast) und Dvergr-Reif (Licht). Seit 1.0 verkauft er auch Taschen, die dein Inventar vergrößern.",
+      "wow": "Der Gürtel verändert das Spiel mehr als jede Rüstung."
+    },
+    {
+      "id": "bauen",
+      "titel": "Harke statt Mauer, Farben statt Raten",
+      "phase": "mitte",
+      "text": "Mit der Harke ziehst du Erdwälle und Gräben hoch, die kein Gegner überwindet, billiger als jede Palisade. Beim Bauen zeigt die Farbe des Teils mit dem Hammer in der Hand die Stabilität: Blau steht sicher, Rot bricht gleich. Alle drei bis vier Teile eine Stütze bis zum Boden.",
+      "wow": "Ein Graben um die Basis und Überfälle werden zum Zuschauerspiel."
+    }
+  ]
+}

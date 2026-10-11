@@ -72,6 +72,17 @@ export function Start() {
         </ol>
       </section>
 
+      <Link to="/tipps" className="flex items-center gap-3 rounded-karte border border-glut-500/30 bg-glut-500/5 px-4 py-3 hover:bg-glut-500/10">
+        <span className="text-glut-400">
+          <RunenIcon name="stern" groesse={22} />
+        </span>
+        <span className="flex-1">
+          <span className="rune-titel block text-asche-100">Zehn Dinge, die dir keiner sagt</span>
+          <span className="text-xs text-asche-300">Essen, Ausgeruht, Parieren, Portale, Haldor und mehr</span>
+        </span>
+        <RunenIcon name="pfeil" groesse={16} className="text-asche-300" />
+      </Link>
+
       <details className="group rounded-karte border border-white/5 p-4">
         <summary className="rune-titel cursor-pointer text-sm text-asche-200">Controller-Belegung PS5</summary>
         <dl className="mt-3 grid grid-cols-[auto_1fr] gap-x-4 gap-y-1 text-sm">

@@ -5,6 +5,7 @@ const SEITEN = [
   ['wiesen', '#/biom/wiesen'],
   ['schwarzwald', '#/biom/schwarzwald'],
   ['suche', '#/suche?q=hirsch'],
+  ['tipps', '#/tipps'],
   ['einstellungen', '#/einstellungen'],
 ] as const
 
