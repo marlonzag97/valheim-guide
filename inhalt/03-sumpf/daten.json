@@ -7,14 +7,14 @@
   },
   "farbe": "sumpf",
   "untertitel": "Gift, Nässe und Eisen in versunkenen Krypten.",
-  "status": "geruest",
+  "status": "voll",
   "boss": {
     "id": "bonemass",
     "name": {
       "de": "Knochenmasse",
       "en": "Bonemass"
     },
-    "altar": "Altar im Sumpf, Ort per Vegvisir in versunkenen Krypten.",
+    "altar": "Verlassener Altar mitten im Sumpf. Den Ort verrät ein Vegvisir-Runenstein, den du in den Sumpfgrüften (manchmal auch in Ruinen) liest.",
     "opfergabe": [
       {
         "item": "withered-bone",
@@ -27,13 +27,987 @@
     ],
     "macht": {
       "name": "Knochenmasse",
-      "wirkung": "Weniger physischer Schaden."
-    }
+      "wirkung": "Etwas weniger Schaden durch Stumpf, Hieb und Stich (etwa 25 %). Blocken kostet keine Ausdauer und bringt sogar etwas zurück. 5 Minuten aktiv, 20 Minuten Abklingzeit."
+    },
+    "leben": 5000,
+    "schwaeche": [
+      "Stumpf",
+      "Frost"
+    ],
+    "resistenz": [
+      "Hieb",
+      "Stich (stark)",
+      "Feuer (stark)",
+      "Gift (immun)"
+    ]
   },
-  "vorbereitung": [],
-  "gefahren": [],
-  "rohstoffe": [],
-  "freischaltungen": [],
+  "vorbereitung": [
+    {
+      "item": "poison-resistance-mead",
+      "grund": "Gift ist die Waffe des Sumpfs. Der Met senkt Gift-Schaden um 75 %, zehn Minuten lang. Trink ihn vor dem Kampf, nicht danach.",
+      "pflicht": true
+    },
+    {
+      "item": "karve",
+      "grund": "Sümpfe liegen selten auf der Startinsel. Meist musst du übers Meer und am besten an einer Wiese oder einem Schwarzwald neben dem Sumpf anlegen.",
+      "pflicht": true
+    },
+    {
+      "item": "bronze-plate-cuirass",
+      "grund": "Bronzerüstung ist das Minimum. Draugr schlagen mit 48 bis 58 Hieb-Schaden zu, ohne Rüstung bist du schnell tot.",
+      "pflicht": true
+    },
+    {
+      "item": "bronze-axe",
+      "grund": "Alte Rinde gibt es nur von den Uralten Bäumen im Sumpf, und die fällst du mindestens mit der Bronzeaxt.",
+      "pflicht": true
+    },
+    {
+      "item": "bronze-buckler",
+      "grund": "Draugr-Angriffe parieren (L2 im letzten Moment) lässt sie lange taumeln.",
+      "pflicht": false
+    },
+    {
+      "item": "bronze-pickaxe",
+      "grund": "Jede Spitzhacke baut Schlammhaufen ab. Die Bronzespitzhacke hält nur länger als die Geweihspitzhacke.",
+      "pflicht": false
+    },
+    {
+      "item": "smelter",
+      "grund": "Eisenschrott wiegt 10 pro Stück und lässt sich nicht durchs Portal schicken. Eine Schmelze im Sumpf-Lager spart dir viel Schlepperei.",
+      "pflicht": false
+    },
+    {
+      "item": "minor-healing-mead",
+      "grund": "Notfall-Heilung, wenn Draugr oder Egel dich erwischen.",
+      "pflicht": false
+    },
+    {
+      "item": "carrot-soup",
+      "grund": "Essen ist Rüstung. Drei verschiedene Sorten, sonst sind die Egel schneller als dein Leben.",
+      "pflicht": false
+    },
+    {
+      "item": "hoe",
+      "grund": "Mit der Harke ziehst du Pfade über das Wasser und ebnest später die Altar-Arena.",
+      "pflicht": false
+    }
+  ],
+  "gefahren": [
+    {
+      "id": "draugr",
+      "name": {
+        "de": "Draugr",
+        "en": "Draugr"
+      },
+      "gefahr": 3,
+      "schwaeche": [],
+      "resistenz": [
+        "Feuer",
+        "Gift (immun)"
+      ],
+      "tipp": "Der Standardgegner des Sumpfs, 100 Leben. Drei von vier tragen eine Axt (48 Hieb), der Rest einen Bogen. Blocke im letzten Moment (L2), dann taumelt er und du hast Zeit für mehrere Treffer. Gegen Bogenschützen im Zickzack laufen. Lässt Innereien fallen, die du für Würste brauchst.",
+      "drops": [
+        "entrails",
+        "draugr-trophy"
+      ]
+    },
+    {
+      "id": "draugr-elite",
+      "name": {
+        "de": "Elite Draugr",
+        "en": "Draugr elite"
+      },
+      "gefahr": 4,
+      "schwaeche": [],
+      "resistenz": [
+        "Feuer",
+        "Gift (immun)"
+      ],
+      "tipp": "200 Leben und 58 Hieb-Schaden mit dem Schwert, spawnt nachts in der Sumpfmitte. Parieren oder Ausweichrolle (L2 + Kreis) und dann zuschlagen. Seine Trophäe brauchst du für den Eisen-Vorschlaghammer.",
+      "drops": [
+        "entrails",
+        "draugr-elite-trophy"
+      ]
+    },
+    {
+      "id": "leech",
+      "name": {
+        "de": "Schlundegel",
+        "en": "Leech"
+      },
+      "gefahr": 3,
+      "schwaeche": [],
+      "resistenz": [
+        "Gift",
+        "Feuer (immun)",
+        "Geist (immun)"
+      ],
+      "tipp": "Lauert im Wasser und beißt mit Gift (70 Gift, 20 Stich). Nur 60 Leben, aber im tiefen Wasser kannst du nicht angreifen. Halte dich an Land, achte auf Wellen im Wasser und ziehe mit der Harke Pfade. Vom Ufer aus mit Bogen oder Speer wehren.",
+      "drops": [
+        "bloodbag",
+        "leech-trophy"
+      ]
+    },
+    {
+      "id": "blob",
+      "name": {
+        "de": "Schleimling",
+        "en": "Blob"
+      },
+      "gefahr": 2,
+      "schwaeche": [
+        "Stumpf",
+        "Frost",
+        "Blitz"
+      ],
+      "resistenz": [
+        "Feuer",
+        "Stich",
+        "Hieb",
+        "Gift (immun)"
+      ],
+      "tipp": "Kleiner Schleimklumpen mit 50 Leben, der in deine Nähe springt und eine Giftwolke platzen lässt. Die lässt sich nicht blocken. Mit der Keule oder einem Streitkolben ein Schlag, oder aus der Ferne mit dem Bogen.",
+      "drops": [
+        "ooze",
+        "blob-trophy"
+      ]
+    },
+    {
+      "id": "oozer",
+      "name": {
+        "de": "Schleimmasse",
+        "en": "Oozer"
+      },
+      "gefahr": 3,
+      "schwaeche": [
+        "Stumpf",
+        "Frost",
+        "Blitz"
+      ],
+      "resistenz": [
+        "Feuer",
+        "Stich",
+        "Hieb",
+        "Gift (immun)"
+      ],
+      "tipp": "Große Version mit 150 Leben und 8 Metern Giftwolke. Beim Tod zerfällt sie in zwei Schleimlinge. Kommt nachts, lässt mit etwa einem Drittel Chance Eisenschrott fallen. Stumpfe Waffe nehmen, Abstand halten, vorher Giftresistenz-Met trinken.",
+      "drops": [
+        "ooze",
+        "scrap-iron"
+      ]
+    },
+    {
+      "id": "wraith",
+      "name": {
+        "de": "Zorngeist",
+        "en": "Wraith"
+      },
+      "gefahr": 4,
+      "schwaeche": [
+        "Feuer",
+        "Geist"
+      ],
+      "resistenz": [
+        "Stumpf",
+        "Stich",
+        "Hieb",
+        "Frost (immun)",
+        "Gift (immun)"
+      ],
+      "tipp": "Fliegt nachts durch den Sumpf, nur 100 Leben, aber 60 Hieb-Schaden und nimmt von normalen Waffen wenig. Fackel oder Feuerpfeile helfen. Er greift mit einem einzigen Kratzer an, also parieren (L2) und zuschlagen. Meide den Sumpf nachts. Lässt Ketten fallen.",
+      "drops": [
+        "chain",
+        "wraith-trophy"
+      ]
+    },
+    {
+      "id": "surtling",
+      "name": {
+        "de": "Surtling",
+        "en": "Surtling"
+      },
+      "gefahr": 2,
+      "schwaeche": [
+        "Frost"
+      ],
+      "resistenz": [
+        "Feuer (immun)",
+        "Gift (immun)",
+        "Geist (immun)"
+      ],
+      "tipp": "Kleiner Feuerteufel an Feuer-Geysiren, 20 Leben, wirft Feuerbälle. Im Dauerregen tun sie wenig Schaden. Wasser tötet sie, also Geysir-Umgebung mit der Harke absenken: Surtlinge verenden beim Erscheinen und du sammelst Surtlingkerne und Kohle ein.",
+      "drops": [
+        "surtling-core",
+        "coal",
+        "surtling-trophy"
+      ]
+    },
+    {
+      "id": "abomination",
+      "name": {
+        "de": "Monstrosität",
+        "en": "Abomination"
+      },
+      "gefahr": 4,
+      "schwaeche": [
+        "Feuer"
+      ],
+      "resistenz": [
+        "Stumpf",
+        "Stich (stark)",
+        "Frost (immun)",
+        "Gift (immun)",
+        "Geist (immun)"
+      ],
+      "tipp": "Baumähnlicher Riese mit 800 Leben, langsam, aber 60 bis 80 Stumpf-Schaden pro Schlag. Hieb-Waffen (Axt, Schwert) funktionieren am besten, Feuerpfeile auch. Mit Bandenschild parieren (L2) macht den Kampf viel kürzer. Lässt Wurzeln und Glibber fallen.",
+      "drops": [
+        "root",
+        "guck",
+        "abomination-trophy"
+      ]
+    }
+  ],
+  "rohstoffe": [
+    {
+      "id": "scrap-iron-quelle",
+      "name": {
+        "de": "Eisenschrott",
+        "en": "Scrap iron"
+      },
+      "fundort": "Er steckt in Schlammhaufen (Muddy scrap pile) in den Sumpfgrüften, die du mit der Spitzhacke aufbrichst, und in Kisten der Krypten. Pro Haufen springen im Schnitt etwa 4 Stück raus. Schleimmassen lassen ihn manchmal fallen. Nach der Knochenmasse findest du mit dem Gabelbein auch vergrabene Haufen im Freien.",
+      "werkzeug": "Beliebige Spitzhacke",
+      "wofuer": [
+        "iron"
+      ]
+    },
+    {
+      "id": "iron-quelle",
+      "name": {
+        "de": "Eisen",
+        "en": "Iron"
+      },
+      "fundort": "Wird in der Schmelze aus Eisenschrott gewonnen: 1 Schrott und 2 Kohle ergeben einen Barren. Eisen lässt sich nicht durchs Portal schicken.",
+      "wofuer": [
+        "iron-axe",
+        "iron-pickaxe",
+        "iron-sword",
+        "iron-mace",
+        "iron-atgeir",
+        "battleaxe",
+        "banded-shield",
+        "iron-tower-shield",
+        "iron-helmet",
+        "iron-scale-mail",
+        "iron-greaves",
+        "iron-nails",
+        "huntsman-bow"
+      ]
+    },
+    {
+      "id": "ancient-bark-quelle",
+      "name": {
+        "de": "Alte Rinde",
+        "en": "Ancient bark"
+      },
+      "fundort": "Fällst du von den Uralten Bäumen, den riesigen kahlen Stämmen im Sumpf. Auch in Kisten der Krypten.",
+      "werkzeug": "Bronzeaxt",
+      "wofuer": [
+        "longship",
+        "battleaxe",
+        "iron-buckler",
+        "ancient-bark-spear",
+        "root-mask"
+      ]
+    },
+    {
+      "id": "withered-bone-quelle",
+      "name": {
+        "de": "Verdorrter Knochen",
+        "en": "Withered bone"
+      },
+      "fundort": "Fällt selten aus Schlammhaufen in den Krypten, liegt manchmal in Kisten im Sumpf. Du brauchst zehn davon für den Boss.",
+      "wofuer": []
+    },
+    {
+      "id": "entrails-quelle",
+      "name": {
+        "de": "Innereien",
+        "en": "Entrails"
+      },
+      "fundort": "Fallen von Draugr und Elite Draugr.",
+      "wofuer": [
+        "sausages"
+      ]
+    },
+    {
+      "id": "chain-quelle",
+      "name": {
+        "de": "Kette",
+        "en": "Chain"
+      },
+      "fundort": "Von Zorngeistern, in Kisten der Sumpfgrüfte und in Truhen der Sumpf-Ruinen.",
+      "wofuer": [
+        "forge-bellows"
+      ]
+    },
+    {
+      "id": "turnip-seeds-quelle",
+      "name": {
+        "de": "Rübensamen",
+        "en": "Turnip seeds"
+      },
+      "fundort": "Wachsen als gelbe Blüten im Sumpf. Pflücken, dann mit dem Kultivator auf trockenem Boden anpflanzen. Aus einer Rübe bekommst du drei neue Samen.",
+      "wofuer": [
+        "turnip",
+        "turnip-stew"
+      ]
+    },
+    {
+      "id": "root-quelle",
+      "name": {
+        "de": "Wurzel",
+        "en": "Root"
+      },
+      "fundort": "Von Monstrositäten (Abomination), etwa 5 Stück pro Gegner.",
+      "wofuer": [
+        "root-mask",
+        "root-harnesk",
+        "root-leggings"
+      ]
+    },
+    {
+      "id": "guck-quelle",
+      "name": {
+        "de": "Glibber",
+        "en": "Guck"
+      },
+      "fundort": "Von Monstrositäten und aus Glibbersäcken (Gucksack), die hoch in den Bäumen hängen und mit Axt oder Spitzhacke abgebaut werden. Später für die Draugr-Reißzähne in den Bergen.",
+      "wofuer": []
+    },
+    {
+      "id": "bloodbag-quelle",
+      "name": {
+        "de": "Blutsack",
+        "en": "Bloodbag"
+      },
+      "fundort": "Von Schlundegeln.",
+      "wofuer": []
+    },
+    {
+      "id": "ooze-quelle",
+      "name": {
+        "de": "Schlamm",
+        "en": "Ooze"
+      },
+      "fundort": "Von Schleimlingen und Schleimmassen.",
+      "wofuer": []
+    }
+  ],
+  "freischaltungen": [
+    {
+      "id": "r-iron",
+      "ergebnis": "iron",
+      "station": "schmelze",
+      "zutaten": [
+        {
+          "item": "scrap-iron",
+          "menge": 1
+        },
+        {
+          "item": "coal",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-iron-nails",
+      "ergebnis": "iron-nails",
+      "station": "schmiede",
+      "menge": 10,
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-iron-axe",
+      "ergebnis": "iron-axe",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 4
+        },
+        {
+          "item": "iron",
+          "menge": 20
+        },
+        {
+          "item": "leather-scraps",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-iron-pickaxe",
+      "ergebnis": "iron-pickaxe",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "core-wood",
+          "menge": 3
+        },
+        {
+          "item": "iron",
+          "menge": 20
+        }
+      ]
+    },
+    {
+      "id": "r-iron-sword",
+      "ergebnis": "iron-sword",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 2
+        },
+        {
+          "item": "iron",
+          "menge": 20
+        },
+        {
+          "item": "leather-scraps",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-iron-mace",
+      "ergebnis": "iron-mace",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 4
+        },
+        {
+          "item": "iron",
+          "menge": 20
+        },
+        {
+          "item": "leather-scraps",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-iron-atgeir",
+      "ergebnis": "iron-atgeir",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 10
+        },
+        {
+          "item": "iron",
+          "menge": 30
+        },
+        {
+          "item": "leather-scraps",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-battleaxe",
+      "ergebnis": "battleaxe",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "ancient-bark",
+          "menge": 30
+        },
+        {
+          "item": "iron",
+          "menge": 35
+        },
+        {
+          "item": "leather-scraps",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-ancient-bark-spear",
+      "ergebnis": "ancient-bark-spear",
+      "station": "schmiede",
+      "stufe": 3,
+      "zutaten": [
+        {
+          "item": "troll-hide",
+          "menge": 4
+        },
+        {
+          "item": "iron",
+          "menge": 10
+        },
+        {
+          "item": "ancient-bark",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-iron-sledge",
+      "ergebnis": "iron-sledge",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "ancient-bark",
+          "menge": 10
+        },
+        {
+          "item": "iron",
+          "menge": 30
+        },
+        {
+          "item": "ymir-flesh",
+          "menge": 4
+        },
+        {
+          "item": "draugr-elite-trophy",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-huntsman-bow",
+      "ergebnis": "huntsman-bow",
+      "station": "schmiede",
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 10
+        },
+        {
+          "item": "iron",
+          "menge": 20
+        },
+        {
+          "item": "feathers",
+          "menge": 10
+        },
+        {
+          "item": "deer-hide",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-ironhead-arrow",
+      "ergebnis": "ironhead-arrow",
+      "station": "schmiede",
+      "stufe": 2,
+      "menge": 20,
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 8
+        },
+        {
+          "item": "iron",
+          "menge": 1
+        },
+        {
+          "item": "feathers",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-banded-shield",
+      "ergebnis": "banded-shield",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 10
+        },
+        {
+          "item": "iron",
+          "menge": 8
+        }
+      ]
+    },
+    {
+      "id": "r-iron-tower-shield",
+      "ergebnis": "iron-tower-shield",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 15
+        },
+        {
+          "item": "iron",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-iron-buckler",
+      "ergebnis": "iron-buckler",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 10
+        },
+        {
+          "item": "ancient-bark",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-iron-helmet",
+      "ergebnis": "iron-helmet",
+      "station": "schmiede",
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 20
+        },
+        {
+          "item": "deer-hide",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-iron-scale-mail",
+      "ergebnis": "iron-scale-mail",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 20
+        },
+        {
+          "item": "deer-hide",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-iron-greaves",
+      "ergebnis": "iron-greaves",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 20
+        },
+        {
+          "item": "deer-hide",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-root-mask",
+      "ergebnis": "root-mask",
+      "station": "werkbank",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "root",
+          "menge": 10
+        },
+        {
+          "item": "ancient-bark",
+          "menge": 10
+        },
+        {
+          "item": "leather-scraps",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-root-harnesk",
+      "ergebnis": "root-harnesk",
+      "station": "werkbank",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "root",
+          "menge": 10
+        },
+        {
+          "item": "ancient-bark",
+          "menge": 10
+        },
+        {
+          "item": "deer-hide",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-root-leggings",
+      "ergebnis": "root-leggings",
+      "station": "werkbank",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "root",
+          "menge": 10
+        },
+        {
+          "item": "ancient-bark",
+          "menge": 10
+        },
+        {
+          "item": "deer-hide",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-stonecutter",
+      "ergebnis": "stonecutter",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 10
+        },
+        {
+          "item": "iron",
+          "menge": 2
+        },
+        {
+          "item": "stone",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-sharpening-stone",
+      "ergebnis": "sharpening-stone",
+      "station": "steinmetz",
+      "zutaten": [
+        {
+          "item": "stone",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-smiths-anvil",
+      "ergebnis": "smiths-anvil",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 5
+        },
+        {
+          "item": "iron",
+          "menge": 20
+        }
+      ]
+    },
+    {
+      "id": "r-forge-toolrack",
+      "ergebnis": "forge-toolrack",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 10
+        },
+        {
+          "item": "iron",
+          "menge": 15
+        }
+      ]
+    },
+    {
+      "id": "r-forge-bellows",
+      "ergebnis": "forge-bellows",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 5
+        },
+        {
+          "item": "deer-hide",
+          "menge": 5
+        },
+        {
+          "item": "chain",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-grinding-wheel",
+      "ergebnis": "grinding-wheel",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 25
+        },
+        {
+          "item": "sharpening-stone",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-spice-rack",
+      "ergebnis": "spice-rack",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "dandelion",
+          "menge": 3
+        },
+        {
+          "item": "carrot",
+          "menge": 2
+        },
+        {
+          "item": "mushroom",
+          "menge": 5
+        },
+        {
+          "item": "thistle",
+          "menge": 3
+        },
+        {
+          "item": "turnip",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-longship",
+      "ergebnis": "longship",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "iron-nails",
+          "menge": 100
+        },
+        {
+          "item": "deer-hide",
+          "menge": 10
+        },
+        {
+          "item": "fine-wood",
+          "menge": 40
+        },
+        {
+          "item": "ancient-bark",
+          "menge": 40
+        }
+      ]
+    },
+    {
+      "id": "r-sausages",
+      "ergebnis": "sausages",
+      "station": "kessel",
+      "stufe": 2,
+      "menge": 4,
+      "zutaten": [
+        {
+          "item": "entrails",
+          "menge": 4
+        },
+        {
+          "item": "raw-meat",
+          "menge": 1
+        },
+        {
+          "item": "thistle",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-turnip-stew",
+      "ergebnis": "turnip-stew",
+      "station": "kessel",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "raw-meat",
+          "menge": 1
+        },
+        {
+          "item": "turnip",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-mead-base-poison-resistance",
+      "ergebnis": "mead-base-poison-resistance",
+      "station": "kessel",
+      "zutaten": [
+        {
+          "item": "honey",
+          "menge": 10
+        },
+        {
+          "item": "thistle",
+          "menge": 5
+        },
+        {
+          "item": "neck-tail",
+          "menge": 1
+        },
+        {
+          "item": "coal",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-poison-resistance-mead",
+      "ergebnis": "poison-resistance-mead",
+      "station": "gaerbottich",
+      "menge": 6,
+      "zutaten": [
+        {
+          "item": "mead-base-poison-resistance",
+          "menge": 1
+        }
+      ]
+    }
+  ],
   "items": [
     {
       "id": "withered-bone",
@@ -41,7 +1015,8 @@
         "de": "Verdorrter Knochen",
         "en": "Withered bone"
       },
-      "typ": "material"
+      "typ": "material",
+      "hinweis": "Zehn Stück als Opfergabe am Altar von Knochenmasse."
     },
     {
       "id": "wishbone",
@@ -49,7 +1024,8 @@
         "de": "Gabelbein",
         "en": "Wishbone"
       },
-      "typ": "material"
+      "typ": "werkzeug",
+      "hinweis": "Im Hilfsslot ausrüsten. Es zeigt dir mit grünem Funkeln und Ton vergrabene Schlammhaufen im Sumpf, Silberadern in den Bergen und Schätze in den Wiesen."
     },
     {
       "id": "bonemass-trophy",
@@ -57,10 +1033,555 @@
         "de": "Knochenmasse-Trophäe",
         "en": "Bonemass trophy"
       },
+      "typ": "material",
+      "hinweis": "An den Opfersteinen am Start aufhängen, dann kannst du die Macht aktivieren."
+    },
+    {
+      "id": "scrap-iron",
+      "name": {
+        "de": "Eisenschrott",
+        "en": "Scrap iron"
+      },
+      "typ": "material",
+      "hinweis": "Wiegt 10 pro Stück und geht nicht durchs Portal. In der Schmelze mit Kohle zu Eisen."
+    },
+    {
+      "id": "iron",
+      "name": {
+        "de": "Eisen",
+        "en": "Iron"
+      },
+      "typ": "material",
+      "hinweis": "Barren aus der Schmelze. Wiegt viel und geht nicht durchs Portal."
+    },
+    {
+      "id": "iron-nails",
+      "name": {
+        "de": "Eisennägel",
+        "en": "Iron nails"
+      },
+      "typ": "material",
+      "hinweis": "Ein Eisenbarren ergibt 10 Nägel. Gebraucht für das Langschiff und viele Bauteile späterer Biome."
+    },
+    {
+      "id": "ancient-bark",
+      "name": {
+        "de": "Alte Rinde",
+        "en": "Ancient bark"
+      },
+      "typ": "material",
+      "hinweis": "Von den Uralten Bäumen im Sumpf. Mindestens Bronzeaxt nötig."
+    },
+    {
+      "id": "entrails",
+      "name": {
+        "de": "Innereien",
+        "en": "Entrails"
+      },
       "typ": "material"
+    },
+    {
+      "id": "chain",
+      "name": {
+        "de": "Kette",
+        "en": "Chain"
+      },
+      "typ": "material",
+      "hinweis": "Nicht herstellbar, nur als Beute von Zorngeistern und aus Kisten."
+    },
+    {
+      "id": "ooze",
+      "name": {
+        "de": "Schlamm",
+        "en": "Ooze"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "bloodbag",
+      "name": {
+        "de": "Blutsack",
+        "en": "Bloodbag"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "guck",
+      "name": {
+        "de": "Glibber",
+        "en": "Guck"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "root",
+      "name": {
+        "de": "Wurzel",
+        "en": "Root"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "ymir-flesh",
+      "name": {
+        "de": "Ymirs Fleisch",
+        "en": "Ymir flesh"
+      },
+      "typ": "material",
+      "hinweis": "Beim Händler Haldor für 120 Münzen. Nach dem Ältesten im Angebot (Stand des Wikis, bei Zweifel im Spiel prüfen)."
+    },
+    {
+      "id": "sharpening-stone",
+      "name": {
+        "de": "Schleifstein",
+        "en": "Sharpening stone"
+      },
+      "typ": "material",
+      "hinweis": "Am Steinmetz aus 5 Stein hergestellt. Wird für das Schleifrad gebraucht."
+    },
+    {
+      "id": "turnip-seeds",
+      "name": {
+        "de": "Rübensamen",
+        "en": "Turnip seeds"
+      },
+      "typ": "material",
+      "hinweis": "Aus gelben Blüten im Sumpf. Mit dem Kultivator pflanzen, Wachstum etwa zweieinhalb Spieltage."
+    },
+    {
+      "id": "turnip",
+      "name": {
+        "de": "Rübe",
+        "en": "Turnip"
+      },
+      "typ": "material",
+      "hinweis": "Roh nicht essbar. Für Rübeneintopf, Gewürzregal und neue Samen."
+    },
+    {
+      "id": "draugr-trophy",
+      "name": {
+        "de": "Draugr-Trophäe",
+        "en": "Draugr trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "draugr-elite-trophy",
+      "name": {
+        "de": "Elite-Draugr-Trophäe",
+        "en": "Draugr elite trophy"
+      },
+      "typ": "material",
+      "hinweis": "Für den Eisen-Vorschlaghammer."
+    },
+    {
+      "id": "leech-trophy",
+      "name": {
+        "de": "Schlundegel-Trophäe",
+        "en": "Leech trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "blob-trophy",
+      "name": {
+        "de": "Schleimling-Trophäe",
+        "en": "Blob trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "wraith-trophy",
+      "name": {
+        "de": "Zorngeist-Trophäe",
+        "en": "Wraith trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "surtling-trophy",
+      "name": {
+        "de": "Surtling-Trophäe",
+        "en": "Surtling trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "abomination-trophy",
+      "name": {
+        "de": "Monstrosität-Trophäe",
+        "en": "Abomination trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "sausages",
+      "name": {
+        "de": "Würste",
+        "en": "Sausages"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 55,
+        "ausdauer": 18,
+        "dauer": 1500
+      },
+      "hinweis": "Ein Ansatz ergibt vier Portionen. Brauchen einen Kessel auf Stufe 2 (Gewürzregal)."
+    },
+    {
+      "id": "turnip-stew",
+      "name": {
+        "de": "Rübeneintopf",
+        "en": "Turnip stew"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 18,
+        "ausdauer": 55,
+        "dauer": 1500
+      },
+      "hinweis": "Viel Ausdauer, brauchen einen Kessel auf Stufe 2 (Gewürzregal)."
+    },
+    {
+      "id": "mead-base-poison-resistance",
+      "name": {
+        "de": "Metansatz: Giftresistenz",
+        "en": "Mead base: Poison resistance"
+      },
+      "typ": "met",
+      "hinweis": "Am Metkessel (Mead ketill) über einem Feuer angesetzt, dann im Gärbottich vergoren."
+    },
+    {
+      "id": "poison-resistance-mead",
+      "name": {
+        "de": "Giftresistenz-Met",
+        "en": "Poison resistance mead"
+      },
+      "typ": "met",
+      "werte": {
+        "dauer": 600
+      },
+      "hinweis": "Gift-Schaden und Gift-Dauer sinken um 75 % für zehn Minuten. Wirkt nur auf Gift, das nach dem Trinken ankommt. Ein Ansatz ergibt sechs Fläschchen, Gärung dauert zwei Spieltage."
+    },
+    {
+      "id": "iron-axe",
+      "name": {
+        "de": "Eisenaxt",
+        "en": "Iron axe"
+      },
+      "typ": "werkzeug",
+      "werte": {
+        "hieb": 60
+      }
+    },
+    {
+      "id": "iron-pickaxe",
+      "name": {
+        "de": "Eisenspitzhacke",
+        "en": "Iron pickaxe"
+      },
+      "typ": "werkzeug",
+      "werte": {
+        "stich": 33
+      },
+      "hinweis": "Erste Spitzhacke, die Silber und Obsidian abbaut."
+    },
+    {
+      "id": "iron-sword",
+      "name": {
+        "de": "Eisenschwert",
+        "en": "Iron sword"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 55
+      }
+    },
+    {
+      "id": "iron-mace",
+      "name": {
+        "de": "Eisenstreitkolben",
+        "en": "Iron mace"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stumpf": 55
+      },
+      "hinweis": "Stumpf, also gut gegen Knochenmasse und Schleimlinge."
+    },
+    {
+      "id": "iron-atgeir",
+      "name": {
+        "de": "Eisenatgeir",
+        "en": "Iron atgeir"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 65
+      }
+    },
+    {
+      "id": "battleaxe",
+      "name": {
+        "de": "Streitaxt",
+        "en": "Battleaxe"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 70
+      },
+      "hinweis": "Zweihändig."
+    },
+    {
+      "id": "ancient-bark-spear",
+      "name": {
+        "de": "Speer aus Alter Rinde",
+        "en": "Ancient bark spear"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 55
+      },
+      "hinweis": "Wurfspeer, braucht Schmiede auf Stufe 3."
+    },
+    {
+      "id": "iron-sledge",
+      "name": {
+        "de": "Eisen-Vorschlaghammer",
+        "en": "Iron sledge"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stumpf": 55
+      },
+      "hinweis": "Zweihändig, schlägt in einem großen Umkreis und stößt zurück. Sehr gut gegen Knochenmasses Gefolge."
+    },
+    {
+      "id": "huntsman-bow",
+      "name": {
+        "de": "Jägerbogen",
+        "en": "Huntsman bow"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 42
+      }
+    },
+    {
+      "id": "ironhead-arrow",
+      "name": {
+        "de": "Eisenspitzenpfeil",
+        "en": "Ironhead arrow"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 42
+      }
+    },
+    {
+      "id": "banded-shield",
+      "name": {
+        "de": "Bandenschild",
+        "en": "Banded shield"
+      },
+      "typ": "schild",
+      "werte": {
+        "block": 42
+      },
+      "hinweis": "Rundschild, gut zum Parieren."
+    },
+    {
+      "id": "iron-tower-shield",
+      "name": {
+        "de": "Eisen-Turmschild",
+        "en": "Iron tower shield"
+      },
+      "typ": "schild",
+      "werte": {
+        "block": 52
+      },
+      "hinweis": "Mehr Block, aber kein Parieren, etwas langsamer."
+    },
+    {
+      "id": "iron-buckler",
+      "name": {
+        "de": "Eisenbuckler",
+        "en": "Iron buckler"
+      },
+      "typ": "schild",
+      "werte": {
+        "block": 28
+      },
+      "hinweis": "Kleiner Schild mit starkem Parier-Bonus."
+    },
+    {
+      "id": "iron-helmet",
+      "name": {
+        "de": "Eisenhelm",
+        "en": "Iron helmet"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 14
+      }
+    },
+    {
+      "id": "iron-scale-mail",
+      "name": {
+        "de": "Eisen-Schuppenpanzer",
+        "en": "Iron scale mail"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 14
+      },
+      "hinweis": "Minus 5 % Tempo."
+    },
+    {
+      "id": "iron-greaves",
+      "name": {
+        "de": "Eisen-Beinschienen",
+        "en": "Iron greaves"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 14
+      },
+      "hinweis": "Minus 5 % Tempo."
+    },
+    {
+      "id": "root-mask",
+      "name": {
+        "de": "Wurzelmaske",
+        "en": "Root mask"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 8
+      },
+      "hinweis": "Etwas resistent gegen Gift, aber schwach gegen Feuer. Das Set (alle drei Teile) gibt +15 Bogenfertigkeit."
+    },
+    {
+      "id": "root-harnesk",
+      "name": {
+        "de": "Wurzel-Harnisch",
+        "en": "Root harnesk"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 8
+      },
+      "hinweis": "Etwas resistent gegen Stich, schwach gegen Feuer."
+    },
+    {
+      "id": "root-leggings",
+      "name": {
+        "de": "Wurzel-Beinlinge",
+        "en": "Root leggings"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 8
+      },
+      "hinweis": "Schwach gegen Feuer."
+    },
+    {
+      "id": "stonecutter",
+      "name": {
+        "de": "Steinmetz",
+        "en": "Stonecutter"
+      },
+      "typ": "station",
+      "hinweis": "Braucht eine Werkbank in der Nähe. Dach und Wände nötig, um daran zu arbeiten. Hier machst du Schleifsteine und Steinbauteile."
+    },
+    {
+      "id": "smiths-anvil",
+      "name": {
+        "de": "Schmiedeamboss",
+        "en": "Smith's anvil"
+      },
+      "typ": "station",
+      "hinweis": "Schmiede-Ausbau, erhöht die Schmiede-Stufe um 1. Nah an die Schmiede stellen."
+    },
+    {
+      "id": "forge-toolrack",
+      "name": {
+        "de": "Werkzeugständer",
+        "en": "Forge toolrack"
+      },
+      "typ": "station",
+      "hinweis": "Schmiede-Ausbau, erhöht die Stufe um 1. Muss an Wand oder Decke."
+    },
+    {
+      "id": "forge-bellows",
+      "name": {
+        "de": "Schmiede-Blasebalg",
+        "en": "Forge bellows"
+      },
+      "typ": "station",
+      "hinweis": "Schmiede-Ausbau, erhöht die Stufe um 1. Wird direkt an die Schmiede gesetzt. Besteht nicht aus Metallbarren, geht also durchs Portal."
+    },
+    {
+      "id": "grinding-wheel",
+      "name": {
+        "de": "Schleifrad",
+        "en": "Grinding wheel"
+      },
+      "typ": "station",
+      "hinweis": "Schmiede-Ausbau, erhöht die Stufe um 1. Braucht einen Schleifstein vom Steinmetz."
+    },
+    {
+      "id": "spice-rack",
+      "name": {
+        "de": "Gewürzregal",
+        "en": "Spice rack"
+      },
+      "typ": "station",
+      "hinweis": "Kessel-Ausbau, schaltet Stufe 2 frei (Würste, Rübeneintopf). Hängt von Decke oder Regal, zum Beispiel an einem Holzbalken."
+    },
+    {
+      "id": "longship",
+      "name": {
+        "de": "Langschiff",
+        "en": "Longship"
+      },
+      "typ": "bauteil",
+      "hinweis": "Großes Schiff mit viel Platz und hohem Tempo, 1000 Leben, 18 Lagerplätze. Teuer, aber robust."
     }
   ],
   "checkliste": [
+    {
+      "id": "z-sumpf-lager",
+      "text": "Mit der Karve zum Sumpf, Lager am trockenen Rand bauen (Werkbank, Bett, Feuer)"
+    },
+    {
+      "id": "z-giftmet",
+      "text": "Distel, Honig, Halsschwanz und Kohle sammeln, Giftresistenz-Met ansetzen und gären"
+    },
+    {
+      "id": "z-sumpfgruft",
+      "text": "Sumpfgruft mit dem Sumpfschlüssel öffnen, Schlammhaufen aufbrechen und Eisenschrott sammeln"
+    },
+    {
+      "id": "z-eisen-schmelzen",
+      "text": "Eisenschrott schmelzen, Schmiede mit Ambossen oder Kühler auf Stufe 2 bringen"
+    },
+    {
+      "id": "z-eisenausruestung",
+      "text": "Eisenspitzhacke, Waffe, Bandenschild und Eisenrüstung herstellen"
+    },
+    {
+      "id": "z-essen",
+      "text": "Rübensamen finden, Rüben ziehen, Rübeneintopf und Würste kochen"
+    },
+    {
+      "id": "z-knochen",
+      "text": "Zehn Verdorrte Knochen sammeln"
+    },
+    {
+      "id": "z-vegvisir-arena",
+      "text": "Vegvisir lesen, Altar finden und die Arena mit der Harke ebnen"
+    },
     {
       "id": "z-bonemass",
       "text": "Knochenmasse besiegen",
