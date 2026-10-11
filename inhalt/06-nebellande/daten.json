@@ -6,15 +6,15 @@
     "en": "Mistlands"
   },
   "farbe": "nebellande",
-  "untertitel": "Nebel, Seeker, Dvergr und Eitr-Magie.",
-  "status": "geruest",
+  "untertitel": "Nebel, Sucher, Dvergr und Eitr-Magie.",
+  "status": "voll",
   "boss": {
     "id": "the-queen",
     "name": {
       "de": "Die Königin",
       "en": "The Queen"
     },
-    "altar": "Versiegelte Zitadelle in den Nebellanden, Tor mit dem Siegelbrecher öffnen.",
+    "altar": "Infizierte Zitadelle (Infested Citadel), ein Dungeon unter einer Schwarzmarmor-Ruine in den Nebellanden. Ein Vegvisir aus den Infizierten Minen verrät den Ort. Das Tor öffnet nur der Siegelbrecher, er wird nicht verbraucht. Die Königin lebt schon drinnen, beim ersten Mal brauchst du keine Opfergabe. Danach rufst du sie am Hivesitz (Hive seat) ganz oben mit 3 Sucher-Soldat-Trophäen.",
     "opfergabe": [
       {
         "item": "sealbreaker",
@@ -22,32 +22,1639 @@
       }
     ],
     "belohnung": [
-      "queen-drop",
+      "majestic-carapace",
       "the-queen-trophy"
     ],
     "macht": {
       "name": "Die Königin",
-      "wirkung": "Mehr Eitr-Regeneration, weniger Ausdauerverbrauch."
-    }
+      "wirkung": "Eitr-Regeneration plus 100 %, Schleichen kostet keine Ausdauer, 50 % weniger Giftschaden. 5 Minuten aktiv, 20 Minuten Abklingzeit."
+    },
+    "leben": 12500,
+    "schwaeche": [],
+    "resistenz": [
+      "Stich",
+      "Geist (immun)"
+    ]
   },
-  "vorbereitung": [],
-  "gefahren": [],
-  "rohstoffe": [],
-  "freischaltungen": [],
+  "vorbereitung": [
+    {
+      "item": "black-metal-axe",
+      "grund": "Ohne Schwarzmetall-Axt kein Yggdrasil-Holz, und ohne Holz keine Schwarzschmiede.",
+      "pflicht": true
+    },
+    {
+      "item": "black-metal-pickaxe",
+      "grund": "Für Schwarzen Marmor und Weichgewebe aus den Riesenresten. Wird in der Schmiede (Stufe 2) gebaut.",
+      "pflicht": true
+    },
+    {
+      "item": "wisplight",
+      "grund": "Die Nebellande sind Nebel pur. Der Wisp-Brunnen steht im Heimatlager, das Wisplicht baust du aus Wisp und Silber.",
+      "pflicht": true
+    },
+    {
+      "item": "fire-resistance-barley-wine",
+      "grund": "Gjall und Dvergr-Magier machen Feuerschaden, der nachbrennt.",
+      "pflicht": false
+    },
+    {
+      "item": "cart",
+      "grund": "Mit dem Karren rammst du Dvergr-Komponentenkisten, ohne die Dvergr wütend zu machen.",
+      "pflicht": false
+    },
+    {
+      "item": "cultivator",
+      "grund": "Jotun-Puffs und Magierkappen wachsen nicht nach, du baust sie in der Nebellande selbst an.",
+      "pflicht": false
+    },
+    {
+      "item": "workbench",
+      "grund": "Saftextraktor und Schwarzschmiede müssen in Werkbank-Nähe stehen. Stell eine ins Lager.",
+      "pflicht": true
+    }
+  ],
+  "gefahren": [
+    {
+      "id": "seeker",
+      "name": {
+        "de": "Sucher",
+        "en": "Seeker"
+      },
+      "gefahr": 4,
+      "schwaeche": [],
+      "resistenz": [
+        "Stumpf",
+        "Stich",
+        "Hieb",
+        "Geist (immun)"
+      ],
+      "tipp": "Der Standardgegner der Nebellande, 200 Leben. Er fliegt kurze Strecken und stürzt sich mit einem Doppelschlag (bis 120 Stich pro Klaue) auf dich. Normale Waffen kratzen kaum, Elementarschaden wirkt voll: Stab der Glut, Nebelbrecher (Frost), Feuerpfeile. Am Boden kriecht er langsamer als du rennst, also lauf los, sobald er landet. Der Atgeir-Drehschlag wirft ihn zurück.",
+      "drops": [
+        "seeker-meat",
+        "carapace",
+        "seeker-trophy"
+      ]
+    },
+    {
+      "id": "seeker-soldier",
+      "name": {
+        "de": "Sucher-Soldat",
+        "en": "Seeker soldier"
+      },
+      "gefahr": 5,
+      "schwaeche": [
+        "Hinterleib (Schwachstelle)"
+      ],
+      "resistenz": [
+        "Stumpf",
+        "Stich",
+        "Hieb",
+        "Geist (immun)"
+      ],
+      "tipp": "1500 Leben, kann nicht fliegen und rammt dich oder schlägt mit beiden Klauen zu. Er zerlegt auch Felsen und deine Bauten. Am sichersten ist Parieren (L2 im letzten Moment) und dann der Gegenschlag, am besten auf den Hinterleib. Auf einem Felsen über ihm bist du sicher, solange er ihn nicht zertrümmert. Elementarpfeile wirken besser als normale. Lässt Chitinpanzer und die Mandibel.",
+      "drops": [
+        "carapace",
+        "mandible",
+        "seeker-meat",
+        "seeker-soldier-trophy"
+      ]
+    },
+    {
+      "id": "seeker-brood",
+      "name": {
+        "de": "Sucher-Brut",
+        "en": "Seeker brood"
+      },
+      "gefahr": 2,
+      "schwaeche": [],
+      "resistenz": [
+        "Stumpf",
+        "Stich",
+        "Hieb",
+        "Geist (immun)"
+      ],
+      "tipp": "Winzig (20 Leben), stirbt meist mit einem Schlag, kommt aber im Schwarm und aus Eiern. Flächenwaffen wie Atgeir-Drehschlag, Demolisher oder Stab der Glut räumen sie auf. Die Brut lässt Königsgelee fallen, das du für Essen und Met brauchst.",
+      "drops": [
+        "royal-jelly"
+      ]
+    },
+    {
+      "id": "tick",
+      "name": {
+        "de": "Zecke",
+        "en": "Tick"
+      },
+      "gefahr": 3,
+      "schwaeche": [
+        "Stich"
+      ],
+      "resistenz": [
+        "Geist (immun)"
+      ],
+      "tipp": "Nur 50 Leben, aber sie springt dich an und saugt sich fest (zehnmal 50 Stich in fünf Sekunden). Mit der Ausweichrolle (L2 + Kreis) schüttelst du sie ab, ein Schild blockt sie. Gegen Gruppen helfen Flächenangriffe. Zweisternige Zecken können leichte Rüstung in unter einer Sekunde zerlegen.",
+      "drops": [
+        "blood-clot",
+        "tick-trophy"
+      ]
+    },
+    {
+      "id": "gjall",
+      "name": {
+        "de": "Gjall",
+        "en": "Gjall"
+      },
+      "gefahr": 4,
+      "schwaeche": [
+        "Stich auf den Bauch (Eier)"
+      ],
+      "resistenz": [
+        "Feuer",
+        "Geist (immun)"
+      ],
+      "tipp": "Riesiger Flieger mit 1500 Leben. Er spuckt Feuerbälle (50 Stumpf, 80 Feuer, brennt nach) und lässt Zecken-Eier fallen. Die orangen Eier am Bauch sind die Schwachstelle: Mit Bogen, Armbrust oder Stab von unten drauf. Nahkampf bringt nichts, er schüttelt dich ab. Feuerresistenz-Gerstenwein hilft sehr. Rennen geht auch: Er ist langsamer als du.",
+      "drops": [
+        "bilebag",
+        "gjall-trophy"
+      ]
+    },
+    {
+      "id": "dvergr-mage",
+      "name": {
+        "de": "Dvergr-Magier",
+        "en": "Dvergr mage"
+      },
+      "gefahr": 4,
+      "schwaeche": [],
+      "resistenz": [
+        "Feuer",
+        "Frost",
+        "Geist (immun)"
+      ],
+      "tipp": "Friedlich, bis du ihn oder seine Bauten angreifst, dann werden alle Dvergr in der Nähe feindlich. 350 Leben, schickt Feuerbälle und Eisblitze, Unterstützer heilen und stärken die anderen. Wenn du kämpfst, nimm die Magier zuerst. Kistenlager lassen sich ohne Kampf plündern, siehe Rohstoffe.",
+      "drops": [
+        "black-marble",
+        "soft-tissue",
+        "dvergr-trophy"
+      ]
+    },
+    {
+      "id": "dvergr-rogue",
+      "name": {
+        "de": "Dvergr-Schurke",
+        "en": "Dvergr rogue"
+      },
+      "gefahr": 3,
+      "schwaeche": [],
+      "resistenz": [
+        "Geist (immun)"
+      ],
+      "tipp": "Friedlich, bis du angreifst. Danach schießt er mit dem Bogen (110 Stich) oder schlägt zu. 350 Leben, zwei Sterne treffen sehr hart. Hohe Position und Deckung machen den Kampf leichter.",
+      "drops": [
+        "black-marble",
+        "soft-tissue",
+        "dvergr-trophy"
+      ]
+    }
+  ],
+  "rohstoffe": [
+    {
+      "id": "yggdrasil-wood-quelle",
+      "name": {
+        "de": "Yggdrasil-Holz",
+        "en": "Yggdrasil wood"
+      },
+      "fundort": "Yggdrasil-Schösslinge (Yggdrasil shoots) auf den schwarzen Felsen der Nebellande. Ein Baum gibt 20 Holz, etwa die Hälfte davon Yggdrasil.",
+      "werkzeug": "Schwarzmetall-Axt",
+      "wofuer": [
+        "black-forge",
+        "galdr-table",
+        "eitr-refinery",
+        "sap-extractor",
+        "staff-of-embers",
+        "demolisher",
+        "black-metal-pickaxe"
+      ]
+    },
+    {
+      "id": "black-marble-quelle",
+      "name": {
+        "de": "Schwarzer Marmor",
+        "en": "Black marble"
+      },
+      "fundort": "Riesenreste (Giant remains): Schädel und Rippen, die aus dem Boden ragen. Ein Schädel gibt im Schnitt fast 400 Marmor. Dazu Dvergr-Bauten und manche Dvergr-Drops.",
+      "werkzeug": "Schwarzmetall-Spitzhacke",
+      "wofuer": [
+        "black-forge",
+        "eitr-refinery",
+        "rune-table",
+        "black-marble-floor",
+        "mortar-and-pestle"
+      ]
+    },
+    {
+      "id": "soft-tissue-quelle",
+      "name": {
+        "de": "Weichgewebe",
+        "en": "Soft tissue"
+      },
+      "fundort": "Das Gehirn im Inneren der Riesenschädel, dazu Dvergr-Kisten und Dvergr-Drops.",
+      "werkzeug": "Schwarzmetall-Spitzhacke",
+      "wofuer": [
+        "refined-eitr"
+      ]
+    },
+    {
+      "id": "sap-quelle",
+      "name": {
+        "de": "Saft",
+        "en": "Sap"
+      },
+      "fundort": "Uralte Wurzeln (Ancient roots) am Boden der Nebellande. Du stellst einen Saftextraktor drauf, er liefert etwa einen Saft pro Minute.",
+      "wofuer": [
+        "refined-eitr",
+        "yggdrasil-porridge",
+        "mead-base-minor-eitr",
+        "mead-base-lingering-stamina"
+      ]
+    },
+    {
+      "id": "black-core-quelle",
+      "name": {
+        "de": "Schwarzer Kern",
+        "en": "Black core"
+      },
+      "fundort": "Infizierte Minen (Infested mines): auf Ständern in versteckten Räumen hinter Dvergr-Toren mit blauen Runen. Manche Minen haben keinen, andere über zehn.",
+      "wofuer": [
+        "black-forge",
+        "eitr-refinery",
+        "galdr-table"
+      ]
+    },
+    {
+      "id": "sealbreaker-fragment-quelle",
+      "name": {
+        "de": "Siegelbrecher-Fragment",
+        "en": "Sealbreaker fragment"
+      },
+      "fundort": "Infizierte Minen: in blau leuchtenden Kristallen, die du zerschlagen musst. Neun reichen für einen Siegelbrecher.",
+      "wofuer": [
+        "sealbreaker"
+      ]
+    },
+    {
+      "id": "dvergr-extractor-quelle",
+      "name": {
+        "de": "Dvergr-Extraktor",
+        "en": "Dvergr extractor"
+      },
+      "fundort": "Dvergr-Komponentenkisten in bewohnten Dvergr-Außenposten (Wachtürme, Leuchttürme, Ausgrabungsstätten, Häfen). Wer die Kiste direkt zerschlägt, macht die Dvergr feindlich.",
+      "wofuer": [
+        "sap-extractor"
+      ]
+    },
+    {
+      "id": "carapace-quelle",
+      "name": {
+        "de": "Chitinpanzer",
+        "en": "Carapace"
+      },
+      "fundort": "Von Suchern (1) und Sucher-Soldaten (2 bis 3). Bei Sternen mehr.",
+      "wofuer": [
+        "carapace-breastplate",
+        "carapace-shield",
+        "carapace-spear",
+        "carapace-arrow"
+      ]
+    },
+    {
+      "id": "scale-hide-quelle",
+      "name": {
+        "de": "Schuppenhaut",
+        "en": "Scale hide"
+      },
+      "fundort": "Von Hasen (Hare), die in den Nebellanden herumhüpfen. Dazu Hasenfleisch. Hasen lassen sich auch mit Fallen fangen.",
+      "wofuer": [
+        "carapace-breastplate",
+        "eitr-weave-robe",
+        "feather-cape",
+        "krom"
+      ]
+    },
+    {
+      "id": "royal-jelly-quelle",
+      "name": {
+        "de": "Königsgelee",
+        "en": "Royal jelly"
+      },
+      "fundort": "Haufen in Infizierten Minen (wachsen alle vier Stunden nach) und von Sucher-Bruten.",
+      "wofuer": [
+        "seeker-aspic",
+        "yggdrasil-porridge",
+        "mead-base-major-healing"
+      ]
+    },
+    {
+      "id": "jotun-puffs-quelle",
+      "name": {
+        "de": "Jotun-Puffs",
+        "en": "Jotun puffs"
+      },
+      "fundort": "Wachsen wild in den Nebellanden. Seit 1.0 wachsen gepflückte Pilze nicht mehr nach, also mit dem Kultivator in der Nebellande selbst anbauen (offener Himmel nötig).",
+      "wofuer": [
+        "jotun-puffs",
+        "misthare-supreme",
+        "salad",
+        "mushroom-omelette",
+        "minor-eitr-mead"
+      ]
+    },
+    {
+      "id": "magecap-quelle",
+      "name": {
+        "de": "Magierkappe",
+        "en": "Magecap"
+      },
+      "fundort": "Wachsen wild in den Nebellanden, ebenfalls nur dort anbaubar und nicht mehr nachwachsend.",
+      "wofuer": [
+        "magecap",
+        "seeker-aspic",
+        "mead-base-minor-eitr"
+      ]
+    },
+    {
+      "id": "wisp-quelle",
+      "name": {
+        "de": "Wisp",
+        "en": "Wisp"
+      },
+      "fundort": "Nachts und bei Regen am Wisp-Brunnen, den du schon im Heimatlager bauen kannst.",
+      "wofuer": [
+        "wisplight",
+        "wisp-torch",
+        "mistwalker"
+      ]
+    }
+  ],
+  "freischaltungen": [
+    {
+      "id": "r-black-metal-pickaxe",
+      "ergebnis": "black-metal-pickaxe",
+      "station": "schmiede",
+      "stufe": 2,
+      "zutaten": [
+        {
+          "item": "yggdrasil-wood",
+          "menge": 3
+        },
+        {
+          "item": "black-metal",
+          "menge": 25
+        }
+      ]
+    },
+    {
+      "id": "r-wisp-fountain",
+      "ergebnis": "wisp-fountain",
+      "station": "steinmetz",
+      "zutaten": [
+        {
+          "item": "stone",
+          "menge": 10
+        },
+        {
+          "item": "torn-spirit",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-wisplight",
+      "ergebnis": "wisplight",
+      "station": "werkbank",
+      "zutaten": [
+        {
+          "item": "silver",
+          "menge": 1
+        },
+        {
+          "item": "wisp",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-wisp-torch",
+      "ergebnis": "wisp-torch",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "yggdrasil-wood",
+          "menge": 1
+        },
+        {
+          "item": "wisp",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-black-forge",
+      "ergebnis": "black-forge",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 10
+        },
+        {
+          "item": "yggdrasil-wood",
+          "menge": 10
+        },
+        {
+          "item": "black-core",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-black-forge-cooler",
+      "ergebnis": "black-forge-cooler",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 5
+        },
+        {
+          "item": "copper",
+          "menge": 5
+        },
+        {
+          "item": "black-marble",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-sap-extractor",
+      "ergebnis": "sap-extractor",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "yggdrasil-wood",
+          "menge": 10
+        },
+        {
+          "item": "black-metal",
+          "menge": 5
+        },
+        {
+          "item": "dvergr-extractor",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-eitr-refinery",
+      "ergebnis": "eitr-refinery",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 20
+        },
+        {
+          "item": "black-metal",
+          "menge": 5
+        },
+        {
+          "item": "yggdrasil-wood",
+          "menge": 10
+        },
+        {
+          "item": "black-core",
+          "menge": 5
+        },
+        {
+          "item": "sap",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-galdr-table",
+      "ergebnis": "galdr-table",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "black-metal",
+          "menge": 10
+        },
+        {
+          "item": "yggdrasil-wood",
+          "menge": 20
+        },
+        {
+          "item": "black-core",
+          "menge": 5
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-rune-table",
+      "ergebnis": "rune-table",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 10
+        },
+        {
+          "item": "yggdrasil-wood",
+          "menge": 5
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-unfading-candles",
+      "ergebnis": "unfading-candles",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 10
+        },
+        {
+          "item": "skeleton-trophy",
+          "menge": 3
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 10
+        },
+        {
+          "item": "resin",
+          "menge": 15
+        }
+      ]
+    },
+    {
+      "id": "r-mortar-and-pestle",
+      "ergebnis": "mortar-and-pestle",
+      "station": "bauen",
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 8
+        },
+        {
+          "item": "fine-wood",
+          "menge": 6
+        },
+        {
+          "item": "core-wood",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-sealbreaker",
+      "ergebnis": "sealbreaker",
+      "station": "galdr-tisch",
+      "zutaten": [
+        {
+          "item": "sealbreaker-fragment",
+          "menge": 9
+        }
+      ]
+    },
+    {
+      "id": "r-black-marble-floor",
+      "ergebnis": "black-marble-floor",
+      "station": "steinmetz",
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-black-marble-stair",
+      "ergebnis": "black-marble-stair",
+      "station": "steinmetz",
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 8
+        }
+      ]
+    },
+    {
+      "id": "r-black-marble-2x2x2",
+      "ergebnis": "black-marble-2x2x2",
+      "station": "steinmetz",
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 8
+        }
+      ]
+    },
+    {
+      "id": "r-black-marble-column-small",
+      "ergebnis": "black-marble-column-small",
+      "station": "steinmetz",
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-black-marble-column-wide",
+      "ergebnis": "black-marble-column-wide",
+      "station": "steinmetz",
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-black-marble-arch",
+      "ergebnis": "black-marble-arch",
+      "station": "steinmetz",
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-black-marble-table",
+      "ergebnis": "black-marble-table",
+      "station": "steinmetz",
+      "zutaten": [
+        {
+          "item": "black-marble",
+          "menge": 6
+        },
+        {
+          "item": "copper",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-mistwalker",
+      "ergebnis": "mistwalker",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 3
+        },
+        {
+          "item": "iron",
+          "menge": 15
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 10
+        },
+        {
+          "item": "wisp",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-himminafl",
+      "ergebnis": "himminafl",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "yggdrasil-wood",
+          "menge": 10
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 15
+        },
+        {
+          "item": "silver",
+          "menge": 5
+        },
+        {
+          "item": "mandible",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-jotun-bane",
+      "ergebnis": "jotun-bane",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "yggdrasil-wood",
+          "menge": 5
+        },
+        {
+          "item": "iron",
+          "menge": 15
+        },
+        {
+          "item": "bilebag",
+          "menge": 3
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-spinesnap",
+      "ergebnis": "spinesnap",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "fine-wood",
+          "menge": 10
+        },
+        {
+          "item": "bone-fragments",
+          "menge": 40
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-arbalest",
+      "ergebnis": "arbalest",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 10
+        },
+        {
+          "item": "iron",
+          "menge": 8
+        },
+        {
+          "item": "root",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-krom",
+      "ergebnis": "krom",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "iron",
+          "menge": 30
+        },
+        {
+          "item": "bronze",
+          "menge": 20
+        },
+        {
+          "item": "scale-hide",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-carapace-spear",
+      "ergebnis": "carapace-spear",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "yggdrasil-wood",
+          "menge": 10
+        },
+        {
+          "item": "carapace",
+          "menge": 4
+        },
+        {
+          "item": "mandible",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-demolisher",
+      "ergebnis": "demolisher",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "yggdrasil-wood",
+          "menge": 10
+        },
+        {
+          "item": "iron",
+          "menge": 20
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-skull-splittur",
+      "ergebnis": "skull-splittur",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "yggdrasil-wood",
+          "menge": 15
+        },
+        {
+          "item": "iron",
+          "menge": 30
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-carapace-arrow",
+      "ergebnis": "carapace-arrow",
+      "station": "schwarze-schmiede",
+      "menge": 20,
+      "zutaten": [
+        {
+          "item": "carapace",
+          "menge": 4
+        },
+        {
+          "item": "feathers",
+          "menge": 2
+        },
+        {
+          "item": "wood",
+          "menge": 8
+        }
+      ]
+    },
+    {
+      "id": "r-carapace-bolt",
+      "ergebnis": "carapace-bolt",
+      "station": "schwarze-schmiede",
+      "menge": 20,
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 8
+        },
+        {
+          "item": "carapace",
+          "menge": 2
+        },
+        {
+          "item": "feathers",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-iron-bolt",
+      "ergebnis": "iron-bolt",
+      "station": "schwarze-schmiede",
+      "menge": 20,
+      "zutaten": [
+        {
+          "item": "wood",
+          "menge": 8
+        },
+        {
+          "item": "iron",
+          "menge": 1
+        },
+        {
+          "item": "feathers",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-bone-bolt",
+      "ergebnis": "bone-bolt",
+      "station": "schwarze-schmiede",
+      "menge": 20,
+      "zutaten": [
+        {
+          "item": "bone-fragments",
+          "menge": 8
+        },
+        {
+          "item": "feathers",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-carapace-buckler",
+      "ergebnis": "carapace-buckler",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "carapace",
+          "menge": 16
+        },
+        {
+          "item": "scale-hide",
+          "menge": 3
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-carapace-shield",
+      "ergebnis": "carapace-shield",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "carapace",
+          "menge": 20
+        },
+        {
+          "item": "scale-hide",
+          "menge": 3
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-carapace-helmet",
+      "ergebnis": "carapace-helmet",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "carapace",
+          "menge": 16
+        },
+        {
+          "item": "scale-hide",
+          "menge": 3
+        },
+        {
+          "item": "mandible",
+          "menge": 2
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-carapace-breastplate",
+      "ergebnis": "carapace-breastplate",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "carapace",
+          "menge": 20
+        },
+        {
+          "item": "scale-hide",
+          "menge": 3
+        },
+        {
+          "item": "iron",
+          "menge": 5
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-carapace-greaves",
+      "ergebnis": "carapace-greaves",
+      "station": "schwarze-schmiede",
+      "zutaten": [
+        {
+          "item": "carapace",
+          "menge": 20
+        },
+        {
+          "item": "scale-hide",
+          "menge": 3
+        },
+        {
+          "item": "iron",
+          "menge": 5
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-staff-of-embers",
+      "ergebnis": "staff-of-embers",
+      "station": "galdr-tisch",
+      "zutaten": [
+        {
+          "item": "yggdrasil-wood",
+          "menge": 20
+        },
+        {
+          "item": "surtling-core",
+          "menge": 4
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 16
+        }
+      ]
+    },
+    {
+      "id": "r-staff-of-frost",
+      "ergebnis": "staff-of-frost",
+      "station": "galdr-tisch",
+      "zutaten": [
+        {
+          "item": "yggdrasil-wood",
+          "menge": 20
+        },
+        {
+          "item": "freeze-gland",
+          "menge": 4
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 16
+        }
+      ]
+    },
+    {
+      "id": "r-staff-of-protection",
+      "ergebnis": "staff-of-protection",
+      "station": "galdr-tisch",
+      "zutaten": [
+        {
+          "item": "yggdrasil-wood",
+          "menge": 20
+        },
+        {
+          "item": "blood-clot",
+          "menge": 4
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 16
+        }
+      ]
+    },
+    {
+      "id": "r-dead-raiser",
+      "ergebnis": "dead-raiser",
+      "station": "galdr-tisch",
+      "zutaten": [
+        {
+          "item": "bone-fragments",
+          "menge": 10
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 16
+        },
+        {
+          "item": "skeleton-trophy",
+          "menge": 4
+        }
+      ]
+    },
+    {
+      "id": "r-eitr-weave-hood",
+      "ergebnis": "eitr-weave-hood",
+      "station": "galdr-tisch",
+      "zutaten": [
+        {
+          "item": "linen-thread",
+          "menge": 16
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 15
+        },
+        {
+          "item": "iron",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-eitr-weave-robe",
+      "ergebnis": "eitr-weave-robe",
+      "station": "galdr-tisch",
+      "zutaten": [
+        {
+          "item": "linen-thread",
+          "menge": 20
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 20
+        },
+        {
+          "item": "feathers",
+          "menge": 10
+        },
+        {
+          "item": "scale-hide",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-eitr-weave-trousers",
+      "ergebnis": "eitr-weave-trousers",
+      "station": "galdr-tisch",
+      "zutaten": [
+        {
+          "item": "linen-thread",
+          "menge": 20
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 20
+        },
+        {
+          "item": "scale-hide",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-feather-cape",
+      "ergebnis": "feather-cape",
+      "station": "galdr-tisch",
+      "zutaten": [
+        {
+          "item": "feathers",
+          "menge": 10
+        },
+        {
+          "item": "refined-eitr",
+          "menge": 20
+        },
+        {
+          "item": "scale-hide",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-cooked-seeker-meat",
+      "ergebnis": "cooked-seeker-meat",
+      "station": "feuer",
+      "zutaten": [
+        {
+          "item": "seeker-meat",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-cooked-hare-meat",
+      "ergebnis": "cooked-hare-meat",
+      "station": "feuer",
+      "zutaten": [
+        {
+          "item": "hare-meat",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-seeker-aspic",
+      "ergebnis": "seeker-aspic",
+      "station": "kessel",
+      "stufe": 5,
+      "menge": 2,
+      "zutaten": [
+        {
+          "item": "seeker-meat",
+          "menge": 2
+        },
+        {
+          "item": "magecap",
+          "menge": 2
+        },
+        {
+          "item": "royal-jelly",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-yggdrasil-porridge",
+      "ergebnis": "yggdrasil-porridge",
+      "station": "kessel",
+      "stufe": 5,
+      "zutaten": [
+        {
+          "item": "sap",
+          "menge": 4
+        },
+        {
+          "item": "barley",
+          "menge": 3
+        },
+        {
+          "item": "royal-jelly",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-mushroom-omelette",
+      "ergebnis": "mushroom-omelette",
+      "station": "kessel",
+      "stufe": 5,
+      "zutaten": [
+        {
+          "item": "egg",
+          "menge": 3
+        },
+        {
+          "item": "jotun-puffs",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-salad",
+      "ergebnis": "salad",
+      "station": "kessel",
+      "stufe": 5,
+      "menge": 3,
+      "zutaten": [
+        {
+          "item": "jotun-puffs",
+          "menge": 3
+        },
+        {
+          "item": "onion",
+          "menge": 3
+        },
+        {
+          "item": "cloudberries",
+          "menge": 3
+        }
+      ]
+    },
+    {
+      "id": "r-misthare-supreme",
+      "ergebnis": "misthare-supreme",
+      "station": "kunsthandwerkstisch",
+      "zutaten": [
+        {
+          "item": "hare-meat",
+          "menge": 1
+        },
+        {
+          "item": "jotun-puffs",
+          "menge": 3
+        },
+        {
+          "item": "carrot",
+          "menge": 2
+        }
+      ]
+    },
+    {
+      "id": "r-mead-base-minor-eitr",
+      "ergebnis": "mead-base-minor-eitr",
+      "station": "kessel",
+      "zutaten": [
+        {
+          "item": "honey",
+          "menge": 10
+        },
+        {
+          "item": "sap",
+          "menge": 5
+        },
+        {
+          "item": "jotun-puffs",
+          "menge": 2
+        },
+        {
+          "item": "magecap",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-minor-eitr-mead",
+      "ergebnis": "minor-eitr-mead",
+      "station": "gaerbottich",
+      "menge": 6,
+      "zutaten": [
+        {
+          "item": "mead-base-minor-eitr",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-mead-base-lingering-stamina",
+      "ergebnis": "mead-base-lingering-stamina",
+      "station": "kessel",
+      "zutaten": [
+        {
+          "item": "sap",
+          "menge": 10
+        },
+        {
+          "item": "cloudberries",
+          "menge": 10
+        },
+        {
+          "item": "jotun-puffs",
+          "menge": 10
+        }
+      ]
+    },
+    {
+      "id": "r-lingering-stamina-mead",
+      "ergebnis": "lingering-stamina-mead",
+      "station": "gaerbottich",
+      "menge": 6,
+      "zutaten": [
+        {
+          "item": "mead-base-lingering-stamina",
+          "menge": 1
+        }
+      ]
+    },
+    {
+      "id": "r-mead-base-major-healing",
+      "ergebnis": "mead-base-major-healing",
+      "station": "kessel",
+      "zutaten": [
+        {
+          "item": "honey",
+          "menge": 10
+        },
+        {
+          "item": "blood-clot",
+          "menge": 4
+        },
+        {
+          "item": "royal-jelly",
+          "menge": 5
+        }
+      ]
+    },
+    {
+      "id": "r-major-healing-mead",
+      "ergebnis": "major-healing-mead",
+      "station": "gaerbottich",
+      "menge": 6,
+      "zutaten": [
+        {
+          "item": "mead-base-major-healing",
+          "menge": 1
+        }
+      ]
+    }
+  ],
   "items": [
+    {
+      "id": "yggdrasil-wood",
+      "name": {
+        "de": "Yggdrasil-Holz",
+        "en": "Yggdrasil wood"
+      },
+      "typ": "material",
+      "hinweis": "Kommt nur von Yggdrasil-Schösslingen, braucht mindestens die Schwarzmetall-Axt. Lässt sich nicht im Köhler verbrennen."
+    },
+    {
+      "id": "black-marble",
+      "name": {
+        "de": "Schwarzer Marmor",
+        "en": "Black marble"
+      },
+      "typ": "material",
+      "hinweis": "Mit der Schwarzmetall-Spitzhacke aus Riesenresten abbauen. Auch Dvergr-Bauten geben etwas her."
+    },
+    {
+      "id": "soft-tissue",
+      "name": {
+        "de": "Weichgewebe",
+        "en": "Soft tissue"
+      },
+      "typ": "material",
+      "hinweis": "Steckt als Gehirn-Brocken in den Schädeln der Riesenreste. Mit der Spitzhacke abbauen, auch Dvergr-Kisten geben welches."
+    },
+    {
+      "id": "sap",
+      "name": {
+        "de": "Saft",
+        "en": "Sap"
+      },
+      "typ": "material",
+      "hinweis": "Kommt aus dem Saftextraktor auf Uralten Wurzeln. Pro Wurzel etwa ein Saft pro Minute, bis zu 10 im Extraktor."
+    },
+    {
+      "id": "refined-eitr",
+      "name": {
+        "de": "Raffinierter Eitr",
+        "en": "Refined eitr"
+      },
+      "typ": "material",
+      "hinweis": "Entsteht in der Eitr-Raffinerie aus Saft und Weichgewebe. Auf dem Boden gibt er Funken ab, die Gift- und Blitzschaden machen."
+    },
+    {
+      "id": "black-core",
+      "name": {
+        "de": "Schwarzer Kern",
+        "en": "Black core"
+      },
+      "typ": "material",
+      "hinweis": "Nur in Infizierten Minen, meist in versteckten Schatzräumen. Du brauchst 15: je 5 für Schwarzschmiede, Eitr-Raffinerie und Galdr-Tisch."
+    },
+    {
+      "id": "sealbreaker-fragment",
+      "name": {
+        "de": "Siegelbrecher-Fragment",
+        "en": "Sealbreaker fragment"
+      },
+      "typ": "material",
+      "hinweis": "Steckt in blau beleuchteten Kristallen in Infizierten Minen. Du brauchst neun."
+    },
     {
       "id": "sealbreaker",
       "name": {
         "de": "Siegelbrecher",
         "en": "Sealbreaker"
       },
+      "typ": "material",
+      "hinweis": "Schlüssel zur Infizierten Zitadelle. Wird am Galdr-Tisch aus neun Fragmenten gebaut und beim Öffnen nicht verbraucht."
+    },
+    {
+      "id": "dvergr-extractor",
+      "name": {
+        "de": "Dvergr-Extraktor",
+        "en": "Dvergr extractor"
+      },
+      "typ": "material",
+      "hinweis": "Liegt in Dvergr-Komponentenkisten in bewohnten Dvergr-Außenposten. Geht nicht durch normale Portale."
+    },
+    {
+      "id": "carapace",
+      "name": {
+        "de": "Chitinpanzer",
+        "en": "Carapace"
+      },
+      "typ": "material",
+      "hinweis": "Fällt von Suchern und Sucher-Soldaten. Geht im Gegensatz zu anderen Rüstungsmaterialien durchs Portal."
+    },
+    {
+      "id": "mandible",
+      "name": {
+        "de": "Mandibel",
+        "en": "Mandible"
+      },
+      "typ": "material",
+      "hinweis": "Fällt von Sucher-Soldaten."
+    },
+    {
+      "id": "scale-hide",
+      "name": {
+        "de": "Schuppenhaut",
+        "en": "Scale hide"
+      },
+      "typ": "material",
+      "hinweis": "Fällt von Hasen."
+    },
+    {
+      "id": "bilebag",
+      "name": {
+        "de": "Gallenbeutel",
+        "en": "Bilebag"
+      },
+      "typ": "material",
+      "hinweis": "Fällt von Gjall."
+    },
+    {
+      "id": "blood-clot",
+      "name": {
+        "de": "Blutgerinnsel",
+        "en": "Blood clot"
+      },
+      "typ": "material",
+      "hinweis": "Fällt von Zecken."
+    },
+    {
+      "id": "wisp",
+      "name": {
+        "de": "Wisp",
+        "en": "Wisp"
+      },
+      "typ": "material",
+      "hinweis": "Sammelst du nachts am Wisp-Brunnen. Der Brunnen braucht den Zerrissenen Geist von Yagluth."
+    },
+    {
+      "id": "seeker-meat",
+      "name": {
+        "de": "Sucherfleisch",
+        "en": "Seeker meat"
+      },
       "typ": "material"
     },
     {
-      "id": "queen-drop",
+      "id": "hare-meat",
       "name": {
-        "de": "Königinnen-Tropfen",
-        "en": "Queen drop"
+        "de": "Hasenfleisch",
+        "en": "Hare meat"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "majestic-carapace",
+      "name": {
+        "de": "Majestätischer Chitinpanzer",
+        "en": "Majestic carapace"
+      },
+      "typ": "material",
+      "hinweis": "Die Belohnung der Königin, fünf Stück. Aus einem davon entsteht später die Kunstpresse (Artisan press) für die Drakkar."
+    },
+    {
+      "id": "seeker-trophy",
+      "name": {
+        "de": "Sucher-Trophäe",
+        "en": "Seeker trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "seeker-soldier-trophy",
+      "name": {
+        "de": "Sucher-Soldat-Trophäe",
+        "en": "Seeker soldier trophy"
+      },
+      "typ": "material",
+      "hinweis": "Drei davon rufen die Königin am Hivesitz erneut."
+    },
+    {
+      "id": "tick-trophy",
+      "name": {
+        "de": "Zecken-Trophäe",
+        "en": "Tick trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "gjall-trophy",
+      "name": {
+        "de": "Gjall-Trophäe",
+        "en": "Gjall trophy"
+      },
+      "typ": "material"
+    },
+    {
+      "id": "dvergr-trophy",
+      "name": {
+        "de": "Dvergr-Trophäe",
+        "en": "Dvergr trophy"
       },
       "typ": "material"
     },
@@ -57,10 +1664,759 @@
         "de": "Trophäe der Königin",
         "en": "The Queen trophy"
       },
+      "typ": "material",
+      "hinweis": "An den Opferstein hängen, dann gehört dir ihre Macht."
+    },
+    {
+      "id": "egg",
+      "name": {
+        "de": "Ei",
+        "en": "Egg"
+      },
       "typ": "material"
+    },
+    {
+      "id": "jotun-puffs",
+      "name": {
+        "de": "Jotun-Puffs",
+        "en": "Jotun puffs"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 25,
+        "ausdauer": 25,
+        "dauer": 900
+      },
+      "hinweis": "Wächst nur in den Nebellanden mit dem Kultivator. Seit 1.0 wachsen gepflückte Pilze nicht mehr nach, du musst sie anbauen."
+    },
+    {
+      "id": "magecap",
+      "name": {
+        "de": "Magierkappe",
+        "en": "Magecap"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 25,
+        "ausdauer": 25,
+        "eitr": 25,
+        "dauer": 900
+      },
+      "hinweis": "Wächst nur in den Nebellanden. Der erste Eitr-Happen. Seit 1.0 wachsen gepflückte Pilze nicht mehr nach."
+    },
+    {
+      "id": "royal-jelly",
+      "name": {
+        "de": "Königsgelee",
+        "en": "Royal jelly"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 15,
+        "ausdauer": 15,
+        "dauer": 900
+      },
+      "hinweis": "Liegt in Haufen in Infizierten Minen und wächst dort alle vier Stunden nach."
+    },
+    {
+      "id": "cooked-seeker-meat",
+      "name": {
+        "de": "Gebratenes Sucherfleisch",
+        "en": "Cooked seeker meat"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 60,
+        "ausdauer": 20,
+        "dauer": 1200
+      },
+      "hinweis": "Wird auf der Eisen-Kochstation gebraten, die normale Kochstation reicht nicht."
+    },
+    {
+      "id": "cooked-hare-meat",
+      "name": {
+        "de": "Gebratenes Hasenfleisch",
+        "en": "Cooked hare meat"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 60,
+        "ausdauer": 20,
+        "dauer": 1200
+      }
+    },
+    {
+      "id": "seeker-aspic",
+      "name": {
+        "de": "Sucher-Aspik",
+        "en": "Seeker aspic"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 28,
+        "ausdauer": 14,
+        "eitr": 85,
+        "dauer": 1800
+      },
+      "hinweis": "Das beste Eitr-Essen der Nebellande. Ein Ansatz ergibt zwei Portionen. Braucht den Kessel mit Mörser und Stößel."
+    },
+    {
+      "id": "yggdrasil-porridge",
+      "name": {
+        "de": "Yggdrasil-Brei",
+        "en": "Yggdrasil porridge"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 27,
+        "ausdauer": 13,
+        "eitr": 80,
+        "dauer": 1500
+      },
+      "hinweis": "Braucht den Kessel mit Mörser und Stößel."
+    },
+    {
+      "id": "mushroom-omelette",
+      "name": {
+        "de": "Pilzomelett",
+        "en": "Mushroom omelette"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 28,
+        "ausdauer": 85,
+        "dauer": 1500
+      },
+      "hinweis": "Viel Ausdauer. Braucht den Kessel mit Mörser und Stößel."
+    },
+    {
+      "id": "salad",
+      "name": {
+        "de": "Salat",
+        "en": "Salad"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 26,
+        "ausdauer": 80,
+        "dauer": 1500
+      },
+      "hinweis": "Ein Ansatz ergibt drei Portionen. Braucht den Kessel mit Mörser und Stößel."
+    },
+    {
+      "id": "misthare-supreme",
+      "name": {
+        "de": "Misthare Supreme",
+        "en": "Misthare supreme"
+      },
+      "typ": "nahrung",
+      "werte": {
+        "leben": 85,
+        "ausdauer": 28,
+        "dauer": 1500
+      },
+      "hinweis": "Das meiste Leben aller Nebellande-Gerichte. Erst am Küchentisch (Food preparation table) den Rohling machen, dann 50 Sekunden im Steinofen backen. Länger als 100 Sekunden wird Kohle daraus."
+    },
+    {
+      "id": "mead-base-minor-eitr",
+      "name": {
+        "de": "Metansatz: Schwacher Eitr",
+        "en": "Mead base: Minor eitr"
+      },
+      "typ": "met",
+      "hinweis": "Wird am Metkessel (Mead ketill) angesetzt und im Gärbottich zwei Tage vergoren."
+    },
+    {
+      "id": "minor-eitr-mead",
+      "name": {
+        "de": "Schwacher Eitr-Met",
+        "en": "Minor eitr mead"
+      },
+      "typ": "met",
+      "werte": {
+        "eitr": 125,
+        "dauer": 10
+      },
+      "hinweis": "Gibt 125 Eitr über 10 Sekunden zurück, 2 Minuten Abklingzeit. Ein Ansatz ergibt sechs Fläschchen."
+    },
+    {
+      "id": "mead-base-lingering-stamina",
+      "name": {
+        "de": "Metansatz: Anhaltende Ausdauer",
+        "en": "Mead base: Lingering stamina"
+      },
+      "typ": "met",
+      "hinweis": "Wird am Metkessel angesetzt und im Gärbottich zwei Tage vergoren."
+    },
+    {
+      "id": "lingering-stamina-mead",
+      "name": {
+        "de": "Met der anhaltenden Ausdauer",
+        "en": "Lingering stamina mead"
+      },
+      "typ": "met",
+      "werte": {
+        "dauer": 300
+      },
+      "hinweis": "25 % schnellere Ausdauerregeneration für 5 Minuten. Ein Ansatz ergibt sechs Fläschchen."
+    },
+    {
+      "id": "mead-base-major-healing",
+      "name": {
+        "de": "Metansatz: Starke Heilung",
+        "en": "Mead base: Major healing"
+      },
+      "typ": "met",
+      "hinweis": "Wird am Metkessel angesetzt und im Gärbottich zwei Tage vergoren."
+    },
+    {
+      "id": "major-healing-mead",
+      "name": {
+        "de": "Starker Heilmet",
+        "en": "Major healing mead"
+      },
+      "typ": "met",
+      "werte": {
+        "leben": 125,
+        "dauer": 10
+      },
+      "hinweis": "Stellt 125 Leben über 10 Sekunden wieder her, 2 Minuten Abklingzeit. Ein Ansatz ergibt sechs Fläschchen."
+    },
+    {
+      "id": "black-metal-pickaxe",
+      "name": {
+        "de": "Schwarzmetall-Spitzhacke",
+        "en": "Black metal pickaxe"
+      },
+      "typ": "werkzeug",
+      "werte": {
+        "stich": 49,
+        "haltbarkeit": 210
+      },
+      "hinweis": "Baut Schwarzen Marmor, Weichgewebe und Alte Schwerter und Rüstungen ab. Wird in der Schmiede gebaut, braucht Yggdrasil-Holz."
+    },
+    {
+      "id": "wisplight",
+      "name": {
+        "de": "Wisplicht",
+        "en": "Wisplight"
+      },
+      "typ": "werkzeug",
+      "hinweis": "Ein Wisp, der dir folgt und den Nebel in etwa 10 m Umkreis vertreibt. Seit 1.0 mit größerer Reichweite. Belegt den Schmuck-Platz und ersetzt Megingjord."
+    },
+    {
+      "id": "mistwalker",
+      "name": {
+        "de": "Nebelbrecher",
+        "en": "Mistwalker"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 75,
+        "frost": 40,
+        "haltbarkeit": 200
+      },
+      "hinweis": "Einhandschwert, leuchtet und vertreibt den Nebel. Frostschaden bremst Sucher."
+    },
+    {
+      "id": "himminafl",
+      "name": {
+        "de": "Himmin Afl",
+        "en": "Himminafl"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 85,
+        "blitz": 40,
+        "haltbarkeit": 175
+      },
+      "hinweis": "Atgeir. Der Drehschlag wirft Sucher zurück und räumt Bruten weg."
+    },
+    {
+      "id": "jotun-bane",
+      "name": {
+        "de": "Jotun Bane",
+        "en": "Jotun Bane"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 80,
+        "gift": 40,
+        "haltbarkeit": 175
+      },
+      "hinweis": "Einhandaxt mit Giftschaden. Fällt auch Bäume."
+    },
+    {
+      "id": "spinesnap",
+      "name": {
+        "de": "Spinesnap",
+        "en": "Spinesnap"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 72,
+        "geist": 5,
+        "haltbarkeit": 100
+      },
+      "hinweis": "Bogen mit viel Rückstoß."
+    },
+    {
+      "id": "arbalest",
+      "name": {
+        "de": "Arbalest",
+        "en": "Arbalest"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 200,
+        "haltbarkeit": 50
+      },
+      "hinweis": "Armbrust, langsam und mächtig. Mit Chitinbolzen auf Gjall-Bäuche und Sucher-Soldaten."
+    },
+    {
+      "id": "krom",
+      "name": {
+        "de": "Krom",
+        "en": "Krom"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 150,
+        "haltbarkeit": 200
+      },
+      "hinweis": "Zweihandschwert. Der starke Einzelschlag ist gegen die Königin die beste Wahl."
+    },
+    {
+      "id": "carapace-spear",
+      "name": {
+        "de": "Chitin-Speer",
+        "en": "Carapace spear"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 115,
+        "haltbarkeit": 100
+      },
+      "hinweis": "Man kann ihn werfen (1,5-facher Schaden)."
+    },
+    {
+      "id": "demolisher",
+      "name": {
+        "de": "Demolisher",
+        "en": "Demolisher"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stumpf": 145,
+        "haltbarkeit": 100
+      },
+      "hinweis": "Zweihandhammer mit Flächenschaden. Wirkt auch durch Wände und über Höhenunterschiede."
+    },
+    {
+      "id": "skull-splittur",
+      "name": {
+        "de": "Skull Splittur",
+        "en": "Skull Splittur"
+      },
+      "typ": "waffe",
+      "werte": {
+        "hieb": 130,
+        "haltbarkeit": 200
+      },
+      "hinweis": "Zweihandaxt, fällt auch Bäume."
+    },
+    {
+      "id": "carapace-arrow",
+      "name": {
+        "de": "Chitinpfeil",
+        "en": "Carapace arrow"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 72
+      }
+    },
+    {
+      "id": "carapace-bolt",
+      "name": {
+        "de": "Chitinbolzen",
+        "en": "Carapace bolt"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 72
+      }
+    },
+    {
+      "id": "iron-bolt",
+      "name": {
+        "de": "Eisenbolzen",
+        "en": "Iron bolt"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 42
+      }
+    },
+    {
+      "id": "bone-bolt",
+      "name": {
+        "de": "Knochenbolzen",
+        "en": "Bone bolt"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stich": 32
+      }
+    },
+    {
+      "id": "staff-of-embers",
+      "name": {
+        "de": "Stab der Glut",
+        "en": "Staff of Embers"
+      },
+      "typ": "waffe",
+      "werte": {
+        "stumpf": 120,
+        "feuer": 120,
+        "haltbarkeit": 200
+      },
+      "hinweis": "Feuerball mit Flächenschaden. Kostet pro Schuss 35 Eitr. Räumt ganze Sucher-Gruppen."
+    },
+    {
+      "id": "staff-of-frost",
+      "name": {
+        "de": "Stab des Frostes",
+        "en": "Staff of Frost"
+      },
+      "typ": "waffe",
+      "werte": {
+        "frost": 30,
+        "haltbarkeit": 200
+      },
+      "hinweis": "Eissplitter, ungenau und hungrig nach Eitr."
+    },
+    {
+      "id": "staff-of-protection",
+      "name": {
+        "de": "Stab des Schutzes",
+        "en": "Staff of Protection"
+      },
+      "typ": "waffe",
+      "werte": {
+        "haltbarkeit": 200
+      },
+      "hinweis": "Blutmagie: Du zahlst 40 % deines Lebens für einen Schutzschild, der auch Mitspieler deckt."
+    },
+    {
+      "id": "dead-raiser",
+      "name": {
+        "de": "Totenbeschwörer",
+        "en": "Dead Raiser"
+      },
+      "typ": "waffe",
+      "werte": {
+        "haltbarkeit": 200
+      },
+      "hinweis": "Blutmagie: ruft Skelette, kostet 100 Eitr und 40 % Leben."
+    },
+    {
+      "id": "carapace-buckler",
+      "name": {
+        "de": "Chitinbuckler",
+        "en": "Carapace buckler"
+      },
+      "typ": "schild",
+      "werte": {
+        "block": 78,
+        "haltbarkeit": 200
+      }
+    },
+    {
+      "id": "carapace-shield",
+      "name": {
+        "de": "Chitinschild",
+        "en": "Carapace shield"
+      },
+      "typ": "schild",
+      "werte": {
+        "block": 96,
+        "haltbarkeit": 200
+      },
+      "hinweis": "Rundschild, blockt deutlich mehr als der Buckler."
+    },
+    {
+      "id": "carapace-helmet",
+      "name": {
+        "de": "Chitinhelm",
+        "en": "Carapace helmet"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 32,
+        "haltbarkeit": 1200
+      }
+    },
+    {
+      "id": "carapace-breastplate",
+      "name": {
+        "de": "Chitin-Brustpanzer",
+        "en": "Carapace breastplate"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 32,
+        "haltbarkeit": 1200
+      },
+      "hinweis": "Macht dich etwas langsamer (minus 5 % Tempo)."
+    },
+    {
+      "id": "carapace-greaves",
+      "name": {
+        "de": "Chitin-Beinschienen",
+        "en": "Carapace greaves"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 32,
+        "haltbarkeit": 1200
+      },
+      "hinweis": "Macht dich etwas langsamer (minus 5 % Tempo)."
+    },
+    {
+      "id": "eitr-weave-hood",
+      "name": {
+        "de": "Eitrgewebe-Kapuze",
+        "en": "Eitr-weave hood"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 16,
+        "haltbarkeit": 1000
+      },
+      "hinweis": "20 % mehr Eitr-Regeneration."
+    },
+    {
+      "id": "eitr-weave-robe",
+      "name": {
+        "de": "Eitrgewebe-Robe",
+        "en": "Eitr-weave robe"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 16,
+        "haltbarkeit": 1000
+      },
+      "hinweis": "40 % mehr Eitr-Regeneration, minus 2 % Tempo."
+    },
+    {
+      "id": "eitr-weave-trousers",
+      "name": {
+        "de": "Eitrgewebe-Hose",
+        "en": "Eitr-weave trousers"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 16,
+        "haltbarkeit": 1000
+      },
+      "hinweis": "40 % mehr Eitr-Regeneration, minus 2 % Tempo."
+    },
+    {
+      "id": "feather-cape",
+      "name": {
+        "de": "Federumhang",
+        "en": "Feather cape"
+      },
+      "typ": "ruestung",
+      "werte": {
+        "ruestung": 1,
+        "haltbarkeit": 1200
+      },
+      "hinweis": "Kein Fallschaden und langsames Fallen. Dafür doppelter Feuerschaden und Frostresistenz."
+    },
+    {
+      "id": "black-forge",
+      "name": {
+        "de": "Schwarzschmiede",
+        "en": "Black forge"
+      },
+      "typ": "station",
+      "hinweis": "Braucht ein Dach und mindestens 70 % Deckung. Reparieren kostet hier nichts. Ausbauten schalten höhere Stufen frei."
+    },
+    {
+      "id": "black-forge-cooler",
+      "name": {
+        "de": "Schwarzschmiede-Kühler",
+        "en": "Black forge cooler"
+      },
+      "typ": "station",
+      "hinweis": "Ausbau der Schwarzschmiede, schaltet Stufe 2 frei."
+    },
+    {
+      "id": "galdr-table",
+      "name": {
+        "de": "Galdr-Tisch",
+        "en": "Galdr table"
+      },
+      "typ": "station",
+      "hinweis": "Für Magie, Eitrgewebe-Rüstung, Federumhang und den Siegelbrecher. Braucht ein Dach und 70 % Deckung, Reparieren kostet nichts."
+    },
+    {
+      "id": "rune-table",
+      "name": {
+        "de": "Runentisch",
+        "en": "Rune table"
+      },
+      "typ": "station",
+      "hinweis": "Ausbau des Galdr-Tischs."
+    },
+    {
+      "id": "unfading-candles",
+      "name": {
+        "de": "Unvergängliche Kerzen",
+        "en": "Unfading candles"
+      },
+      "typ": "station",
+      "hinweis": "Ausbau des Galdr-Tischs."
+    },
+    {
+      "id": "eitr-refinery",
+      "name": {
+        "de": "Eitr-Raffinerie",
+        "en": "Eitr refinery"
+      },
+      "typ": "station",
+      "hinweis": "Wandelt Saft und Weichgewebe in Raffinierten Eitr um. Die Funken zerstören Holz, bau drumherum mit Schwarzmarmor."
+    },
+    {
+      "id": "sap-extractor",
+      "name": {
+        "de": "Saftextraktor",
+        "en": "Sap extractor"
+      },
+      "typ": "station",
+      "hinweis": "Wird auf eine Uralte Wurzel in Werkbank-Nähe gestellt und sammelt Saft."
+    },
+    {
+      "id": "mortar-and-pestle",
+      "name": {
+        "de": "Mörser und Stößel",
+        "en": "Mortar and pestle"
+      },
+      "typ": "station",
+      "hinweis": "Ausbau des Kessels. Schaltet Kesselstufe 5 frei: Sucher-Aspik, Salat, Pilzomelett, Yggdrasil-Brei."
+    },
+    {
+      "id": "wisp-fountain",
+      "name": {
+        "de": "Wisp-Brunnen",
+        "en": "Wisp fountain"
+      },
+      "typ": "bauteil",
+      "hinweis": "Zieht nachts und bei Regen Wisps an, in jedem Biom. Mit der Zeit sammeln sich bis zu neun."
+    },
+    {
+      "id": "wisp-torch",
+      "name": {
+        "de": "Wisp-Fackel",
+        "en": "Wisp torch"
+      },
+      "typ": "bauteil",
+      "hinweis": "Ortsfeste Lichtquelle, die den Nebel vertreibt. Reichweite seit 1.0 größer."
+    },
+    {
+      "id": "black-marble-floor",
+      "name": {
+        "de": "Schwarzmarmor-Boden",
+        "en": "Black marble floor"
+      },
+      "typ": "bauteil",
+      "hinweis": "Immun gegen Feuer, Frost, Blitz und Gift."
+    },
+    {
+      "id": "black-marble-stair",
+      "name": {
+        "de": "Schwarzmarmor-Treppe",
+        "en": "Black marble stair"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "black-marble-2x2x2",
+      "name": {
+        "de": "Schwarzmarmor 2x2x2",
+        "en": "Black marble 2x2x2"
+      },
+      "typ": "bauteil",
+      "hinweis": "Massiver Block."
+    },
+    {
+      "id": "black-marble-column-small",
+      "name": {
+        "de": "Schwarzmarmor-Säule, klein",
+        "en": "Black marble column, small"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "black-marble-column-wide",
+      "name": {
+        "de": "Schwarzmarmor-Säule, breit",
+        "en": "Black marble column, wide"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "black-marble-arch",
+      "name": {
+        "de": "Schwarzmarmor-Bogen",
+        "en": "Black marble arch"
+      },
+      "typ": "bauteil"
+    },
+    {
+      "id": "black-marble-table",
+      "name": {
+        "de": "Schwarzmarmor-Tisch",
+        "en": "Black marble table"
+      },
+      "typ": "bauteil"
     }
   ],
   "checkliste": [
+    {
+      "id": "z-lager-nebellande",
+      "text": "Lager am Rand der Nebellande aufbauen, Wisp-Brunnen, Wisps sammeln, Wisplicht bauen"
+    },
+    {
+      "id": "z-schwarzmetall-werkzeug",
+      "text": "Schwarzmetall-Axt und -Spitzhacke bauen, Yggdrasil-Holz und Schwarzen Marmor sammeln"
+    },
+    {
+      "id": "z-mine",
+      "text": "Infizierte Mine finden: mindestens 15 Schwarze Kerne und 9 Siegelbrecher-Fragmente holen"
+    },
+    {
+      "id": "z-schwarzschmiede",
+      "text": "Schwarzschmiede bauen und Ausrüstung anfertigen (Chitinrüstung, Schild, Waffe)"
+    },
+    {
+      "id": "z-extraktor",
+      "text": "Dvergr-Extraktor besorgen, Saftextraktor auf eine Uralte Wurzel stellen"
+    },
+    {
+      "id": "z-eitr",
+      "text": "Eitr-Raffinerie bauen und Raffinierten Eitr herstellen"
+    },
+    {
+      "id": "z-galdr",
+      "text": "Galdr-Tisch bauen, Siegelbrecher herstellen, Federumhang und Stab"
+    },
+    {
+      "id": "z-essen-met",
+      "text": "Jotun-Puffs und Magierkappen anbauen, Misthare Supreme, Sucher-Aspik und Heil-Met vorbereiten"
+    },
     {
       "id": "z-the-queen",
       "text": "Die Königin besiegen",
